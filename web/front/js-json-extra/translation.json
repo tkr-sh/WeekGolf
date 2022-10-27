@@ -169,7 +169,7 @@
         "Implicit conversion of bool to int" : false,
         "Implicit conversion of char to int" : false,
         "Format a string" : "'%i'%n",
-        "Template string" : "'#{var1}, #{var2}'",
+        "Template string" : "\"#{var1}, #{var2}\"",
         "Three-Way operator" : true
     },
 
@@ -198,7 +198,7 @@
         "Implicit conversion of bool to int" : true,
         "Implicit conversion of char to int" : false,
         "Format a string" : "sprintf(\"%s\",$s)",
-        "Template string" : "$var {$expr}",
+        "Template string" : "\"$var {$expr}\"",
         "Three-Way operator" : true
     }
 }
