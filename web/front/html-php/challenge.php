@@ -3039,6 +3039,7 @@
             // Change scroll when clicked
             function clickLang(n){
                 scroll_content.scrollTop = n*130;
+                setTimeout(showPicker, 500);
             }
 
 
