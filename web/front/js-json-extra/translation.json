@@ -115,6 +115,36 @@
         "Three-Way operator" : false
     },
 
+    
+    "PHP" : {
+        "Variable declaration" : "$s = \"a variable\"",
+        "Constant declaration" : "define(\"S\", \"a constant\")",
+        "Function declaration" : "function a_function($argument){\n\treturn $argument;\n}",
+        "Lambda declaration" : "$a_lambda = function ($argument){\n\treturn $argument;\n}",
+        "While loop" : "while ($b){...}",
+        "For loop" : "for($i = 0; $i < $n; $i++){...}",
+        "Foreach loop" : "for($arr as $e){...}",
+        "Do .. while loop" : "do{\n\t...\n}while ($b)",
+        "Foreach index and element loop" : false,
+        "Infinite loop" : "for(;;){...}",
+        "if ... else if ... else" : "if($b1){\n\t...\n} elseif ($b2) {\n\t...\n} else {\n\t...\n}",
+        "Ternary operator" : "$b ? $true : $false",
+        "Try ... Catch" : "try {\n\t...\n} catch (Exception $e) {\n\t...\n}",
+        "Switch" : "switch ($x){\n\tcase $y:\n\t\t...\n\t\tbreak;\n\tdefault:\n\t\t...\n\t\tbreak;\n}",
+        "Type of the %" : "Truncated",
+        "Top level constructor" : "&lt;? else it's HTML",
+        "Get a line of STDIN" : "fgets(STDIN)",
+        "Get all STDIN" : "`dd`",
+        "Get a char STDIN" : false,
+        "Print without a new line at the end" : "echo$s\n?&gt;&lt;?=$s (if it's at the end)",
+        "Print with a new line at the end" : "echo\"$s\\n\"\n?&gt;&lt;?=\"$s\\n\" (if it's at the end)",
+        "Implicit conversion of bool to int" : true,
+        "Implicit conversion of char to int" : false,
+        "Format a string" : "sprintf(\"%s\",$s)",
+        "Template string" : "\"$var {$expr}\"",
+        "Three-Way operator" : true
+    },
+
     "Python" : {
         "Variable declaration" : "s = \"a variable\"",
         "Constant declaration" : false,
@@ -143,6 +173,35 @@
         "Template string" : "f'{var1}, {var2}'",
         "Three-Way operator" : false
     },
+    
+    "Raku" : {
+        "Variable declaration" : "my $s = \"a variable\"",
+        "Constant declaration" : "constant $s = \"a constant\"",
+        "Function declaration" : "sub a_function($argument) {\n\treturn $argument;\n}",
+        "Lambda declaration" : "my $a_lambda = -> $argument {$argument};",
+        "While loop" : "while $b {\n\t...\n}",
+        "For loop" : "for 0..$n-1 -> $i {\n\t...\n}",
+        "Foreach loop" : "for i in a_list\n\na_list.map{...}",
+        "Do .. while loop" : "begin\n\t...\nend while b",
+        "Foreach index and element loop" : false,
+        "Infinite loop" : "loop{...}",
+        "if ... else if ... else" : "if b1\n\t...\nelsif b2\n\t...\nelse\n\t...\nend",
+        "Ternary operator" : "b ? _true : _false",
+        "Try ... Catch" : "begin\n\t...\nrescue\n\t...\nend",
+        "Switch" : "case x\n\twhen y\n\t\t...\n\telse\n\t\t...\nend",
+        "Type of the %" : "Floored",
+        "Top level constructor" : false,
+        "Get a line of STDIN" : "gets",
+        "Get all STDIN" : "$<",
+        "Get a char STDIN" : "$<.getc",
+        "Print without a new line at the end" : "print s\n$><&lt;s",
+        "Print with a new line at the end" : "puts s\np s",
+        "Implicit conversion of bool to int" : false,
+        "Implicit conversion of char to int" : false,
+        "Format a string" : "'%i'%n",
+        "Template string" : "\"#{var1}, #{var2}\"",
+        "Three-Way operator" : true
+    },
 
     "Ruby" : {
         "Variable declaration" : "s = \"a variable\"",
@@ -170,35 +229,6 @@
         "Implicit conversion of char to int" : false,
         "Format a string" : "'%i'%n",
         "Template string" : "\"#{var1}, #{var2}\"",
-        "Three-Way operator" : true
-    },
-
-    "PHP" : {
-        "Variable declaration" : "$s = \"a variable\"",
-        "Constant declaration" : "define(\"S\", \"a constant\")",
-        "Function declaration" : "function a_function($argument){\n\treturn $argument;\n}",
-        "Lambda declaration" : "$a_lambda = function ($argument){\n\treturn $argument;\n}",
-        "While loop" : "while ($b){...}",
-        "For loop" : "for($i = 0; $i < $n; $i++){...}",
-        "Foreach loop" : "for($arr as $e){...}",
-        "Do .. while loop" : "do{\n\t...\n}while ($b)",
-        "Foreach index and element loop" : false,
-        "Infinite loop" : "for(;;){...}",
-        "if ... else if ... else" : "if($b1){\n\t...\n} elseif ($b2) {\n\t...\n} else {\n\t...\n}",
-        "Ternary operator" : "$b ? $true : $false",
-        "Try ... Catch" : "try {\n\t...\n} catch (Exception $e) {\n\t...\n}",
-        "Switch" : "switch ($x){\n\tcase $y:\n\t\t...\n\t\tbreak;\n\tdefault:\n\t\t...\n\t\tbreak;\n}",
-        "Type of the %" : "Truncated",
-        "Top level constructor" : "&lt;? else it's HTML",
-        "Get a line of STDIN" : "fgets(STDIN)",
-        "Get all STDIN" : "`dd`",
-        "Get a char STDIN" : false,
-        "Print without a new line at the end" : "echo$s\n?&gt;&lt;?=$s (if it's at the end)",
-        "Print with a new line at the end" : "echo\"$s\\n\"\n?&gt;&lt;?=\"$s\\n\" (if it's at the end)",
-        "Implicit conversion of bool to int" : true,
-        "Implicit conversion of char to int" : false,
-        "Format a string" : "sprintf(\"%s\",$s)",
-        "Template string" : "\"$var {$expr}\"",
         "Three-Way operator" : true
     }
 }

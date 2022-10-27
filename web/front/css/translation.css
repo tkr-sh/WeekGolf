@@ -26,7 +26,7 @@
 
 .no_code {
     left: 0px;
-    background-color: #3c3;
+    background-color: var(--main-color);
     font-family: 'Poppins', sans-serif !important;
 }
 
