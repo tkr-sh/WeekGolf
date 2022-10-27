@@ -1,0 +1,352 @@
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    background-color: #222;
+    top: 0;
+    position: absolute;
+    width: 100%;
+}
+
+html, body {
+    margin: 0;
+    height: calc(100%);
+}
+
+
+#circle_green {
+    background-color: var(--main-color);
+    height: 2000px;
+    width: 2000px;
+    border-radius: 1000px;
+    margin-top: -1000px;
+    margin-left: -100px;
+    transition: .3s;
+}
+
+#golfer {
+    margin-left: 100px;
+    margin-top: -600px;
+    height: 200px;
+    position: absolute;
+}
+
+
+#main-content {
+    margin-top: 260px;
+    height: calc(50% + 250px);
+    width: 60%;
+    left: 0;
+    color: white;
+}
+
+#box {
+    width:100%;
+    height: 500px;
+    margin-top: -30px;
+}
+
+#title {
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.textarea {
+    margin-left: calc(50% - 225px);
+    width: 450px;
+    text-align: left;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #444;
+    outline: none;
+    border: none;
+    display: grid;
+    grid-template-columns: 50px 400px;
+    padding: 0 0.4rem;
+    position: relative;
+    margin-top: 20px;
+}
+
+.textarea input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+}
+
+#checked {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #777;
+    top: 8px;
+    right: 10px;
+    display:inline-block;
+    position: relative;
+    background-color: #222;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+#createAccount {
+    background-color: #040;
+    width: 400px;
+    height: 60px;
+    color: #Fff;
+    border-radius: 30px;
+    margin-left: calc(50% - 200px);
+    text-align: center;
+    display: table;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 50px;
+    transition: .5s;
+    cursor: not-allowed;
+}
+
+#logo_golf {
+    margin-left: 220px;
+    margin-top: -555px;
+    height: 150px;
+    position: absolute;
+}
+
+#OR, #OR2 {
+    width: 50px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    position: relative;
+    margin-left: calc(50% - 25px);
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+#login_button, #login_button2, #create_button {
+    margin-top: -730px;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    border-radius: 35px;
+    border: #fff solid 5px;
+    color: #fff;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    transition: .5s ;
+    margin-left: 100px;
+}
+#login_button:hover, #login_button2:hover, #create_button:hover {
+    background-color: #5a5;
+}
+
+#create_button {
+    width: 240px;
+}
+
+#login_text {
+    margin-top: -900px;
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    margin-left: 50px;
+}
+
+#eye {
+    margin-left: 10px;
+}
+
+#alert {
+    position: absolute;
+    width: 350px;
+    margin-left: calc(50% - 175px);
+    height: 100px;
+    background-color: #f35;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    transition: 0s;
+    z-index: 10;
+    display: none;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+#error_txt {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#content_oauth2 {
+    width: 350px;
+    margin-left: calc(50% - 175px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box_oauth2{
+    height: 45px;
+    width: 100px;
+    border-radius: 7px;
+    background-color: #f35;
+    transition: .5s;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.box_oauth2:hover {
+    filter: brightness(120%);
+}
+
+#g-recaptcha {
+    margin-left: calc(50% - 152px);
+    margin-top: 30px;
+}
+
+
+#login_button2 {
+    display: none;
+}
+
+#OR2 {
+    display: block;
+}
+
+
+
+
+
+
+
+/*
+__________                                            __              
+\______   \ ____   ____________   ____   ____   _____|__|__  __ ____  
+ |       _// __ \ /  ___/\____ \ /  _ \ /    \ /  ___/  \  \/ // __ \ 
+ |    |   \  ___/ \___ \ |  |_> >  <_> )   |  \\___ \|  |\   /\  ___/ 
+ |____|_  /\___  >____  >|   __/ \____/|___|  /____  >__| \_/  \___  >
+        \/     \/     \/ |__|               \/     \/              \/
+*/
+@media screen and (max-width: 1000px) {
+
+    #circle_green {
+        margin-left: 0px;
+        margin-top: -800px;
+    }
+
+    #login_text {
+        margin-top: -1100px;
+        font-size: 38px;
+    }
+
+    #login_button {
+        margin-top: -950px;
+    }
+
+    #create_button {
+        margin-top: -950px;
+        margin-left: 50px;
+    }
+
+    #golfer {
+        display: none;
+    }
+
+    #logo_golf {
+        margin-top: -755px;
+        margin-left: 130px;
+    }
+
+}
+
+
+@media screen and (max-height: 850px) {
+
+    #main-content {
+        margin-top: 100px;
+    }
+
+    #login_button {
+        padding-top: 10px;
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    #create_button {
+        padding-top: 10px;
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    #OR {
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width: 750px) {
+
+    #main-content {
+        width: 100%;
+        height: 500px;
+        margin-top: 100px;
+        display: block;
+    }
+
+    body {
+        display: table;
+        height: calc(100% + 200px);
+    }
+
+    #circle_green {
+        display: none;
+    }
+
+    #right-box {
+        display: none;
+    }
+
+    /* 1 */
+    #login_button, #create_button {
+        display: none;
+    }
+
+    /* 2 */
+    #login_button2, #create_button2 {
+        display: block;
+        position: relative;
+        margin-top: 0px;
+        margin-left: calc( 50% - 100px);
+    }
+
+    #box {
+        margin-top: -50px;
+    }
+
+    .textarea{
+        width: 300px;
+        margin-left: calc( 50% - 150px);
+    }
+
+    #eye {
+        margin-left: -135px;
+    }
+    
+    #OR{
+        display: block;
+    }
+    
+}

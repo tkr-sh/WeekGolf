@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+    <!-- If logged -->
+    <script>
+        if (localStorage.token !== ""){
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.open("POST", "https://week.golf/getIdbyToken.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            xhttp.send(`t=${localStorage.token}`);
+
+            xhttp.onload = function() {
+                const rep = JSON.parse(xhttp.responseText);
+
+                const id = rep["id"];
+                
+                if (id !== ""){
+                    document.location.href = "https://week.golf/problems.html";
+                }
+            }
+        }
+
+        function pwdLook(){
+            const bool =  document.getElementById("pwd").type==='password';
+            document.getElementById("pwd").type = bool?"text":"password"
+        }
+    </script>
+    <head>
+        <!-- 3ncoding -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Title -->
+        <title>WeekGolf</title>
+
+        <!-- Icon -->
+        <link rel="icon" href="https://i.imgur.com/9Pgc6UV.png">
+
+        <!-- Color Theme -->
+        <script src="color.js"></script>
+
+        <!-- CSS -->
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="header.css" rel="stylesheet" type="text/css" />
+        <link href="footer.css" rel="stylesheet" type="text/css" />
+        <link href="createAccount.css" rel="stylesheet" type="text/css" />
+        
+
+        <!-- Embed HTML -->
+        <script src="lib/csi.js"></script>
+
+        <!-- Header Boucing -->
+        <script src="header.js"></script>
+        
+        <script type="text/javascript">
+            var onloadCallback = function() {
+                grecaptcha.render('g-recaptcha', {
+                    'theme' : 'dark'
+                });
+            }
+        </script>
+
+        <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' async defer></script>
+    </head>
+    <body> 
+
+        <div id="alert">
+            <div style="position: relative;text-align: center;">
+                Error:
+                <div id="error_txt">
+                    Name is too long.
+                </div>
+            </div>
+        </div>
+      
+        <main id="main-content">
+            <section id="box">
+                <div id="title">
+                    Create an Account
+                </div>
+                <form id="comment_form" action="redirectMail.php" method="post" onsubmit="return validForm()">
+                    <div class="textarea"> 
+                        <img src='img/person_icon.svg' style="width: 30px; margin-top: 5px;text-align: center; margin-left: 10px;" alt="Icon of a person">
+                    <input type="text" placeholder="Username" id="user_name" name="username">
+                    </div>
+                    <div class="textarea"> 
+                        <img src='img/mail.svg' style="width: 25px; margin-top: 7.5px;text-align: center;margin-left: 10px;" alt="Icon of a mail">
+                        <input type="text" placeholder="Email" id="email" name="email">
+                    </div>
+                    <div class="textarea" style="grid-template-columns: 50px 350px 50px;"> 
+                        <img src='img/lock.svg' style="width: 25px; margin-top: 7.5px;text-align: center;margin-left: 10px;" alt="Icon of a lock">
+                        <input type="password" placeholder="Password" id="pwd" name="pwd">
+                        <img src="img/eye.svg" style="width: 30px; margin-top: 5px;text-align: center;" onclick="pwdLook()" id="eye" alt="Icon of an eye">
+                    </div>
+                    <input id='input_country' value='XX' name="country" style="display: none;">
+
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <div id="checked" onclick="checked()">
+                        </div>
+                        I accept the <a href="infos.html" style="color: #fff">TCUs</a>
+                    </div>
+                    
+                    <div class="g-recaptcha" id="g-recaptcha" data-sitekey="6LeooYsgAAAAAN-OmhfoXKASHW5pfILe8f3veuSW"></div>
+
+    
+                    <button id="createAccount" type="submit" name="submit" onclick="javascript:this.form.submit();" style="border: none; text-align: center;">
+                        <div class="vertical-align" style="text-align: center; width: 400px; height: 100%; font-family: 'Poppins', sans-serif;">
+                            Create An Account
+                        </div>
+                    </button>
+                    
+                </form>
+
+                <div id="OR2">OR</div>
+                <section id="content_oauth2">
+
+                    <a href="loginWithDiscord.php">
+                        <div class="box_oauth2" style="background-color: #5165f6;">
+                            <img src="img/discord.svg" height="40px" alt="Discord logo">
+                        </div>
+                    </a>
+                    
+                    <a href="loginWithStack.php">
+                        <div class="box_oauth2" style="background-color: #f48023;">
+                            <img src="img/stack.svg" height="40px"  alt="StackOverflow logo">
+                        </div>
+                    </a>
+                    
+                    <a href="loginWithGithub.php">
+                        <div class="box_oauth2" style="background-color: #151515;">
+                            <img src="img/github.svg" height="40px" alt="Github logo">
+                        </div>
+                    </a>
+
+                </section>
+                <div id="OR">OR</div>
+                <a href="login.html">
+                    <div id="login_button2">
+                        Log in
+                    </div>  
+                </a>
+            </section>
+        </main>
+        <section id="right-box" style="width: 40%;height: 100%; float:right;">
+            <div id="circle_green">
+            </div>  
+            <img src="img/golfer.svg" id="golfer" alt="A Golfer (irl)">
+            <img src="img/weekgolfwhite.svg" id="logo_golf"  alt="The logo of WeekGolf">
+            <div id="login_text">
+                Already have<br>an account ?
+            </div>
+            <a href="login.html">
+                <div id="login_button">
+                    Log in
+                </div>  
+            </a>
+        </section>
+
+
+
+
+        <!-- Get IP and Country -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <!-- Country code -->
+        <script>
+            var country_code = "xx";
+
+
+            async function getIpClient() {
+                try {
+                    const response = await axios.get('https://api.ipify.org?format=json');
+                    const ip = response["data"]["ip"];
+
+                    // Get country
+                    const xhttp = new XMLHttpRequest();
+
+                    xhttp.open("POST", "https://week.golf/getCountry.php", true);
+                    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhttp.send(`ip=${ip}`);
+
+                    xhttp.onload = function (){
+                        const rep = JSON.parse(xhttp.response);
+                        const country = rep["country"];
+
+                        country_code = country;
+                        console.log(country_code);
+
+                        document.getElementById("input_country").setAttribute("value",country_code);
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+
+            getIpClient();
+        </script>
+        
+        <!-- Responsive page -->
+        <script>
+
+            const createButton = document.getElementById("createAccount");
+            const checked_button = document.getElementById("checked")
+
+            createButton.addEventListener("mouseover", function( event ) {
+                createButton.style.backgroundColor = (window.getComputedStyle(document.getElementById("checked")).backgroundColor === "rgb(34, 34, 34)")?"":"#3c3";
+            });
+            createButton.addEventListener("mouseout", function( event ) {
+                createButton.style.backgroundColor = (window.getComputedStyle(document.getElementById("checked")).backgroundColor === "rgb(34, 34, 34)")?"":"#080";
+            });
+
+
+            function pwd(){
+                const bool =  document.getElementById("pwd").type==='password';
+                document.getElementById("pwd").type = bool?"text":"password"
+            }
+
+            function checked (){
+                const boolean  = ((window.getComputedStyle(document.getElementById("checked"))).backgroundColor==='rgb(34, 34, 34)');
+                document.getElementById("checked").style.backgroundColor = (boolean)?"#6f6":"#222";
+                document.getElementById("createAccount").style.backgroundColor = (boolean)?"#080":"#040";
+                document.getElementById("createAccount").style.cursor = (boolean)?"pointer":"not-allowed";
+            }
+
+            function reportWindowSize() {
+                const height = document.body.clientHeight;
+                const box = document.getElementById('box');
+                const right_box = document.getElementById("right-box")
+
+                document.body.style.height = height;
+                right_box.style.marginTop = height<1000 ? "-"+height+"px" : "-1000px";
+            }
+
+
+
+            window.onload = reportWindowSize();
+
+            window.onresize = reportWindowSize;
+
+            if (localStorage.smallHeader == null)  
+                localStorage.smallHeader = "small";
+
+        </script>
+
+
+        <!-- Show error -->
+        <script>
+            if ( new URL(document.URL).searchParams.get("err") != null && new URL(document.URL).searchParams.get("err") != ""){
+                document.getElementById("error_txt").textContent = new URL(document.URL).searchParams.get("err");
+                document.getElementById("alert").style.display = "block";
+            }
+        </script>
+
+        <!-- If infos are valid -->
+        <script>
+            function validateEmail(email) { 
+                var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            } 
+
+            function validForm() {
+                let b = true;
+                const email = document.getElementById('email').value;
+                const username = document.getElementById('user_name').value;
+                const pwd = document.getElementById('pwd').value;
+                const TCU = ((window.getComputedStyle(document.getElementById("checked"))).backgroundColor == 'rgb(34, 34, 34)');
+
+                
+                if (!validateEmail(email)){
+                    alert("Invalid e-mail");
+                    b = false;
+                }
+                if ( 24 < username.length || username.length < 3){
+                    alert("Username length should be in [3;24]");
+                    b = false;
+                }
+                if ( 32 < pwd.length || pwd.length < 6){
+                    alert("Password length should be in [6;32]");
+                    b = false;
+                }
+                if ( TCU ){
+                    alert("You must check the \"I accept TCUs\" box");
+                    b = false;
+                }
+
+                return b;
+            }
+
+            // console.log(validForm());
+        </script>
+    </body>
+</html>

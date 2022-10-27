@@ -1,0 +1,5 @@
+<script>
+    let url = new URL(window.location.href).searchParams;
+    localStorage.token = url.get("t");
+    document.location.href  = `https://week.golf/profile.php?id=`+url.get("id");
+</script>

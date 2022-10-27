@@ -1,0 +1,26 @@
+FROM alpine:latest
+
+RUN apk update
+RUN apk add --update build-base make cmake unzip
+RUN apk add --update wget tar gzip xz gcc sed gmp-dev
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN addgroup weekgolf
+RUN adduser -h /home/weekgolf -g '' -s /bin/ash -G weekgolf -D weekgolf
+RUN chown weekgolf:weekgolf /mnt
+
+WORKDIR /home/weekgolf
+
+# compile
+COPY --chown=weekgolf:weekgolf launch.sh /home/weekgolf/launch.sh
+# leave root user
+USER weekgolf:weekgolf
+RUN mkdir /mnt/in
+RUN mkdir /mnt/out
+
+RUN wget https://downloads.haskell.org/~ghc/9.4.1/ghc-9.4.1-x86_64-alpine3_12-linux-static-int_native.tar.xz && tar -xf ghc-9.4.1-x86_64-alpine3_12-linux-static-int_native.tar.xz &&  rm -rf ghc-9.4.1-x86_64-alpine3_12-linux-static-int_native.tar.xz && cd /home/weekgolf/ghc-9.4.1-x86_64-unknown-linux && ./configure --prefix=/home/weekgolf/ghc &&  make install && cd .. && rm -rf /home/weekgolf/ghc-9.4.1-x86_64-unknown-linux
+WORKDIR /home/weekgolf
+
+USER root:root
+RUN rm /usr/bin/tr
+RUN rm /bin/ls
+USER weekgolf:weekgolf

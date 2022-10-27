@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000mm"
+   height="1000mm"
+   viewBox="0 0 1000 1000"
+   version="1.1"
+   id="svg930"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="k_white.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview932"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="mm"
+     width="1000mm"
+     inkscape:zoom="0.16"
+     inkscape:cx="1640.625"
+     inkscape:cy="2253.125"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3051" />
+  <defs
+     id="defs927" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g258" />
+    <g
+       id="g3051"
+       transform="matrix(1.8566022,0,0,1.9131033,-494.58032,-476.82736)">
+      <path
+         style="fill:#ffffff;stroke-width:1.60257"
+         d="M 330.98243,511.0396 V 267.91344 h 62.62005 62.62007 l 0.41781,108.53601 0.4178,108.53612 80.36604,-108.53612 80.36604,-108.53601 h 70.70814 70.70802 l -0.72602,3.68701 c -0.39953,2.02783 -39.64965,52.78363 -87.22275,112.79073 -47.57312,60.00711 -86.4965,109.49159 -86.4965,109.96566 0,0.47372 39.16493,55.48129 87.03313,122.23813 l 87.03302,121.37638 v 8.09721 8.09721 h -70.47719 -70.47733 l -67.9043,-97.88189 c -37.3474,-53.83508 -68.17464,-97.88201 -68.5051,-97.88201 -0.33104,0 -6.13983,7.46298 -12.90955,16.58437 l -12.30878,16.58425 v 81.29763 81.29765 h -62.63122 -62.63138 z"
+         id="path3471" />
+    </g>
+  </g>
+</svg>

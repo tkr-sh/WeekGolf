@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+    <!-- If logged -->
+    <script>
+        if (localStorage.token !== ""){
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.open("POST", "https://week.golf/getIdbyToken.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            xhttp.send(`t=${localStorage.token}`);
+
+            xhttp.onload = function() {
+                const rep = JSON.parse(xhttp.responseText);
+
+                const id = rep["id"];
+                
+                if (id !== ""){
+                    document.location.href = "https://week.golf/profile.php?id="+id;
+                }
+            }
+        }
+    </script>
+
+    <head>
+        <!-- 3ncoding -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Title -->
+        <title>WeekGolf</title>
+
+        <!-- Icon -->
+        <link rel="icon" href="https://i.imgur.com/9Pgc6UV.png">
+        
+        <!-- Color Theme -->
+        <script src="color.js"></script>
+
+        <!-- CSS -->
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="header.css" rel="stylesheet" type="text/css" />
+        <link href="footer.css" rel="stylesheet" type="text/css" />
+        <link href="createAccount.css" rel="stylesheet" type="text/css" />
+
+        <!-- Embed HTML -->
+        <script src="lib/csi.js"></script>
+
+        <!-- Header Boucing -->
+        <script src="header.js"></script>
+    </head>
+    <body> 
+
+        <div id="alert">
+            <div style="position: relative;text-align: center;">
+                Error:
+                <div id="error_txt">
+                    Name is too long.
+                </div>
+            </div>
+        </div>
+      
+        <div id="main-content">
+            <div id="box">
+                <div id="title">
+                    Log in
+                </div>
+                <div class="textarea"> 
+                    <img src='img/person_icon.svg' style="width: 30px; margin-top: 5px;text-align: center; margin-left: 10px;">
+                    <input type="text" placeholder="Username or E-mail" id="user_name">
+                </div>
+                <div class="textarea" style="grid-template-columns: 50px 350px 50px;"> 
+                    <img src='img/lock.svg' style="width: 25px; margin-top: 7.5px;text-align: center;margin-left: 10px;">
+                    <input type="password" placeholder="Password" id="pwd">
+                    <img src="img/eye.svg" style="width: 30px; margin-top: 5px;text-align: center;" onclick="pwd()" id="eye">
+                </div>
+
+                <div id="createAccount" onclick="createAccount()">
+                    <div class="vertical-align">
+                        Log in
+                    </div>
+                </div>
+                <div id="OR2">OR</div>
+                <div id="content_oauth2">
+
+                    <a href="loginWithDiscord.php">
+                        <div class="box_oauth2" style="background-color: #5165f6;">
+                            <img src="img/discord.svg" height="40px">
+                        </div>
+                    </a>
+                    
+                    <a href="loginWithStack.php">
+                        <div class="box_oauth2" style="background-color: #f48023;">
+                            <img src="img/stack.svg" height="40px">
+                        </div>
+                    </a>
+                    
+                    <a href="loginWithGithub.php">
+                        <div class="box_oauth2" style="background-color: #151515;">
+                            <img src="img/github.svg" height="40px">
+                        </div>
+                    </a>
+
+                </div>
+                <div id="OR">OR</div>
+                <a href="createAccount.html">
+                    <div id="login_button2" style="width: 300px; margin-left: calc(50% - 150px);">
+                        Create one
+                    </div>  
+                </a>
+            </div>
+        </div>
+        <div id="right-box" style="width: 40%;height: 100%; float:right;">
+            <div id="circle_green">
+            </div>  
+            <img src="img/golfer.svg" id="golfer">
+            <img src="img/weekgolfwhite.svg" id="logo_golf">
+            <div id="login_text">
+                Don't have<br>an account ?
+            </div>
+            <div id="OR">OR</div>
+            <a href="createAccount.html">
+                <div id="create_button">
+                    Create one
+                </div>  
+            </a>
+        </div>
+
+
+
+        <!-- Log in -->
+        <script>
+            
+            function createAccount(){
+                const xhttp = new XMLHttpRequest();
+
+                const name = document.getElementById('user_name').value;
+                const pwd = document.getElementById('pwd').value;
+                const alert = document.getElementById("alert");
+                const error_txt = document.getElementById("error_txt");
+
+
+
+                xhttp.open("POST", "https://week.golf/login.php", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                xhttp.send(`name=${name}&pwd=${pwd}`);
+
+                xhttp.onload = function() {
+                    const rep = JSON.parse(xhttp.responseText);
+                    const token = rep['token'];
+                    if (token !== null && token !== ""){
+                        localStorage.token = token;
+                        // Get ID 
+                        xhttp.open("POST", "https://week.golf/getIdbyToken.php", true);
+                        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                        xhttp.send(`t=${localStorage.token}`);
+
+                        xhttp.onload = function() {
+                            const rep = JSON.parse(xhttp.responseText);
+                            const id = rep["id"]
+                            if (id !== ""){
+                                document.location.href = "https://week.golf/profile.php?id="+id;
+                            }
+
+                        }
+                        
+                    } else {
+                        alert.style.display = 'block';
+                        error_txt.textContent = rep["error"];
+                    }
+                }
+
+            }
+        </script>
+
+
+
+        <!-- Responsive page -->
+        <script>
+
+            const createButton = document.getElementById("createAccount");
+            const checked_button = document.getElementById("checked")
+
+            createButton.addEventListener("mouseover", function( event ) {
+                createButton.style.backgroundColor = (window.getComputedStyle(document.getElementById("checked")).backgroundColor === "rgb(34, 34, 34)")?"":"#3c3";
+            });
+            createButton.addEventListener("mouseout", function( event ) {
+                createButton.style.backgroundColor = (window.getComputedStyle(document.getElementById("checked")).backgroundColor === "rgb(34, 34, 34)")?"":"#080";
+            });
+
+
+            function pwd(){
+                const bool =  document.getElementById("pwd").type==='password';
+                document.getElementById("pwd").type = bool?"text":"password"
+            }
+
+
+            function reportWindowSize() {
+                const height = document.body.clientHeight;
+                const box = document.getElementById('box');
+                const right_box = document.getElementById("right-box")
+
+                document.body.style.height = height;
+                right_box.style.marginTop = height<1000 ? "-"+height+"px" : "-1000px";
+            }
+
+            const boolean = true;
+            document.getElementById("createAccount").style.backgroundColor = (boolean)?"#080":"#040";
+            document.getElementById("createAccount").style.cursor = (boolean)?"pointer":"not-allowed";
+            window.onload = reportWindowSize;
+            window.onresize = reportWindowSize;
+
+        </script>
+    </body>
+</html>

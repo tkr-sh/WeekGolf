@@ -1,0 +1,248 @@
+#stat_graph {
+    margin-top: 50px;
+    width: calc(90% - 120px);
+    margin-left: calc(5% + 120px);
+    height: 400px;
+    position: relative;
+    transition: margin .3s;
+}
+
+#bar_left {
+    position: absolute;
+    float: left;
+    height: 100%;
+    width: 5px;
+    background-color: #ddd;
+    z-index: 2;
+}
+
+#bar_down {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ddd;
+    z-index: 2;
+}
+
+.temp_bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #888;
+    margin-bottom: 25%;
+}
+
+#flex_sub {
+    display: flex;
+    justify-content: space-between;
+    width: calc(90% - 120px - 30px);
+    margin-left: calc(5% + 120px);
+    height: 50px;
+    padding: 5px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+    padding-inline: 15px;
+}
+
+.score_evolution {
+    position: absolute;
+    margin-left: -35px;
+    width: 30px;
+    float: left;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+    bottom: 0;
+    text-align: right;
+}
+
+#green_left {
+    width: 80px;
+    background-color: var(--main-color);
+    height: 100%;
+    transition: .5s;
+    color: #fff;
+    font-size: 39px;
+    text-align: center;
+    border-radius: 5px;
+    float: left;
+    cursor: pointer;
+}
+
+#green_left:hover {
+    background-color: var(--lighter-color-2);
+}
+
+#content_answer {
+    height: 410px;
+    width: 80px;
+    margin-top: -470px;
+    margin-left: 5%;
+    border-radius: 5px;
+    transition: margin .3s;
+    transition: .3s;
+    background-color: #181818;
+    overflow: hidden;
+}
+
+#selector_answer {
+    width: 10%;
+    height: 100%;
+    float: left;
+    overflow: scroll;
+}
+
+/* width */
+#selector_answer::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+#selector_answer::-webkit-scrollbar-track {
+    background: #0000;
+}
+
+/* Handle */
+#selector_answer::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+/* selector_answer on hover */
+#selector_answer::-webkit-scrollbar-thumb:hover {
+    background: #222;
+}
+
+.little_box_index {
+    margin-left: calc(50% - 25px); 
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    display: table;
+    background-color: var(--darker-color-2);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 15px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.little_box_index:hover {
+    background-color: var(--darker-color-3);
+}
+
+#the_solution {
+    min-height: 350px;
+}
+
+.a_point {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--main-color);
+    bottom: 0;
+    z-index: 5;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.a_point:hover {
+    transform: scale(2.5);
+}
+
+
+.selector {
+    background-color: #181818;
+    width: 30%;
+    margin-left: 2.5%;
+    float: left;
+    margin-bottom: 50px;
+    
+}
+.header_selector {
+    background-color: #111;
+    width: 100%;
+    height: 80px;
+    display: table;
+    text-align: center;
+    color:#fff;
+    font-weight: 900;
+    font-size: 30px;
+}
+.content_selector {
+    padding-inline: 5px;
+    padding-block: 20px;
+    width: calc(100% - 10px);
+    display:flex;
+    flex-direction: column ;
+}
+
+.search_bar {
+    margin-left: calc(5% - 5px);
+    width: 90%;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+    -webkit-appearance: none;
+    border: none;
+    font-family: inherit;
+    border-radius: 5px;
+    padding: 5px;
+    order: -999;
+}
+
+.box_selector {
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    margin-top: 20px;
+    transition: .5s;
+    height: 40px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.box_selector:hover {
+    filter: brightness(110%);
+}
+
+
+/*
+__________                                            __              
+\______   \ ____   ____________   ____   ____   _____|__|__  __ ____  
+ |       _// __ \ /  ___/\____ \ /  _ \ /    \ /  ___/  \  \/ // __ \ 
+ |    |   \  ___/ \___ \ |  |_> >  <_> )   |  \\___ \|  |\   /\  ___/ 
+ |____|_  /\___  >____  >|   __/ \____/|___|  /____  >__| \_/  \___  >
+        \/     \/     \/ |__|               \/     \/              \/
+*/
+@media screen and (max-width: 600px) {
+
+    .header_selector {
+        font-size: 18px;
+        height: 60px;
+    }
+
+    .search_bar {
+        height: 25px;
+        width: 80%;
+        margin-left: calc(10% - 5px);
+        font-size: 14px;
+    }
+
+    .box_selector{
+        border-radius: 5px;
+        overflow: hidden;
+        font-size: 16px;
+    }
+    
+}

@@ -1,0 +1,47 @@
+#translation {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#translation td, #translation th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#translation th {
+    text-align: left;
+    background-color: var(--main-color);
+    color: white;
+}
+
+#translation td {
+    color: white;
+}
+
+#translation td{
+    white-space: pre;
+    font-family: 'Ubuntu Mono', monospace;
+    tab-size: 4;
+}
+
+.no_code {
+    left: 0px;
+    background-color: #3c3;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
+main::-webkit-scrollbar {
+    border-radius: 4px;
+    width: 8px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}
+
+main::-webkit-scrollbar-track {
+    background: #0000;
+    border-radius: 5px;
+}

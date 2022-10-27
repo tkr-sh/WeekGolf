@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "DejaVu Sans Mono";
+    src: url(https://week.golf/includes/fonts/DejaVuSansMono.ttf);
+}
+
+#vyxal_keyboard, #apl_keyboard {
+    font-family: "DejaVu Sans Mono", monospace;
+    width: calc(90% - 50px);
+    margin-left: 5%;
+    background-color: #181818;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.char_vyxal, .char_apl {
+    cursor: pointer;
+    transition: .2s;
+    background-color: var(--darker-color);
+    color: #fff;
+    float: left;
+    flex: 1 0 50px;
+    margin: 3px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 24px;
+}

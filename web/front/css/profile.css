@@ -1,0 +1,871 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+
+
+/*
+
+Country
+
+*/
+#country {
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+#country_parent {
+    height: 50px;
+    float: left;
+    margin-left: calc(10% - 10px);
+    border-radius: 4px;
+    transition: .5s;
+    color: #fff;
+    margin-top: -63px;
+    padding: 3px;
+    background-color: #222; 
+}
+
+
+
+
+
+
+
+
+/*
+.___        _____       
+|   | _____/ ____\____  
+|   |/    \   __\/  _ \ 
+|   |   |  \  | (  <_> )
+|___|___|  /__|  \____/ 
+         \/            
+*/
+#score_left {
+    width: 50%;
+    float: left;
+}
+#ranking_right {
+    width: 50%;
+    float: right;
+}
+#score_div,
+#ranking_div {
+    background-color: #111;
+    width: 80%;
+    margin-left: 10%;
+
+    margin-top: 50px;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.name_section {
+    font-size: 30px;
+    margin-left: 50px;
+    color: #fff;
+}
+.see_more {
+    font-size: 15px;
+    margin-left: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+.line{
+    height: 8px;
+    width: calc(50% - 50px);
+    margin-left: 50px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.text_in_section {
+    color: #fff;
+    font-size: 18px;
+    margin-left: 50px;
+}
+
+.repartition,
+.pourcentage {
+    width: calc(100% - 100px);
+    margin-left: 50px;
+    height: 30px;
+    display: flex; 
+    justify-content: center;
+}
+#repartition{
+    margin-top: 20px;
+}
+#repartition_score,
+#repartition_upgrade,
+#repartition_coop,
+#ranking_bar, #ranking_bar_2{
+    height: 100%;
+    width: 33%;
+}
+#repartition_score {
+    background-color: #08F;
+}
+#repartition_upgrade {
+    background-color: #0b3;
+}
+#repartition_coop {
+    background-color: #f80;
+}
+#ranking_bar, #ranking_bar_2{
+    background-color: rgb(255, 228, 56);
+    float:left;
+    display: flex; 
+    justify-content: left;
+}
+
+#ranking_bar_2{
+    background-color: rgb(103, 255, 56);
+}
+
+#pourcentage_score,
+#pourcentage_upgrade,
+#pourcentage_coop,
+#pourcentage_ranking_better,
+#pourcentage_ranking_same,
+#pourcentage_ranking_less{
+    height: 100%;
+    width: 33%;
+    min-width: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.subtitle {
+    margin-left: 50px;
+    height: 20px;
+    width: 37px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.subtitle_div {
+    justify-content: left;
+    display: table;
+    margin-left: 50px;
+    color:#fff;
+    margin-bottom: 15px;
+}
+
+
+/* Score languages */
+.box_languages_score {
+    width: calc(100% - 100px);
+    margin-left: 50px;
+}
+.bar_languages_score {
+    width: 100%;
+    height: 30px;
+    background-color: #555;
+    border-radius: 5px;
+    display: table;
+    color:#111;
+    font-weight: 800;
+    text-align: left;
+}
+.percentage_languages_score {
+    height: 30px;
+    float: left;
+    left: 0;
+    position: relative;
+    border-radius: 5px;
+    display: table;
+    text-align: center;
+    color:#111;
+    font-weight: 800;
+    
+}
+
+.box_ranking_langage {
+    padding: 5px;
+    height:40px;
+    width: 40px;
+    border-radius: 2px;
+}
+.title_challenge{
+    color: #fff;
+    margin-left: 10px;
+    font-size: 20px;
+    float: 0;
+    position: relative;
+}
+
+#edit {
+    width: 25px;
+    height: 25px;
+    float:right;
+    margin-right: 5%;
+    margin-top: -50px;
+    cursor: pointer;
+}
+
+#editxt {
+    float:right;
+    margin-right: calc(5% + 35px);
+    margin-top: -50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#friendButton {
+    height: 70px;
+    float:right;
+    margin-right: calc(10% - 10px);
+    width: 260px;
+    border-radius: 4px;
+    transition: .5s;
+    color: #fff;
+    display: table;
+    cursor: pointer;
+}
+#friendButton:hover{
+    filter: brightness(90%);
+}
+
+#friendIcon,#discordIcon {
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 50px;
+}
+#discordIcon{
+    margin-top: 0px;
+    overflow: hidden;
+}
+#friendTXT,#discordTXT {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 30px;
+    font-weight: 900;
+    padding-left: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#discordTXT{
+    padding-right: 5px;
+}
+
+.color_box {
+    background-color: #fd0;
+    width: calc(100% - 60px);
+    margin-left: 50px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    display: table;
+    font-weight: 900;
+}
+
+
+@media screen and (max-width: 1100px) {
+    #pannel{
+        height: 350px;
+    }
+    #friendButton, #discordButton {
+        width: calc(80% + 20px);
+        margin-top: 75px;
+        margin-bottom: -65px;
+    }
+    #username{
+        top: -80px;
+        position: relative;
+        /* height: auto; */
+    }
+    #jstfyContent{
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+___________      .__                   .___      
+\_   _____/______|__| ____   ____    __| _/______
+ |    __) \_  __ \  |/ __ \ /    \  / __ |/  ___/
+ |     \   |  | \/  \  ___/|   |  \/ /_/ |\___ \ 
+ \___  /   |__|  |__|\___  >___|  /\____ /____  >
+     \/                  \/     \/      \/    \/ 
+*/
+.boxFriends {
+    height: 80px;
+    width: 80%;
+    margin-left: 10%;
+    background-color: #333;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.headerFriends {
+    position: relative;
+    height: 65px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #666;
+    overflow: hidden;
+}
+
+.friendPP {
+    height: 60px;
+    width: 60px;
+
+    margin-top: -100px;
+    margin-bottom: 4px;
+    margin-left: 20px;
+    
+    border: 8px solid#333;
+    border-radius: 50%;
+    
+    position: relative;
+    z-index: 19px;
+    object-fit: cover;
+}
+
+.friendName{
+    padding-top: 10px;
+    width: 300px;
+    margin-right: calc(50% - 150px);
+    font-size: 35px;
+    color: #fff;
+    float: right;
+    text-align:center;
+}
+
+#friend_div, #follower_div, #following_div {
+    margin-top: 50px;
+    background-color: #181818;
+    width: calc(90% - 40px);
+    margin-left: 5%;
+    padding: 20px;
+    border-radius: 10px;
+}
+#nb_friends, #nb_followers, #nb_followings {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: -50px;
+    position: relative;
+    display:inline;
+}
+#follower_content, #friend_content, #following_content {
+    display: none;
+}
+
+.section_title {
+    margin-top: -20px;
+    height: 50px;
+    color: #fff;
+    font-size: 50px;
+    position: relative;
+    margin-left: 5%;
+    cursor: pointer;
+}
+
+.arrow{
+    float: right;
+    width: 50px;
+    margin-top: 10px;
+}
+
+
+#list_perf, #list_comments {
+    height: 1000px;
+    width: 80%;
+    left: 10%;
+    background-color: #333;
+    filter: blur(0);
+    position: fixed;
+    display: none;
+    top: 0px;
+    z-index: 999999999999999999;
+    margin-top: 50px;
+    border-radius:  10px;
+    overflow-y: hidden;
+}
+
+#header_list_perf, #header_list_comments {
+    width: 100%;
+    height: 230px;
+    background-color: #181818;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    font-size: 70px;
+    padding-top: 5px;
+    box-shadow: 0px 5px 10px black;
+}
+#header_list_comments {
+    height: 130px;
+
+}
+
+#cross_list_perf {
+    width: 40px;
+    height: 40px;
+
+    display: block;
+    position: relative;
+
+    float: right;
+    margin-right: 30px;
+    margin-top: 30px;
+
+    margin-left: -70px;
+
+    cursor: pointer;
+}
+
+
+#content_list_perf {
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+
+
+.filter {
+    width: 70%;
+    background-color: #282828;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+    text-align: left;
+    height: 40px;
+    padding: 3px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+
+.all_perf {
+    width: 80%;
+    margin-left: 10%;
+    background-color: #181818;
+    height: 70px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#problem_filter {
+    margin-right: 200px;
+}
+
+#header_list_perf td{
+    font-size: 30px;
+    transition: .3s;
+}
+
+@media screen and (max-width: 1420px) {
+    .filter{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #problem_filter{
+        margin-right: 5%;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    #header_list_perf td{
+        font-size: 20px;
+    }
+    #header_list_perf{
+        font-size: 40px;
+    }
+    #cross_list_perf{
+        margin: 15px;
+    }
+}
+
+
+#discordButton {
+    height: 70px;
+    float:left;
+    margin-left: calc(10% - 10px);
+    width: 260px;
+    border-radius: 4px;
+    transition: .5s;
+    color: #fff;
+    /* display: table; */
+    display: none;
+    background-color: #5865f2;
+}
+
+#discordButton:hover{
+    filter: brightness(90%);
+}
+
+#new_user {
+    display: none;
+    background-color: #222;
+    text-align: center;
+    width: 80%;
+    height: 80%;
+    color: #fff;
+    margin-left: 10%;
+    margin-top: 50px;
+    font-size: 25px;
+    position: fixed;
+    top: 0;
+    z-index: 9999999999999999999999999999999999999;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#new_buttons {
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 50px;
+}
+
+.new_button {
+    width: 45%;
+    background-color: #5865f2;
+    height: 60px;
+    padding-top: 10px;
+    float:left;
+    font-weight: 900;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.new_button:hover {
+    filter: brightness(110%);
+}
+
+@media screen and (max-width: 1100px) {
+    #discordButton {
+        width: calc(80% + 20px) !important;
+        margin-top: 75px;
+        margin-bottom: -65px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #new_user {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 805px) {
+    #new_user {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 700px) {
+    #new_user {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 650px) {
+    #new_user {
+        font-size: 21px;
+    }
+}
+@media screen and (max-width: 610px) {
+    #new_user {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 550px) {
+    #new_user {
+        font-size: 19px;
+    }
+}
+@media screen and (max-width: 430px) {
+    #new_user {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 500px) {
+    #new_user {
+        width: calc(100% - 20px - 12px);
+        margin-left: 6px;
+    }
+}
+@media only screen and (max-device-width: 480px){
+    #new_user {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+   _____          __  .__      .__  __          
+  /  _  \   _____/  |_|__|__  _|__|/  |_ ___.__.
+ /  /_\  \_/ ___\   __\  \  \/ /  \   __<   |  |
+/    |    \  \___|  | |  |\   /|  ||  |  \___  |
+\____|__  /\___  >__| |__| \_/ |__||__|  / ____|
+        \/     \/                        \/     
+*/
+
+.content_activity {
+    background-color: #181818;
+    width: 90%;
+    border-radius: 10px;
+    margin-left: 5%;
+    box-shadow: 0px 5px 10px black;
+    color: #fff;
+    margin-bottom: 30px;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.header_activity {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 30px;
+    width: calc(100% - 40px);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.main_activity {
+    padding-left: 20px;
+    width: calc(100% - 40px);
+    
+}
+
+.date_activity {
+    font-weight: 400;
+    text-align: right;
+    margin-top: -5px;
+    font-size: 18px;
+    font-family: "Ubuntu", monospace;
+}
+
+.organisation_left {
+    width: calc(100% - 70px);
+    display: flex;
+}
+.organisation_right {
+    display: flex;
+    justify-content: right;
+    width: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+__________                                            __              
+\______   \ ____   ____________   ____   ____   _____|__|__  __ ____  
+ |       _// __ \ /  ___/\____ \ /  _ \ /    \ /  ___/  \  \/ // __ \ 
+ |    |   \  ___/ \___ \ |  |_> >  <_> )   |  \\___ \|  |\   /\  ___/ 
+ |____|_  /\___  >____  >|   __/ \____/|___|  /____  >__| \_/  \___  >
+        \/     \/     \/ |__|               \/     \/              \/
+*/
+
+@media screen and (max-width: 600px) {
+    .td_pannel .text_in_button{
+        font-size: 20px;
+    }
+
+
+
+    .line{
+        width: 100px;
+    }
+    
+    .responsive_div {
+        margin-left: -35px;
+    }
+    .repartition, .pourcentage{
+        width: calc(100% - 60px);
+        margin-left: 50px;
+    }
+    #score_div, #ranking_div {
+        width: 94%;
+        margin-left: 3%;
+    }
+
+    #ranking_div {
+        margin-left: 0%;
+        margin-right: 3%;
+    }
+    
+    .name_section{
+        font-size: 25px;
+    }
+
+    #cross_list_perf {
+        width: 30px;
+        margin: 5px;
+        margin: 10px;
+        margin-top: 0px;
+        margin-left: -40px;
+    }
+    #header_list_perf {
+        font-size: 30px;
+        height: 190px;
+    }
+
+    #content_list_perf {
+        height: 100%;
+    }
+
+    #header_list_perf td{
+        font-size: 20px;
+    }
+
+    .filter {
+        padding: 0;
+    }
+
+    #list_perf {
+        width: 95%;
+        left: 2.5%;
+    }
+
+    .all_perf {
+        margin-left: 2%;
+        width: calc(96% - 20px);
+    }
+
+
+    #friend_div, #follower_div, #following_div {
+        width: calc(95% - 40px);
+        margin-left: 2.5%;
+        padding: 20px;
+        border-radius: 10px;
+        padding-top: 20px;
+        padding-bottom: 7px;
+    }
+    #nb_friends, #nb_followers, #nb_followings {
+        font-size: 30px;
+        font-weight: 400;
+        margin-top: -50px;
+        position: relative;
+        display:inline;
+    }
+    #follower_content, #friend_content, #following_content {
+        display: none;
+    }
+
+    .section_title {
+        font-size: 35px;
+    }
+
+    .arrow {
+        width: 40px;
+    }
+
+    .boxFriends {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .friendPP{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .bar_languages_score {
+        width: 135%;
+    }
+}
