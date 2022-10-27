@@ -115,6 +115,35 @@
         "Three-Way operator" : false
     },
 
+    "Julia" : {
+        "Variable declaration" : "s = \"a variable\"",
+        "Constant declaration" : "S = \"a constant\"",
+        "Function declaration" : "function a_function(argument)\n\treturn argument\nend",
+        "Lambda declaration" : "a_lambda = argument -> argument",
+        "While loop" : "while b\n...\nend",
+        "For loop" : "for i = 0:n-1\n\t...\nend",
+        "Foreach loop" : "for elem in a_list\n\t...\nend",
+        "Do .. while loop" : false,
+        "Foreach index and element loop" : "for (i, elem) in enumerate(a_list)\n\t...\nend",
+        "Infinite loop" : "while true\n\t...\nend",
+        "if ... else if ... else" : "if b1\n\t...\nelseif b2 \n\t...\n else \n\t...\nend",
+        "Ternary operator" : "b ? _true : _false",
+        "Try ... Catch" : "try \n\t...\ncatch e\n\t...\nend",
+        "Switch" : false,
+        "Type of the %" : "Truncated",
+        "Top level constructor" : false,
+        "Get a line of STDIN" : "readline()",
+        "Get all STDIN" : "readlines()",
+        "Get a char STDIN" : "read(stdin, char)",
+        "Print without a new line at the end" : "print(s)",
+        "Print with a new line at the end" : "println(s)",
+        "Implicit conversion of bool to int" : true,
+        "Implicit conversion of char to int" : false,
+        "Format a string" : "@printf \"%d\" n",
+        "Template string" : "\"$var1, $var2\"",
+        "Three-Way operator" : false
+    },
+
     "Python" : {
         "Variable declaration" : "s = \"a variable\"",
         "Constant declaration" : false,
