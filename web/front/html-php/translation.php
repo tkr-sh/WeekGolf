@@ -57,8 +57,6 @@
                         echo "<td class='no_code'>$key</td>";
                         foreach($elem as $key => $value) {
 
-                            $value = str_replace(["<", ">"], ["&lt;", "&gt;"], $value);
-
                             # If boolean
                             if (is_bool($value)){
                                 if (!$value)
@@ -66,6 +64,8 @@
                                 else
                                     echo "<td style='background-color: #3a3'></td>";
                             } else {
+                                $value = str_replace(["<", ">"], ["&lt;", "&gt;"], $value);
+
                                 if (!$value)
                                     echo "<td style='background-color: #c3c'>$value</td>";
                                 else

@@ -95,7 +95,7 @@
         "proba": 1
     },
 
-    "Q13":{
+    "Q13" : {
         "type": "set",
         "question": "In which year was <PARAM> officially created?",
         "answers": {
@@ -130,7 +130,7 @@
         "proba": 5
     },
 
-    "Q14":{
+    "Q14" : {
         "type": "set",
         "question": "In which language is the program correct:",
         "description": "<PARAM>",
@@ -163,6 +163,89 @@
             "```rb\na = 0\nb = 1\n10.times do\n\tp a\n\ta, b = b, a+b\nend```": "Ruby",
             "```rs\nfn main() {\n\tlet mut a = 0;\n\tlet mut b = 1;\n\t\n\tfor i in 0..10 {\n\t\tprintln!(\"{}\", a);\n\t\ta = b - a;\n\t\tb += a;\n\t}\n}```": "Rust",
             "```\n0 →a\n1 →b\n10 (\n\t←a ,\n\t←a ←b ~+ →b →a \n\t_ # Remove the value of a left by ~+\n)```": "Vyxal"
+        },
+        "proba": 5
+    },
+
+    "Q15" : {
+        "type": "set",
+        "question": "To which problem does this input belong?",
+        "description": "<PARAM>",
+        "answers": {
+            "RBT\nXO\n-O": "Candies for Halloween",
+            "1\n5\n9": "Basic sequence",
+            "27.5": "Music Notes",
+            "RNBQKBNR\nPPPPPPPP\n # # # #\n# # # # \n # # # #\n# # # # \npppppppp\nrnbqkbnr": "Chess Points",
+            "Steve Alex\n1 100 2\n3 2 3": "American Presidents",
+            "#012345": "#RGB",
+            "ZYXWVUTSRQPONMLKJIHGFEDCBA\nREVERSE\nIVEVIHV": "New Alphabet",
+            "Hello world!": "Fibonacci&Binary"
+        },
+        "proba": 3
+    },
+
+    "Q16" : {
+        "type": "set",
+        "question": "To which problem does this output belong?",
+        "description": "<PARAM>",
+        "answers": {
+            "PrimeFibo\n6\nPrime\nFibo": "Prime, Fibo, Fizz",
+            "C#6": "Music Notes",
+            "+6": "Chess Points",
+            "Steve won": "American Presidents",
+            "R": "#RGB",
+            "1\n1 1\n1 3 1": "Tribonacci Triangle",
+            "IVEVIHV\nREVERSE": "New Alphabet",
+            "0\n46\n46\n92\n138\n230\n...": "Fibonacci&Binary"
+        },
+        "proba": 3
+    },
+
+    "Q17" : {
+        "type": "pick",
+        "question": "Which of these languages require a dollar sign before the name of a variable?",
+        "answers": ["Perl", "Python", "GolfScript", "Vyxal", "APL", "Prolog", "JavaScript", "The USA?"],
+        "correct": "Perl",
+        "proba": 1
+    },
+
+    "Q18" : {
+        "type": "pick",
+        "question": "Which language isn't in WeekGolf?",
+        "answers": ["Scala", "Prolog", "APL", "Bash", "Elixir", "Jelly", "Clojure"],
+        "correct": "Scala",
+        "proba": 1
+    },
+
+    "Q19" : {
+        "type": "pick",
+        "question": "Which language is in WeekGolf?",
+        "answers": ["Scala", "Swift", "BQN", "Zsh", "Visual Basic", "J", "Husk", "Brainfuck"],
+        "correct": "J",
+        "proba": 1
+    },
+
+    "Q20" : {
+        "type": "set",
+        "question": "What problem does this program solve?",
+        "description": "<PARAM>",
+        "answers": {
+            "```\n`0:$+\\[14;0;+//2\\0:0]```": "Fibonacci & Binary",
+            "```clj\n(pr(nth(iterate(reduce(fn[u x](if(=(count(filter #(and(not=(* 2 %)x)(.contains u(- x %)))u))2)(conj u x)u))[0 1 2](range 3 801))(read))(read)))```": "Ulam of Ulam",
+            "```ml\nlet rec x=read_int()and f x=x>0&(x mod 16<10||f(x/16))and g i=f(x+i)&f(x-i)&g(i+1)||()=print_int i;;g 0```": "Nearest Alpha",
+            "```\nS⌈⌊ʀ⟑R=∑C₴ # Abvious one btw```": "Palindromic Range",
+            "```bash\nread s\ntr A-Z $s```": "New Alphabet",
+            "```lua\na,n=io.read():match\"(.+) (.+)\"x={a}y={a,a}for i=1,n do print(table.concat(x,\" \"))z={a}for j=1,i do z[j+1]=y[j]+x[j]+y[j+1]end z[i+2]=a x=y y=z end```": "Tribonacci Triangle",
+            "```hs\nv x|all(>\"f\")x=\"1\"|1<2=[snd$maximum$zip(\"1\":x)\"0RGB\"]\ng(#)x=v[1#x,3#x,5#x]\nmain=interact$g drop```": "#RGB",
+            "```prolog\nN+M:-get0(C),C>10,N*10-C+48+M;N>1,F is N/\\1,N*3/(6-5*F)+F+T,N<T,M=T;M=N.\nN-I-J-S:-N> -J,format(\"~d\n\",S//(N+I));N+M,N+1-I-J-(S+M).\nmain:-0+I,0+J,-I-I-J-0.```": "Collatz Mean",
+            "```\n⎕←' won',⍨⊃({1>+/(2⊃⊢/×∘×-\\)∘⍎¨1↓⍵}↓' '(≠⊆⊢)⊃)⎕sh'dd'```": "American Presidents",
+            "```rs\nuse std::io::*;fn main(){print!(\"{:+}\",stdin().bytes().fold(0,|n,t|(|c|n+1941%(c&19^4)*(255/c%3-1))(t.unwrap()as i16)))}```": "Chess Points",
+            "```pl\nprint+(map<$_ $_#>,A..G)[(($==17.31234*log<>/15.886)%12+4)/.9%14],$=/=12```": "Music notes",
+            "```pl\nsay \"Prime\"x.is-prime~\"Fibo\"x($_∈(0,1,*+*...*>$_))||$_ for +get..get```": "Prime, Fibo, Fizz",
+            "```js\nfor(b=(P=prompt)(a=P(t=0)-1);a++<b;t+=P<s,t-=P>s,P=s)for(s=i=a;i--;)s+=a%i?0:i\nconsole.log(t)```": "Divisors comparison",
+            "```php\n<?for($n=`dd`;$n-$m=strrev($n);++$i)$n+=$m;echo+$i;```": "Not Lychrel",
+            "```rb\nr,s=*$<\nf=->{eval s.chars*\"%s\"%(_1.chars*9)}\n$><<('0\n'..r).map{[f['*+'],s,s=\"#{f[?+]+f[?*]}\"]}.max[1]```": "Double Persistence",
+            "```\nƓ;Ɠ;ƓU_I$×÷/2Ƥ$IE$?Ḣ;Ɗ9¡µS^µṀ_Ṃ```": "Basic Sequence"
         },
         "proba": 5
     }
