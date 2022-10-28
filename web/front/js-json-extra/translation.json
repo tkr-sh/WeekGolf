@@ -115,6 +115,35 @@
         "Three-Way operator" : true
     },
 
+    "Go": {
+        "Variable declaration" : "s := \"a variable\"",
+        "Constant declaration" : "const s = \"a constant\"",
+        "Function declaration" : "func aFunction(argument type) {\n\treturn argument\n}",
+        "Lambda declaration" : "func(argument type) {\n\treturn argument\n}",
+        "While loop" : "while b {...}",
+        "For loop" : "for i := 0; i < n; i++ {...}",
+        "Foreach loop" : "for _, c := range s {...}",
+        "Do .. while loop" : false,
+        "Foreach index and element loop" : "for idx, c := range s {...}",
+        "Infinite loop" : "for {...}",
+        "if ... else if ... else" : "if b1 {\n\t...\n} else if b2 {\n\t...\n} else {\n\t...\n}",
+        "Ternary operator" : false,
+        "Try ... Catch" : false,
+        "Switch" : "switch x {\ncase y:\n\t...\ndefault:\n\t...\n}",
+        "Type of the %" : "Truncated",
+        "Top level constructor" : "func main() {}",
+        "Get a line of STDIN" : "import \"fmt\"\nvar s string\nfmt.Scan(&s)",
+        "Get all STDIN" : "import \"os\"\nimport \"io\"\nio.ReadAll(os.Stdin)",
+        "Get a char STDIN" : false,
+        "Print without a new line at the end" : "import \"fmt\"\nfmt.Print(s)",
+        "Print with a new line at the end" : "import \"fmt\"\nfmt.Println(s)",
+        "Implicit conversion of bool to int" : false,
+        "Implicit conversion of char to int" : false,
+        "Format a string" : "import \"fmt\"\nSprintf(\"%s\", s)",
+        "Template string" : false,
+        "Three-Way operator" : false
+    },
+
     "JavaScript" : {
         "Variable declaration" : "let s = \"a variable\"\n\nvar s = \"a variable\"\n\ns = \"a variable\"",
         "Constant declaration" : "const s = \"a constant\"",
