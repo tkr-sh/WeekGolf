@@ -1,7 +1,7 @@
 # Discord
-## Sumarry
+## Summary
 - [Discord](#discord)
-  - [Sumarry](#sumarry)
+  - [Summary](#summary)
   - [Language used](#language-used)
   - [questions.json](#questionsjson)
   - [Functions](#functions)

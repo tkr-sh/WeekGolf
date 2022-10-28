@@ -1,7 +1,7 @@
 # Database
-## Sumarry
+## Summary
 - [Database](#database)
-  - [Sumarry](#sumarry)
+  - [Summary](#summary)
   - [Language used](#language-used)
   - [WeekGolf.sql](#weekgolfsql)
   - [Description of the tables](#description-of-the-tables)

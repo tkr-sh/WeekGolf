@@ -1,7 +1,7 @@
 # Docker
-## Sumarry
+## Summary
 - [Docker](#docker)
-  - [Sumarry](#sumarry)
+  - [Summary](#summary)
   - [Organization](#organization)
     - [Dockerfile](#dockerfile)
     - [build.sh](#buildsh)

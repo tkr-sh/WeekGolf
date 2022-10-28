@@ -1,7 +1,7 @@
 # Point system
-## Sumarry
+## Summary
 - [Point system](#point-system)
-  - [Sumarry](#sumarry)
+  - [Summary](#summary)
   - [Golf points](#golf-points)
     - [Variables](#variables)
     - [Formula](#formula)
