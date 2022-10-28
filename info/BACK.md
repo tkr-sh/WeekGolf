@@ -1,7 +1,7 @@
 # Back
-## Sumarry
+## Summary
 - [Back](#back)
-  - [Sumarry](#sumarry)
+  - [Summary](#summary)
   - [Notable functions](#notable-functions)
   - [Notable files](#notable-files)
   - [Files not included](#files-not-included)

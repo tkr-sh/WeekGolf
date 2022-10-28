@@ -1,7 +1,7 @@
 # Front
-## Sumarry
+## Summary
 - [Front](#front)
-  - [Sumarry](#sumarry)
+  - [Summary](#summary)
   - [Notable files](#notable-files)
 
 
