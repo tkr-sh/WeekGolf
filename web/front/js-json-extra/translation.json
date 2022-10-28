@@ -202,6 +202,34 @@
         "Three-Way operator" : false
     },
 
+    "Lua" : {
+        "Variable declaration" : "local s = \"a variable\"",
+        "Constant declaration" : "local s &lt;const&gt; = \"a constant\"",
+        "Function declaration" : "function aFunction (argument)\n\treturn argument\nend",
+        "Lambda declaration" : "aLambda = function(argument)\n\treturn argument\nend",
+        "While loop" : "while b do\n\t...\nend",
+        "For loop" : "for i = 0, n-1 do\n\t...\nend",
+        "Foreach loop" : "for _, elem in ipairs(aList)\n\t...\nend",
+        "Do .. while loop" : "repeat\n\t...\nuntil not b",
+        "Foreach index and element loop" : "for idx, elem in ipairs(aList)\n\t...\nend",
+        "Infinite loop" : "while true\n\t...\nend",
+        "if ... else if ... else" : "if b1 then\n\t...\nelseif b2 then\n\t...\nelse\n\t...\nend",
+        "Ternary operator" : false,
+        "Try ... Catch" : false,
+        "Switch" : false,
+        "Type of the %" : "Floored",
+        "Top level constructor" : false,
+        "Get a line of STDIN" : "io.read()",
+        "Get all STDIN" : "io.read(\"*a\")",
+        "Get a char STDIN" : "io.read(1)",
+        "Print without a new line at the end" : "io.write(s)",
+        "Print with a new line at the end" : "print(s)",
+        "Implicit conversion of bool to int" : false,
+        "Implicit conversion of char to int" : false,
+        "Format a string" : "string.format(\"%d\", n)",
+        "Template string" : false,
+        "Three-Way operator" : false
+    },
     
     "PHP" : {
         "Variable declaration" : "$s = \"a variable\"",
