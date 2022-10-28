@@ -353,7 +353,7 @@
                 for (let i = 0; i < leaderboard_button.length ; i++){
                     leaderboard_button[i].style.backgroundColor = "#151515";
                 }
-                leaderboard_button[n].style.backgroundColor = "#3a3";
+                leaderboard_button[n].style.backgroundColor = "var(--darker-color)";
 
                 leaderboard_ide[n].style.display = "block";
                 leaderboard_ide[!n?1:0].style.display = "none";

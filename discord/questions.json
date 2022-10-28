@@ -97,7 +97,7 @@
 
     "Q13":{
         "type": "set",
-        "question": "In which year was officially created <PARAM> ?",
+        "question": "In which year was <PARAM> officially created?",
         "answers": {
             "APL": "1966",
             "Bash": "1989",

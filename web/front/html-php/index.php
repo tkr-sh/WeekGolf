@@ -39,14 +39,14 @@
                 <div id="white">
                     Week
                 </div>
-                <div id="green" style="color: #3C3">
+                <div id="green" style="color: var(--main-color)">
                     Golf
                 </div>
             </div>
             <img src="img/weekgolfwhite.svg" style="width: 100px" id="logo_in_header">
             <a href="createAccount.html">
                 <div class="button_index">
-                    <div style="height: 100%; display: table-cell;vertical-align: middle; color:#fff; background-color: #5C5">
+                    <div style="height: 100%; display: table-cell;vertical-align: middle; color:#fff; background-color: var(--lighter-color)">
                         Start Golfing Now!
                     </div>
                 </div>
