@@ -112,7 +112,7 @@
         "Implicit conversion of char to int" : true,
         "Format a string" : "sprintf(\"%s\",s)",
         "Template string" : false,
-        "Three-Way operator" : true
+        "Three-Way operator" : "<=>"
     },
 
     "Go": {
@@ -229,7 +229,7 @@
         "Implicit conversion of char to int" : false,
         "Format a string" : "sprintf(\"%s\",$s)",
         "Template string" : "\"$var {$expr}\"",
-        "Three-Way operator" : true
+        "Three-Way operator" : "<=>"
     },
 
     "Python" : {
@@ -287,7 +287,7 @@
         "Implicit conversion of char to int" : false,
         "Format a string" : "sprintf(\"%s\", $s)",
         "Template string" : "\"$var1, $var2\"",
-        "Three-Way operator" : true
+        "Three-Way operator" : "<=>"
     },
 
     "Ruby" : {
@@ -316,7 +316,7 @@
         "Implicit conversion of char to int" : false,
         "Format a string" : "'%i'%n",
         "Template string" : "\"#{var1}, #{var2}\"",
-        "Three-Way operator" : true
+        "Three-Way operator" : "<=>"
     },
     
     "Vyxal" : {

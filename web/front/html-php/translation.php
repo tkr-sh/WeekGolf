@@ -57,6 +57,8 @@
                         echo "<td class='no_code'>$key</td>";
                         foreach($elem as $key => $value) {
 
+                            $value = str_replace(["<", ">"], ["&lt;", "&gt;"], $value);
+
                             # If boolean
                             if (is_bool($value)){
                                 if (!$value)
