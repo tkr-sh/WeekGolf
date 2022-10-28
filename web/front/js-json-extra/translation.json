@@ -197,7 +197,7 @@
         "Print with a new line at the end" : "print_endline s",
         "Implicit conversion of bool to int" : false,
         "Implicit conversion of char to int" : false,
-        "Format a string" : "Printf.printf \"%d\" n",
+        "Format a string" : "Printf.sprintf \"%d\" n",
         "Template string" : false,
         "Three-Way operator" : false
     },
