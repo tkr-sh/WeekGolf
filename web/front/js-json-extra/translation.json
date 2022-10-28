@@ -317,7 +317,7 @@
         "Format a string" : "'%i'%n",
         "Template string" : "\"#{var1}, #{var2}\"",
         "Three-Way operator" : true
-    }
+    },
     
     "Vyxal" : {
         "Variable declaration" : "`a variable` →s",
@@ -346,5 +346,5 @@
         "Format a string" : "`%`%",
         "Template string" : "←var1 ←var2 `Π, Π`",
         "Three-Way operator" : "-±"
-}
+    }
 }
