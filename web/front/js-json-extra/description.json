@@ -32,7 +32,7 @@
 	"Clojure" : {
 		"history" : "Clojure is a multi-paradigm language (agent-oriented, functional, concurrent and logic) created by <a href=\"https://en.wikipedia.org/wiki/Rich_Hickey\">Rick Hickey</a> and initially released in 2007.\nThe existence of Clojure is mainly due to 3 programming languages. Lisp, C# and Java. This is where the name Clojure comes from, which is a play on the word \"closure\" with the letters C, L and J, which correspond to C#, Lisp and Java.The creator of Clojure had also created dotLisp before. Which was an attempt to put Lisp for the .NET framework.\nClojure also works thanks to the JVM (java virtual machine). The development of Clojure took 2 years, after the 2 years of Clojure development, a large part of the Lisp community went to support Lisp.\nThe main source of inspiration of Clojure is Lisp. This is very evident in the syntax. The first objective of Clojure was to create a modern and functional Lisp.\nIt is a matter of course that the main implementation of Clojure is made in Java.\nClojure is in the top 100 of the <a href=\"https://www.tiobe.com/tiobe-index/\">TIOBE index</a>.",
 		"caracteristics" : "- Paradigms: <a href=\"https://en.wikipedia.org/wiki/Agent-oriented_programming\">Agent-oriented</a>, <a href=\"https://en.wikipedia.org/wiki/Logic_programming\">Logic</a>, <a href=\"https://en.wikipedia.org/wiki/Functional_programming\">Functional</a>, <a href=\"https://en.wikipedia.org/wiki/Concurrent_computing\">Concurrent</a>.\n- Clojure is a High level language",
-		"program" : "(def fib-seq-seq\n((fn fib [a b] \n    (lazy-seq (cons a (fib b (+ a b)))))\n0 1))\n\n(println (clojure.string/join \"\n\" (take 10 fib-seq-seq)))"
+		"program" : "(def fib-seq\n  (lazy-cat [0 1]\n    (map + fib-seq (rest fib-seq))))\n\n(println (clojure.string/join \"\n\" (take 10 fib-seq)))"
 	},
 
 	"Elixir" : {
@@ -80,7 +80,7 @@
 	"Jelly" : {
 		"history" : "Jelly is a array-oriented, functional and structured programming language created by <a href=\"https://github.com/DennisMitchell\">Dennis Mitchell </a> in 2015.\nJelly is an esoteric language only made for code golf.\nAs the name of jelly may suggest, jelly is inspired by J. However, unlike J, Jelly does not work with the ascii table but with its own encoding table.\nIt is one of the shortest languages on WeekGolf, competing with Vyxal.",
 		"caracteristics" : "- Paradigms: <a href=\"https://en.wikipedia.org/wiki/Structured_computing\">Structured</a>,  <a href=\"https://en.wikipedia.org/wiki/Array-oriented_programming\">Array-oriented</a>,  <a href=\"https://en.wikipedia.org/wiki/Functional_programming\">Functional</a>, <a href=\"https://en.wikipedia.org/wiki/Esoteric_programming_language\">Esoteric</a>.\n- Jelly is a high level language",
-		"program" : "+9Ð¡1\n       - No input, so left argument (value of a) implicitly zero\n9Ð¡    - Apply 9 times, where a=0 and...\n    1  - The right argument (b) = 1\n+      - Addition"
+		"program" : "+9Ð¡1\n       - No input, so left argument (value of a) implicitly zero\n 9Ð¡   - Apply 9 times, where a=0 and...\n    1  - The right argument (b) = 1\n+      - Addition"
 	},
 
 	"Julia" : {
