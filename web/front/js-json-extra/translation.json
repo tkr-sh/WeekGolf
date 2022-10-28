@@ -146,7 +146,7 @@
 
     "Julia" : {
         "Variable declaration" : "s = \"a variable\"",
-        "Constant declaration" : "S = \"a constant\"",
+        "Constant declaration" : "const s = \"a constant\"",
         "Function declaration" : "function a_function(argument)\n\targument\nend",
         "Lambda declaration" : "a_lambda = argument -> argument",
         "While loop" : "while b\n\t...\nend",
@@ -233,7 +233,7 @@
 
     "Python" : {
         "Variable declaration" : "s = \"a variable\"",
-        "Constant declaration" : "S = \"a constant\"",
+        "Constant declaration" : false,
         "Function declaration" : "def a_function(argument):\n\treturn argument",
         "Lambda declaration" : "a_lambda = lambda argument: argument",
         "While loop" : "while b:\n\t...",
