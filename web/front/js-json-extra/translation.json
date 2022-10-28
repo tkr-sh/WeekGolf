@@ -289,4 +289,33 @@
         "Template string" : "\"#{var1}, #{var2}\"",
         "Three-Way operator" : true
     }
+    
+    "Vyxal" : {
+        "Variable declaration" : "`a variable` →s",
+        "Constant declaration" : false,
+        "Function declaration" : "@a_function:argument|←argument;\n@a_function:1|;",
+        "Lambda declaration" : "λcode; →a_lambda",
+        "While loop" : "{b|...}",
+        "For loop" : "←n(...)\n←n(i|...)",
+        "Foreach loop" : "←a_list(...)|←a_list(elem|...)",
+        "Do .. while loop" : false,
+        "Foreach index and element loop" : "←a_list ė(n÷)\n←a_list ¨2...;",
+        "Infinite loop" : "{...}",
+        "if ... else if ... else" : "←b1 [...|←b2[...|...]]",
+        "Ternary operator" : "\"i\n¨i<truthyElement><falseyElement>",
+        "Try ... Catch" : false,
+        "Switch" : false,
+        "Type of the %" : "Floored",
+        "Top level constructor" : false,
+        "Get a line of STDIN" : "?",
+        "Get all STDIN" : "□",
+        "Get a char STDIN" : false,
+        "Print without a new line at the end" : "₴",
+        "Print with a new line at the end" : ",",
+        "Implicit conversion of bool to int" : true,
+        "Implicit conversion of char to int" : false,
+        "Format a string" : "`%`%",
+        "Template string" : "←var1 ←var2 `Π, Π`",
+        "Three-Way operator" : "-±"
+}
 }
