@@ -440,7 +440,7 @@
         "Function declaration" : "def a_function(argument)\n\targument\nend",
         "Lambda declaration" : "a_lambda = -> argument{argument}",
         "While loop" : "while b do\n\t...\nend",
-        "For loop" : "for i in 0...n\n\n(0...n).map{...}",
+        "For loop" : "for i in 0...n\n\n(0...n).each { |i| ...}",
         "Foreach loop" : "for i in a_list\n\na_list.each {|elem| ...}",
         "Do .. while loop" : "begin\n\t...\nend while b",
         "Foreach index and element loop" : "a_list.each_with_index {|elem, idx| ...}",
