@@ -202,6 +202,35 @@
         "Three-Way operator" : false
     },
 
+    "Java" : {
+        "Variable declaration" : "String s = \"a variable\"",
+        "Constant declaration" : "final String s = \"a constant\"",
+        "Function declaration" : "type aFunction(type argument) {\n\treturn argument;\n}",
+        "Lambda declaration" : "arg -> arg",
+        "While loop" : "while (b) {...}",
+        "For loop" : "for (int i = 0; i < n; i++) {...}",
+        "Foreach loop" : "for (var c : s) {...}",
+        "Do .. while loop" : "do {\n\t...\n} while (b)",
+        "Foreach index and element loop" : false,
+        "Infinite loop" : "for (;;) {...}",
+        "if ... else if ... else" : "if (b1) {\n\t...\n} else if (b2) {\n\t...\n} else {\n\t...\n}",
+        "Ternary operator" : "b ? _true : _false",
+        "Try ... Catch" : "try {\n\t...\n} catch (Exception e) {\n\t...\n}",
+        "Switch" : "switch (x) {\n\tcase y:\n\t\t...\n\t\tbreak;\n\tdefault:\n\t\t...\n\t\tbreak;\n}",
+        "Type of the %" : "Truncated",
+        "Top level constructor" : "interface prog {static void main(String[] args) {...}}",
+        "Get a line of STDIN" : "new java.util.Scanner(System.in).nextLine()",
+        "Get all STDIN" : false,
+        "Get a char STDIN" : "System.in.read()",
+        "Print without a new line at the end" : "System.out.print(s)",
+        "Print with a new line at the end" : "System.out.println(s)",
+        "Implicit conversion of bool to int" : false,
+        "Implicit conversion of char to int" : true,
+        "Format a string" : "String.format(\"%s\", s)",
+        "Template string" : false,
+        "Three-Way operator" : "a.compareTo(b)"
+    },
+
     "JavaScript" : {
         "Variable declaration" : "let s = \"a variable\"\n\nvar s = \"a variable\"\n\ns = \"a variable\"",
         "Constant declaration" : "const s = \"a constant\"",
