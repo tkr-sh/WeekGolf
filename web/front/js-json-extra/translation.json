@@ -257,7 +257,7 @@
         "Implicit conversion of char to int" : false,
         "Format a string" : "\"%d\".format(n)",
         "Template string" : "\"$var1, $var2\"",
-        "Three-Way operator" : false
+        "Three-Way operator" : "a.compareTo(b)"
     },
 
     "Lua" : {
