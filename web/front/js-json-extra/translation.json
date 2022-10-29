@@ -385,7 +385,7 @@
         "For loop" : "for 0..$n-1 -> $i {\n\t...\n}",
         "Foreach loop" : "for @a_list -> $elem {\n\tsay $elem;\n}",
         "Do .. while loop" : false,
-        "Foreach index and element loop" : false,
+        "Foreach index and element loop" : "for @a_list.kv -> $idx, $elem {\n\tsay $elem;\n}",
         "Infinite loop" : "loop{...}",
         "if ... else if ... else" : "if $b1 {\n\t...\n} elsif $b2 {\n\t...\n} else {\n\t...\n}",
         "Ternary operator" : "$b ?? $true !! $false",
