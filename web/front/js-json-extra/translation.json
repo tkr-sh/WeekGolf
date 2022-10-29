@@ -255,7 +255,7 @@
         "Print with a new line at the end" : "println(s)",
         "Implicit conversion of bool to int" : false,
         "Implicit conversion of char to int" : false,
-        "Format a string" : "java.lang.String.format(\"%d\", n)",
+        "Format a string" : "\"%d\".format(n)",
         "Template string" : "\"$var1, $var2\"",
         "Three-Way operator" : false
     },
