@@ -115,6 +115,35 @@
         "Three-Way operator" : "<=>"
     },
 
+    "C#" : {
+        "Variable declaration" : "string s = \"a variable\"",
+        "Constant declaration" : "const string s = \"a constant\"",
+        "Function declaration" : "type AFunction(type argument) {\n\treturn argument;\n}",
+        "Lambda declaration" : "arg => arg",
+        "While loop" : "while (b) {...}",
+        "For loop" : "for (int i = 0; i < n; i++) {...}",
+        "Foreach loop" : "foreach (var c in s) {...}",
+        "Do .. while loop" : "do {\n\t...\n} while (b)",
+        "Foreach index and element loop" : false,
+        "Infinite loop" : "for (;;) {...}",
+        "if ... else if ... else" : "if (b1) {\n\t...\n} else if (b2) {\n\t...\n} else {\n\t...\n}",
+        "Ternary operator" : "b ? _true : _false",
+        "Try ... Catch" : "try {\n\t...\n} catch (Exception e) {\n\t...\n}",
+        "Switch" : "switch (x) {\n\tcase y:\n\t\t...\n\t\tbreak;\n\tdefault:\n\t\t...\n\t\tbreak;\n}",
+        "Type of the %" : "Truncated",
+        "Top level constructor" : "class P {static void Main() {...}}\n\nHowever, it's not needed as top-level statements are supported.",
+        "Get a line of STDIN" : "Console.ReadLine()",
+        "Get all STDIN" : false,
+        "Get a char STDIN" : "Console.Read()",
+        "Print without a new line at the end" : "Console.Write(s)",
+        "Print with a new line at the end" : "Console.WriteLine(s)",
+        "Implicit conversion of bool to int" : false,
+        "Implicit conversion of char to int" : true,
+        "Format a string" : "String.Format(\"{0}\", s)",
+        "Template string" : "$\"{var1}, {var2}\"",
+        "Three-Way operator" : false
+    },
+
     "Clojure" : {
         "Variable declaration" : "(def s \"a variable\")",
         "Constant declaration" : "(def ^:const s \"a constant\")",
