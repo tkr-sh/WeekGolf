@@ -58,8 +58,8 @@
     },
 
     "C" : {
-        "Variable declaration" : "auto s = \"a variable\"",
-        "Constant declaration" : "const auto s = \"a constant\"",
+        "Variable declaration" : "char *s = \"a variable\"",
+        "Constant declaration" : "const char *s = \"a constant\"",
         "Function declaration" : "type a_function(type argument){\n\treturn argument;\n}",
         "Lambda declaration" : false,
         "While loop" : "while (b){...}",
