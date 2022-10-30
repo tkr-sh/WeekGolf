@@ -365,7 +365,7 @@ def generate_string_description(sec: int) -> str:
     """ Return the string to update the description in Python """
 
     return f"""This quiz consists of a series of 10 different questions! Whether it's about WeekGolf, about the world of code golf, or about the world of programming in general! :D
-You have 10 seconds to answer to each question!
+You have 15 seconds to answer to each question!
 
 For the quiz to start, there must be more than one person. You can participate by writing "Me", "me", "ME!!!!" etc.
 
