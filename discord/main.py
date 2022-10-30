@@ -158,7 +158,7 @@ def main(color_list, logo_list, name_list,votes_list):
         draw.text((x_lang, y_lang_offset_list[i]), name_list[i], font=fnt90, fill=(255, 255, 255, 255))
 
         ## The vote number
-        vote_txt = votes_list[i] + "\n "[i<2] + "vote" + ["","s"][int(votes_list[i]) > 1]
+        vote_txt = votes_list[i] + "\n "[i<2] + "vote" + ["","s"][int(votes_list[i]) == 1]
         w, _ = draw.textsize(vote_txt, font=fnt90)
         x_lang = [1050, 1024 + (1024 - w)/2,(1024 - w)/2][(i == 0) + (i < 2)]
         draw.text((x_lang, y_vote_offset_list[i]), vote_txt, font=fnt90, fill=(255, 255, 255, 255))
@@ -235,7 +235,7 @@ def top2(color_list, logo_list, name_list,votes_list):
         draw.text((x_lang, 600), name_list[i], font=fnt, fill=(255, 255, 255, 255))
 
         # Vote
-        vote_txt = votes_list[i] + "\n "[i<2] + "vote" + ["","s"][int(votes_list[i]) > 1]
+        vote_txt = votes_list[i] + "\n "[i<2] + "vote" + ["","s"][int(votes_list[i]) == 1]
         w, _ = draw.textsize(vote_txt, font=fnt)
         x_lang = [1050, 1024 + (1024 - w)/2,(1024 - w)/2][(i == 0) + (i < 2)]
         draw.text((x_lang, 1300), vote_txt, font=fnt, fill=(255, 255, 255, 255))
@@ -517,10 +517,10 @@ async def on_message(message):
             # Creating the embed
             new_embed = discord.Embed(title=f"Language: {lang}", color=int(str(getColorOfLang(lang.lower().replace("#","s").replace("++","pp")).content)[3:-1],16), timestamp=datetime.datetime.utcnow())
             history = send_correct_text(rep[lang]["history"])
-            caracteristics = send_correct_text(rep[lang]["caracteristics"])
+            characteristics = send_correct_text(rep[lang]["characteristics"])
             history = send_correct_text(rep[lang]["history"])
             new_embed.add_field(name="History", value=history, inline=False)
-            new_embed.add_field(name="Caracteristics", value=caracteristics, inline=False)
+            new_embed.add_field(name="Caracteristics", value=characteristics, inline=False)
             new_embed.add_field(name="Example of program", value=f"```{langToExtension(lang)}\n"+rep[lang]["program"]+"\n```", inline=False)
             new_embed.set_thumbnail(url=f"https://week.golf/img/{lang.lower()}.png")
 

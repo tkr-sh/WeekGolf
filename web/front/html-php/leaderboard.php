@@ -423,7 +423,7 @@
                 }
 
                 document.getElementById("leaderboard_img").src = `img/${lang.replace("cpp","c++").replace("js","javascript")}_white.svg`;
-                document.getElementById("leaderboard_title").textContent = language_div_length+" player"+(language_div_length>1?"s":"");
+                document.getElementById("leaderboard_title").textContent = language_div_length+" player"+(language_div_length==1?"s":"");
 
                 let a_lu = document.getElementsByClassName("leaderboard_users")[1].getElementsByTagName("a");
                 let tot_players = 0;
