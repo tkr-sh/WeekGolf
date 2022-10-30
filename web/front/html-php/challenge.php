@@ -160,7 +160,7 @@
                                 $data = json_decode($data, true);
                                 $data = $data[setCorrectName(LOTW)];
                                 $history = $data["history"];
-                                $caracteristics = $data["caracteristics"];
+                                $characteristics = $data["characteristics"];
                                 $program = $data["program"];
 
                                 $lang_result = $conn->query("SELECT lang FROM CurrentLang ORDER BY lang");
@@ -200,11 +200,11 @@
 
 
                     
-                    <!-- Caracteristics -->
-                    <h1>Caracteristics:</h1>
-                    <ul id="caracteristics">
+                    <!-- Characteristics -->
+                    <h1>Characteristics:</h1>
+                    <ul id="characteristics">
                         <?php
-                        foreach (explode("\n-",substr($caracteristics,2))as $caracteristic){
+                        foreach (explode("\n-",substr($characteristics,2))as $caracteristic){
                         ?>
                             <li><?= $caracteristic ?></li>
                         <?php
@@ -2570,7 +2570,7 @@
                         }
                     }
                 }
-                const new_description = size + " byte"+(size>1?"s":"") + (localStorage.cursorposition == "true" ? getCursorPosition() : "");
+                const new_description = size + " byte"+(size==1?"s":"") + (localStorage.cursorposition == "true" ? getCursorPosition() : "");
                 if (new_description !== nbBytes.innerHTML)
                     nbBytes.innerHTML = new_description;
             }, 100);
@@ -3078,7 +3078,7 @@
 
             
 
-            // Get the informations (history, caracteristics, program) of a lang
+            // Get the informations (history, characteristics, program) of a lang
             function getInfoLang(lang) {
 
                 let history;
@@ -3093,12 +3093,12 @@
                 }
                 
                 history = storage_lang_info[setCorrectName(lang)]["history"].replaceAll("\n","<br><br>");
-                cara = storage_lang_info[setCorrectName(lang)]["caracteristics"].split`\n`.map(e => e.replace("-",""));
+                cara = storage_lang_info[setCorrectName(lang)]["characteristics"].split`\n`.map(e => e.replace("-",""));
                 cara = "<li>"+cara.join`</li><li>`+"</li>";
                 code = storage_lang_info[setCorrectName(lang)]["program"];
 
                 document.getElementById("history").innerHTML = history;
-                document.getElementById("caracteristics").innerHTML = cara;
+                document.getElementById("characteristics").innerHTML = cara;
                 lotwIde.setValue(code, 1);
                 lotwIde.session.setMode(`ace/mode/${capitalize(lang) in correspondance ? correspondance[capitalize(lang)] : "python"}`);
 

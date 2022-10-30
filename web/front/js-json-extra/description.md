@@ -3,115 +3,115 @@
 - [Main links](#main-links)
 - [APL](#apl)
   - [History](#history)
-  - [Caracteristics](#caracteristics)
+  - [Characteristics](#characteristics)
   - [Program](#program)
 - [Bash](#bash)
   - [History](#history-1)
-  - [Caracteristics](#caracteristics-1)
+  - [Characteristics](#characteristics-1)
   - [Program](#program-1)
 - [C](#c)
   - [History](#history-2)
-  - [Caracteristics](#caracteristics-2)
+  - [Characteristics](#characteristics-2)
   - [Program](#program-2)
 - [C++](#c-1)
   - [History](#history-3)
-  - [Caracteristics](#caracteristics-3)
+  - [Characteristics](#characteristics-3)
   - [Program](#program-3)
 - [C#](#c-2)
   - [History](#history-4)
-  - [Caracteristics](#caracteristics-4)
+  - [Characteristics](#characteristics-4)
   - [Program](#program-4)
 - [Clojure](#clojure)
   - [History](#history-5)
-  - [Caracteristics](#caracteristics-5)
+  - [Characteristics](#characteristics-5)
   - [Program](#program-5)
 - [Elixir](#elixir)
   - [History](#history-6)
-  - [Caracteristics](#caracteristics-6)
+  - [Characteristics](#characteristics-6)
   - [Program](#program-6)
 - [Go](#go)
   - [History](#history-7)
-  - [Caracteristics](#caracteristics-7)
+  - [Characteristics](#characteristics-7)
   - [Program](#program-7)
 - [GolfScript](#golfscript)
   - [History](#history-8)
-  - [Caracteristics](#caracteristics-8)
+  - [Characteristics](#characteristics-8)
   - [Program](#program-8)
 - [Haskell](#haskell)
   - [History](#history-9)
-  - [Caracteristics](#caracteristics-9)
+  - [Characteristics](#characteristics-9)
   - [Program](#program-9)
 - [J](#j)
   - [History](#history-10)
-  - [Caracteristics](#caracteristics-10)
+  - [Characteristics](#characteristics-10)
   - [Program](#program-10)
 - [Java](#java)
   - [History](#history-11)
-  - [Caracteristics](#caracteristics-11)
+  - [Characteristics](#characteristics-11)
   - [Program](#program-11)
 - [JavaScript](#javascript)
   - [History](#history-12)
-  - [Caracteristics](#caracteristics-12)
+  - [Characteristics](#characteristics-12)
   - [Program](#program-12)
 - [Jelly](#jelly)
   - [History](#history-13)
-  - [Caracteristics](#caracteristics-13)
+  - [Characteristics](#characteristics-13)
   - [Program](#program-13)
 - [Julia](#julia)
   - [History](#history-14)
-  - [Caracteristics](#caracteristics-14)
+  - [Characteristics](#characteristics-14)
   - [Program](#program-14)
 - [K](#k)
   - [History](#history-15)
-  - [Caracteristics](#caracteristics-15)
+  - [Characteristics](#characteristics-15)
   - [Program](#program-15)
 - [Kotlin](#kotlin)
   - [History](#history-16)
-  - [Caracteristics](#caracteristics-16)
+  - [Characteristics](#characteristics-16)
   - [Program](#program-16)
 - [Lua](#lua)
   - [History](#history-17)
-  - [Caracteristics](#caracteristics-17)
+  - [Characteristics](#characteristics-17)
   - [Program](#program-17)
 - [OCaml](#ocaml)
   - [History](#history-18)
-  - [Caracteristics](#caracteristics-18)
+  - [Characteristics](#characteristics-18)
   - [Program](#program-18)
 - [Perl](#perl)
   - [History](#history-19)
-  - [Caracteristics](#caracteristics-19)
+  - [Characteristics](#characteristics-19)
   - [Program](#program-19)
 - [PHP](#php)
   - [History](#history-20)
-  - [Caracteristics](#caracteristics-20)
+  - [Characteristics](#characteristics-20)
   - [Program](#program-20)
 - [Prolog](#prolog)
   - [History](#history-21)
-  - [Caracteristics](#caracteristics-21)
+  - [Characteristics](#characteristics-21)
   - [Program](#program-21)
 - [Python](#python)
   - [History](#history-22)
-  - [Caracteristics](#caracteristics-22)
+  - [Characteristics](#characteristics-22)
   - [Program](#program-22)
 - [R](#r)
   - [History](#history-23)
-  - [Caracteristics](#caracteristics-23)
+  - [Characteristics](#characteristics-23)
   - [Program](#program-23)
 - [Raku](#raku)
   - [History](#history-24)
-  - [Caracteristics](#caracteristics-24)
+  - [Characteristics](#characteristics-24)
   - [Program](#program-24)
 - [Ruby](#ruby)
   - [History](#history-25)
-  - [Caracteristics](#caracteristics-25)
+  - [Characteristics](#characteristics-25)
   - [Program](#program-25)
 - [Rust](#rust)
   - [History](#history-26)
-  - [Caracteristics](#caracteristics-26)
+  - [Characteristics](#characteristics-26)
   - [Program](#program-26)
 - [Vyxal](#vyxal)
   - [History](#history-27)
-  - [Caracteristics](#caracteristics-27)
+  - [Characteristics](#characteristics-27)
   - [Program](#program-27)
   
 # Main links
@@ -138,7 +138,7 @@ In 1960 he started to work for IBM, and it was there that Kenneth E. Iverson dev
 4 years later, in 1966, APL became public. It was revolutionary at first. APL used a ball or screen terminal instead of the punch card. Because of this and the mathematical concepts used in APL, it was increasingly successful until the mid-1980s.
 Nowadays, APL is not used much anymore.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Array_programming">Array</a>,  <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>,  <a href="https://en.wikipedia.org/wiki/Structured_programming">Structured</a>.
 - APL is a high level language
 - APL does not use the ASCII table but its own table to encode the character
@@ -162,7 +162,7 @@ The first concept of Shell in Unix machines appeared in 1971 and it was made by 
 BASH is the default shell on many Unix devices. However, today many OS prefer ZSH to BASH.
 BASH is also turing complete and a programming language; although today this is not the main use of it. BASH serves more as a Shell than a scripting language.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>,  <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural</a>.
 - BASH is a high level language
 - BASH is a shell
@@ -191,7 +191,7 @@ C has many different uses, creating OS (UNIX), creating embedded systems (with A
 There are a lot of C compilers, and the syntax can change a lot depending on the compiler and the OS used. The most popular ones are GCC and CLANG. WeekGolf uses GCC for the C language.
 C has greatly influenced the world of computing and programming languages. Languages have been created to add features to C (C++, Rust), C has created a <a href="https://en.wikipedia.org/wiki/Control_flow">control flow</a> used by several languages (C++, Java, C#, PHP, JavaScript) and even if one day we will all die, C will never die.
 
-## Caracteristics
+## Characteristics
 - With C, you have a low-level approach without limits. If you do any kind of important error, your OS can "break". <i>Note: Software such as <a href="https://frama-c.com/">FramaC</a> or <a href="https://trust-in-soft.com/">TrustInSoft</a> try to overcome this problem. FramaC and TrustInSoft both use <a href="https://en.wikipedia.org/wiki/Static_program_analysis">static analysis</a> and <a href="https://en.wikipedia.org/wiki/Formal_methods">formal methods</a>.</i>
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>,  <a href="https://en.wikipedia.org/wiki/Structured_programming">Structured</a>.
 - C is a Low/Medium level language
@@ -230,7 +230,7 @@ There are different major implementations of C++, GCC/G++ and CLANG/CLANG++ to n
 Today C++ is one of the most popular languages. Between 2000 and 2018, it has almost always been the third most popular language according to the <a href="https://www.tiobe.com/tiobe-index/">TIOBE index</a> (behind C and Java). However, for a few years now, many people have been talking about the fact that C++ might be replaced by Rust in the future. It's hard to deny or affirm this though.
 
 
-## Caracteristics
+## Characteristics
 - With C++, you have a low-level approach without limits. <i>Note: Software such as <a href="https://frama-c.com/">FramaC</a> with FramaClang or <a href="https://trust-in-soft.com/">TrustInSoft</a> try to overcome this problem. FramaC/FramaClang and TrustInSoft both use <a href="https://en.wikipedia.org/wiki/Static_program_analysis">static analysis</a> and <a href="https://en.wikipedia.org/wiki/Formal_methods">formal methods</a>.</i>
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>,  <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented</a>.
 - C++ is a Low/Medium level language
@@ -263,7 +263,7 @@ Even if C# was at the beginning very very similar to Java, the more time passed,
 For example, in 2008, in version 3 of C#, LINQ (Language INtegrated Queries) was added, which represents an advance quite different from Java. But more recently, in November 2021, for C#10, C# stopped being a class-based language and can now execute code without creating classes and main functions like in Java.
 The name "C#" is inspired by the music notation where a hash indicates that the written note should be increased by a semitone. This is similar to the language name of C++, where "++" indicates that a variable should be incremented by 1 after being evaluated. The # symbol also looks like a ligature of four "+" symbols (in a two-by-two grid), which implies that the language is an increment of C++ and also of C.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented</a>, <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>, <a href="https://en.wikipedia.org/wiki/Concurrent_computing">Concurrent</a>, <a href="https://en.wikipedia.org/wiki/Structured_programming">Structured</a>.
 - C# is a Medium/High level language (I know it's controversial to say that C# is a mid-level language, but, C# still has a notion of pointers and references, even though overall there is a high level of abstraction and pointers are rarely used.)
 
@@ -288,7 +288,7 @@ The main source of inspiration of Clojure is Lisp. This is very evident in the s
 It is a matter of course that the main implementation of Clojure is made in Java.
 Clojure is in the top 100 of the <a href="https://www.tiobe.com/tiobe-index/">TIOBE index</a>. 
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Agent-oriented_programming">Agent-oriented</a>, <a href="https://en.wikipedia.org/wiki/Logic_programming">Logic</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>, <a href="https://en.wikipedia.org/wiki/Concurrent_computing">Concurrent</a>.
 - Clojure is a High level language
 
@@ -314,7 +314,7 @@ Elixir is not intended to evolve in a drastically different way. Each new versio
 Elixir is in the top 100 of the <a href="https://www.tiobe.com/tiobe-index/">TIOBE index</a>. 
 
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Process-oriented_programming">Process-oriented</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>, <a href="https://en.wikipedia.org/wiki/Concurrent_computing">Concurrent</a>.
 - Elixir is a High level language
 
@@ -343,7 +343,7 @@ Since Go is a rather new language, there has been no big change in the history o
 Go is in the top 20 of the <a href="https://www.tiobe.com/tiobe-index/">TIOBE index</a>. 
 
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented</a>, <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>, <a href="https://en.wikipedia.org/wiki/Concurrent_computing">Concurrent</a>.
 - Go is a Medium/high level language
 
@@ -373,7 +373,7 @@ GolfScript is an esoteric language only made for code golf (as its name indicate
 However, unlike many Golf Code languages, GolfScript uses the ASCII table. This makes it longer than some languages like Jelly or Vyxal. As GolfScript is stack based, a GolfScript program is a list of objects like integers, strings, lists etc.
 
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Stack-oriented_programming">Stack-oriented</a>, <a href="https://en.wikipedia.org/wiki/Esoteric_programming_language">Esoteric</a>.
 - GolfScript is a High level language
 
@@ -407,7 +407,7 @@ Haskell is in the TOP50 of the <a href="https://www.tiobe.com/tiobe-index/">TIOB
 
 
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Functional_programming">Purely functional</a>.
 - Haskell is a High level language
 
@@ -432,7 +432,7 @@ Since its appearance, J has evolved quite a bit. An event that greatly marked th
 
 
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Array_programming">Array</a>,  <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>,  <a href="https://en.wikipedia.org/wiki/Structured_programming">Structured</a>.
 - J is a high level language
 - J uses ASCII table. Not like APL.
@@ -462,7 +462,7 @@ Despite this, large companies still use Java today, such as Microsoft (this incl
 Java has also created a new generation of JVM-based languages like Scala, Groovy or Kotlin.
 Kotlin was even made to replace Java in Android development, and succeeded because since 2019, Google has designated it as the language for android development.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented</a> & <a href="https://en.wikipedia.org/wiki/Class-based_programming">Class-based</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>,  <a href="https://en.wikipedia.org/wiki/Concurrent_computing">Concurrent</a>.
 - Java is a high level programming language
 
@@ -498,7 +498,7 @@ as client-side programming language on websites.
 Also, JavaScript brought about the creation of TypeScript, which was created by Microsoft <b>TO</b> improve and secure the production of JavaScript code.
 Today JavaScript is the most used client-side programming language on websites with an overwhelming <a href="https://w3techs.com/technologies/details/cp-javascript">98.0%</a>.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>,  <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented</a>.
 - JavaScript is a high level programming language
 
@@ -523,7 +523,7 @@ Jelly is an esoteric language only made for code golf.
 As the name of jelly may suggest, jelly is inspired by J. However, unlike J, Jelly does not work with the ascii table but with its own encoding table.
 It is one of the shortest languages on WeekGolf, competing with Vyxal.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Structured_computing">Structured</a>,  <a href="https://en.wikipedia.org/wiki/Array-oriented_programming">Array-oriented</a>,  <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>, <a href="https://en.wikipedia.org/wiki/Esoteric_programming_language">Esoteric</a>.
 - Jelly is a high level language
 
@@ -543,7 +543,7 @@ Julia was created because the developers of julia wanted a more powerful languag
 The developers of julia wanted these positive aspects for a language used in scientific works, basically they wanted to create a new language perfect for the scientific world.
 Unfortunately, today Julia is not very used. However, we can note some uses in companies like NASA.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Structured_computing">Structured</a>,  <a href="https://en.wikipedia.org/wiki/Array-oriented_programming">Array-oriented</a>,  <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>, <a href="https://en.wikipedia.org/wiki/Esoteric_programming_language">Esoteric</a>.
 - Julia is a high level language
 
@@ -566,7 +566,7 @@ Although K is also a functional and array-oriented language, like APL; unlike J,
 Following K, 10 years later, a programming language named Q was created. The syntax of K being sometimes hard to understand for people who are not used to it, Q is therefore easier to understand with English words replacing ascii characters in K. And Q is also a proprietary software. 
 However; even if K belongs to KX System and they don't want to share it too much, there are replicas of K like ngn/K, oK or even Kona. WeekGolf uses the ngn/K repository to run K.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Array_programming">Array</a>,  <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - K is a high level language
 - K uses ASCII table. Not like APL.
@@ -589,7 +589,7 @@ Kotlin is a multi-paradigm language (object-oriented, declarative, concurrent an
 One of the main objectives of Kotlin is the Android development and to replace Java.
 In 2016, the first stable version of Kotlin was released. Following this, the next year, Google announced first-class support for Kotlin on Android. As the years passed, Kotlin improved, and in 2019, Google announced that the Kotlin programming language is now its preferred language for Android app developers over Java. Kotlin has thus fulfilled its initial objective.
 
-## Caracteristics
+## Characteristics
 - Kotlin does not oblige to create a class to create a simple program, unlike Java.
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a>,  <a href="https://en.wikipedia.org/wiki/Declarative_programming">Declarative</a>, <a href="https://en.wikipedia.org/wiki/Concurrent_computing">Concurrent</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - Kotlin is a high level language
@@ -618,7 +618,7 @@ Lua is a language with very few reserved words and is quite different from many 
 Lua has only one data type: tables. Compared to languages like Python which have lists, sets, tuples, dictionaries, or even C++ which has lists, arrays, vectors, maps.
 Lua is also known to be one of the only "popular" languages with R that has its index, for what can be likened to lists, starting at 1 instead of 0.
 Today lua is mostly used in the video game world to make video games that do not require too much computing power, such as Roblox for example.
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a>, <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural</a>, <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - Lua is a high level language
 - Index starts at 1 and not 0
@@ -641,7 +641,7 @@ Caml, that came out in 1985, was a programming language with the functional para
 However, OCaml was not always the successor of Caml.
 Indeed, at the time it was <a href="https://fr.wikipedia.org/wiki/Caml_Light">Caml light</a>. However OCaml introduced the object-oriented paradigm and has a better implementation of modular paradigm compared to Caml light. Today Caml Light is obsolete compared to OCaml.
 OCaml has no official specification but is maintained by a French team called <a href="https://en.wikipedia.org/wiki/French_Institute_for_Research_in_Computer_Science_and_Automation">INRIA</a>.
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a>, <a href="https://en.wikipedia.org/wiki/Modular_programming">Modular</a>, <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - OCaml is a high level language
 
@@ -665,7 +665,7 @@ In order for Perl to be good at this, regular expressions (RegEx) and languages 
 In 2001, the version 6 of Perl is announced (however it will be only stable in 2015). However, the difference between Perl 5 and Perl 6 is so big, that Perl 6 becomes a separate language from Perl. This language is called Raku since 2019.
 However, the <a href="https://en.wikipedia.org/wiki/Perl_Foundation">Perl Foundation</a> continues to maintain Perl, and the next big version of Perl will be 7, so it will go from 5 => 7 (because v6 is Raku, another language).
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>, <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - Perl is a high level language
 
@@ -688,7 +688,7 @@ Basically, the language was a library for personal use. But as time went by, new
 PHP is now known as a server side / back-end language, which is quite versatile and allows to manage databases for example.
 The success of languages depends strongly on the companies that use them, so PHP is popular thanks to companies like FaceBook, WhatsApp, Wikipedia, Yahoo, Etsy and even WeekGolf!(joking) Thanks to these companies, PHP is the <a href="https://w3techs.com/technologies/details/pl-php">most used language</a> to manage server sides in the world. Today, the language still continues to have regular updates.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>, <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - PHP is a high level language
 
@@ -711,7 +711,7 @@ The success of languages depends strongly on the companies that use them, so PHP
 Prolog is a logic and declarative language written by Alain Colmerauer and Philippe Roussel in 1972.
 The name prolog comes from "PROgramming in LOGic", which is faithful to the paradigm of which prolg is part.
 Prolog was one of the first programming languages to be part of the logic paradigm. Today it is the most popular logic language, with several free and commercial implementations available. WeekGolf uses the SWI-Prolog implementation. The logic paradigm and prolog have several advantages; it can be a very good choice for theorem proving, databases, Sudoku solving or any task requiring rule-based logical queries. 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Logic_programming">Logic</a>,  <a href="https://en.wikipedia.org/wiki/Declarative_programming">Declarative</a>.
 - Prolog is a high level language
 
@@ -741,7 +741,7 @@ The difference is so important that some sites indicate Python 3 to talk about P
 Python is a programming language that can be used in many contexts and adapted to any type of use thanks to specialized libraries. Python is a language that is quite simple to understand and write, which means that it can be used to handle a wide variety of tasks. Nevertheless, it is particularly widespread in the scientific world, and has many optimized libraries for numerical computation, most of them written in C.
 In October 2021, it becomes the most popular language in the <a href="https://www.tiobe.com/tiobe-index/">TIOBE index</a>.
 
-## Caracteristics
+## Characteristics
 - Python uses the <a href="https://en.wikipedia.org/wiki/Off-side_rule">off-side rule</a>
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>,  <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - Python is a very high level language
@@ -766,7 +766,7 @@ The main implementation of R is written in C.
 R is an implementation of the S programming language with the added lexical scoping of Scheme. The name R, comes from the fact that both designers of R, had a first name that started with R, and that S had only one letter.
 R is also known to be one of the only "popular" languages with lua that has its index, for what can be likened to lists, starting at 1 instead of 0.
 R is mostly used to do statistics, machine learning or any program related to science. This is due to the paradigm that R uses, namely the array-oriented paradigm.
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Array-oriented_programming">Array-Oriented</a>, <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a>, <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural</a>, <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - R is a high level language
 - Index starts at 1 and not 0
@@ -793,7 +793,7 @@ It was already clear from the beginning that Perl5 would not have backward compa
 Raku took a long time to come out (15 years). And it is a Christmas of 2015 that the first version of Raku is officially announced.
 Raku has the same objectives as perl, and gives great importance to regular expressions (RegEx) and has several languages included in it like awk and sed.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>, <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - Raku is a high level language
 
@@ -817,7 +817,7 @@ The main implementations of Ruby are written in C.
 Although Ruby was released in 1995, it was not immediately popular. It is from 2004-2006 that Ruby begins to gain notoriety thanks to the creation of the Ruby on Rails Framework.
 Until the early 2010s, the trajectories of Ruby and Python were quite similar, language written in the early 90s, similar paradigm, high level of abstraction, readable "syntax", interpreted, written in C etc... In 2011 Ruby even made it into the TOP10 languages in the <a href="https://www.tiobe.com/tiobe-index/">TIOBE index</a>. However, Ruby's rise took a big hit when Ruby on Rails stopped becoming more and more popular. Since then, Ruby has been losing popularity year after year.
 
-## Caracteristics
+## Characteristics
 - Ruby is strongly object oriented: any data is an object, any function is a method, any variable is a reference to an object
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>,  <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - Ruby is a very high level language
@@ -844,7 +844,7 @@ Rust was originally a personal project, but since 2009 Mozilla has been working 
 Rust is a fairly new language, so its history is not as storied as C's, however, it is clearly the most promising language.
 Rust entered the TOP20 of the <a href="https://www.tiobe.com/tiobe-index/">TIOBE index</a > in October 2022.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Concurrent_computing">Concurrent</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>,  <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>.
 - Rust is a Low/Medium level language
 
@@ -871,7 +871,7 @@ Vyxal uses its own encoding table, like Jelly or APL, because the ASCII table do
 Vyxal has had two major releases, even though it is a fairly recent language (2020).
 It is one of the shortest languages on WeekGolf, competing with Jelly.
 
-## Caracteristics
+## Characteristics
 - Paradigms: <a href="https://en.wikipedia.org/wiki/Concurrent_computing">Concurrent</a>,  <a href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a>,  <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a>, <a href="https://en.wikipedia.org/wiki/Esoteric_programming_language">Esoteric</a>.
 - Vyxal is a high level language
 
