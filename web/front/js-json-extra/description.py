@@ -15,7 +15,7 @@ for e in lang:
 
     f_write.write(f"""\t\"{lang_name}\" : {{
 \t\t\"history\" : \"{lang_split[1]}\",
-\t\t\"caracteristics\" : \"{lang_split[2]}\",
+\t\t\"characteristics\" : \"{lang_split[2]}\",
 \t\t\"program\" : \"""" + '\\n'.join(map(lambda s:s[1:],(' '+lang_split[3]).replace(" "*4,"\t").split('\\n'))).replace("\t", " "*4).replace("\\\"",'"').replace('"',"\\\"") + """\"
 \t}"""+(",\n" if e != lang[-1] else "")+"\n")
 

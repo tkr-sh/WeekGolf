@@ -262,7 +262,7 @@ if (isset($code) && isset($problem_id) && isset($lang)){
             $diff = $diff > 1000 ? 0 : $diff;
             $best_size = $best_size > 10000 ? "None" : $best_size;
             $best_score_user = $best_size > 10000 ? "nobody" : $best_score_user;
-            $bytes = "byte" . ($diff > 1 ? "s" : "");
+            $bytes = "byte" . ($diff == 1 ? "s" : "");
 
             esql("INSERT INTO Activity (title, content, owner_id, activity_date, major) VALUES(CONCAT('[$temp_lang] - ', ? ,' made an upgrade with $temp_lang!'), CONCAT('An upgrade on \"$problem_name\" with $temp_lang by ',  ?, ' has been made! With a total of: $length_of_code bytes! The previous score was $best_size bytes by ', ?, ' (Diff: $diff bytes)'),$user_id, NOW(), 2)", [$username, $username, $best_score_user], "sss");
 
