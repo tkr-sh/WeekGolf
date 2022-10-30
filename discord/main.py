@@ -134,8 +134,6 @@ def main(color_list, logo_list, name_list,votes_list):
     for i,colors in enumerate(color_list):
         # Color
         drawColors([0,1024][i>0], [1024,2048][i>0], coor_y_start[i], coor_y_end[i], colors)
-        # time.sleep(1)
-
 
         # Logo
         ## Get the image
@@ -585,7 +583,7 @@ async def on_message(message):
 
                         # Waiting for answers
                         await message.channel.send(embed=embed_question)
-                        await asyncio.sleep(10)
+                        await asyncio.sleep(15)
 
                         # Sorting players and players_score
                         dic_players_score = dict(zip(players, players_score))
