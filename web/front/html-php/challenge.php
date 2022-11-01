@@ -1789,7 +1789,8 @@
             // Function that updates the IDE of the history
             ///////////////////////////////////////////////
             function updateHistoryIde(n) {
-                historyIde.setValue(global_code[n], 1);
+                if (global_code[n] != undefined)
+                    historyIde.setValue(global_code[n], 1);
             }
 
             getHistory();
@@ -2235,7 +2236,10 @@
                         button_show_solution[i].style.display = "none";
                     }
                 }
-                eval(`${button_show_solution[first_index].onclick}`.split("\n")[1]);
+
+                // If there is more than one element
+                if (!first)
+                    eval(`${button_show_solution[first_index].onclick}`.split("\n")[1]);
             }
 
             
