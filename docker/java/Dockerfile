@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN apk update
-RUN apk add --update openjdk17
+RUN apk add --update openjdk19 --repository https://dl-3.alpinelinux.org/alpine/edge/testing/
 RUN addgroup weekgolf
 RUN adduser -h /home/weekgolf -g '' -s /bin/ash -G weekgolf -D weekgolf
 RUN chown weekgolf:weekgolf /mnt
