@@ -459,7 +459,7 @@ def int_to_en(n: int) -> str:
 
 @client.event
 async def on_message(message):
-    global last_message, last_message_up , waiting_for_response, waiting_for_response_up, quiz_state, global_correct, players, players_score, players_this_round, players_correct_this_round
+    global last_message, last_message_up, waiting_for_response, waiting_for_response_up, quiz_state, global_correct, players, players_score, players_this_round, players_correct_this_round
 
     splitable: bool = str(message.content) != ""
 

@@ -245,7 +245,7 @@ Today C++ is one of the most popular languages. Between 2000 and 2018, it has al
         int a = 0, b = 1;
 
         for (int i = 0; i < 10; i++){
-            std::cout << a <<a std::endl;
+            std::cout << a << std::endl;
             a = b - a;
             b += a;
         }
