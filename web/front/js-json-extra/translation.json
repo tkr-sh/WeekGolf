@@ -178,7 +178,7 @@
         "Constant declaration" : "const s = \"a constant\"",
         "Function declaration" : "func aFunction(argument type) {\n\treturn argument\n}",
         "Lambda declaration" : "func(argument type) {\n\treturn argument\n}",
-        "While loop" : "while b {...}",
+        "While loop" : "for b {...}",
         "For loop" : "for i := 0; i < n; i++ {...}",
         "Foreach loop" : "for _, c := range s {...}",
         "Do .. while loop" : false,
