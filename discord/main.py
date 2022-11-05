@@ -158,7 +158,7 @@ def main(color_list, logo_list, name_list,votes_list):
         draw.text((x_lang, y_lang_offset_list[i]), name_list[i], font=fnt90, fill=(255, 255, 255, 255))
 
         ## The vote number
-        vote_txt = votes_list[i] + "\n "[i<2] + "vote" + ["","s"][int(votes_list[i]) == 1]
+        vote_txt = votes_list[i] + "\n "[i<2] + "vote" + ["","s"][int(votes_list[i]) != 1]
         w, _ = draw.textsize(vote_txt, font=fnt90)
         x_lang = [1050, 1024 + (1024 - w)/2,(1024 - w)/2][(i == 0) + (i < 2)]
         draw.text((x_lang, y_vote_offset_list[i]), vote_txt, font=fnt90, fill=(255, 255, 255, 255))
@@ -235,7 +235,7 @@ def top2(color_list, logo_list, name_list,votes_list):
         draw.text((x_lang, 600), name_list[i], font=fnt, fill=(255, 255, 255, 255))
 
         # Vote
-        vote_txt = votes_list[i] + "\n "[i<2] + "vote" + ["","s"][int(votes_list[i]) == 1]
+        vote_txt = votes_list[i] + "\n "[i<2] + "vote" + ["","s"][int(votes_list[i]) != 1]
         w, _ = draw.textsize(vote_txt, font=fnt)
         x_lang = [1050, 1024 + (1024 - w)/2,(1024 - w)/2][(i == 0) + (i < 2)]
         draw.text((x_lang, 1300), vote_txt, font=fnt, fill=(255, 255, 255, 255))
@@ -290,7 +290,7 @@ def intToTime(n: int) -> str:
 
     """ Int to time """
     d,h,m,s = n//3600//24, n//3600%24, n//60%60, n%60
-    return  f"{d} day{['','s'][d>2]}, {h} hour{['','s'][h>2]}, {m} minute{['','s'][m>2]}, {s} second{['','s'][s>2]}"
+    return  f"{d} day{['','s'][d!=1]}, {h} hour{['','s'][h!=1]}, {m} minute{['','s'][m!=1]}, {s} second{['','s'][s!=1]}"
 
 
 def langToExtension(lang: str) -> str:
