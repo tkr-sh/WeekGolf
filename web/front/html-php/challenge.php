@@ -1789,7 +1789,8 @@
             // Function that updates the IDE of the history
             ///////////////////////////////////////////////
             function updateHistoryIde(n) {
-                historyIde.setValue(global_code[n], 1);
+                if (global_code[n] != undefined)
+                    historyIde.setValue(global_code[n], 1);
             }
 
             getHistory();
@@ -1941,66 +1942,6 @@
                 xhttp.open("POST", "https://week.golf/io.php", true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xhttp.send(`lang=${lang}&code=${encodeURIComponent(program)}&id=<?= $request_id ?>&t=${localStorage.token}`);
-
-                <?php
-                $date1 = "2022-10-29";
-                $today = date("Y-m-d");
-                $date2 = "2022-11-01";
-
-                $ts1 = strtotime($date1);
-                $tstoday = strtotime($today);
-                $ts2 = strtotime($date2);
-
-                if ($ts1 <= $tstoday && $tstoday <= $ts2){
-                ?>
-                const rand = max => Math.floor(Math.random() * max);
-
-                function Haloween(){
-                    document.getElementsByTagName("body")[0].style.transition = "5s";
-
-                    setTimeout(function(){
-                        document.body.style.filter = "brightness(0.5) hue-rotate(-30deg) contrast(1.25)";
-                        document.body.style.backgroundColor = "#111";
-                        setTimeout(function(){
-                            document.body.style.filter = "brightness(0.7) hue-rotate(-30deg) contrast(1.75)";
-                            document.body.style.backgroundColor = "#181818";
-                        }, 7000);
-
-                        setTimeout(function(){
-                            document.body.style.filter = "brightness(0.4) hue-rotate(-30deg) contrast(2.25)";
-                            document.body.style.backgroundColor = "#0C0C0C";
-                        }, 15000);
-
-                        setTimeout(function(){
-                            document.body.style.filter = "brightness(1) hue-rotate(0deg) contrast(1)";
-                            document.body.style.backgroundColor = "#252525";
-                            document.getElementsByTagName("body")[0].style.transition = "0s";
-                        }, 27000);
-                    }, 1000);
-
-                }
-                
-
-                if (rand(1000) == 0){
-                    (new Audio('audio/music_box.mp3')).play();
-                    Haloween();
-                } else if (rand(1250) == 0){
-                    (new Audio('audio/voice_f.mp3')).play();
-                    Haloween();
-                } else if (rand(1500) == 0){
-                    (new Audio('audio/voice_m.mp3')).play();
-                    Haloween();
-                } else if (rand(2000) == 0){
-                    (new Audio('audio/voice_mf.mp3')).play();
-                    Haloween();
-
-                    setTimeout(function(){
-                        (new Audio('audio/scream.mp3')).play();
-                    }, rand(28)*1000);
-                }
-                <?php 
-                }
-                ?>
 
 
                 xhttp.onload = function() {
@@ -2295,7 +2236,10 @@
                         button_show_solution[i].style.display = "none";
                     }
                 }
-                eval(`${button_show_solution[first_index].onclick}`.split("\n")[1]);
+
+                // If there is more than one element
+                if (!first)
+                    eval(`${button_show_solution[first_index].onclick}`.split("\n")[1]);
             }
 
             
