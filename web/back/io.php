@@ -342,12 +342,15 @@ if (isset($code) && isset($problem_id) && isset($lang)){
 
 function deleteLastChar($str){
     if ($str[-1] == "\n" || $str[-1] == "\0" || $str[-1] == " "){
-        return substr($str, 0, strlen($str) - 1);
+        if ($str[-2] == "\n" || $str[-2] == "\0" || $str[-2] == " "){
+            return @deleteLastChar(substr($str, 0, strlen($str) - 1));
+        } else {
+            return substr($str, 0, strlen($str) - 1);
+        }
     } else {
         return $str;
     }
 }
-
 
 function calculateNumberOfPoint($new_bytes_nb, $before_bytes_nb, $total){
 
