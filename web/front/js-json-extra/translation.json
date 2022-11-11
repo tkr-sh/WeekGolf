@@ -351,12 +351,12 @@
         "Variable declaration" : "let s = ref \"a variable\"",
         "Constant declaration" : "let s = \"a constant\"",
         "Function declaration" : "let a_function argument = argument",
-        "Lambda declaration" : "a_lambda = fun argument -> argument",
+        "Lambda declaration" : "let a_lambda = fun argument -> argument",
         "While loop" : "while b do\n\t...\ndone",
         "For loop" : "for i = 0 to n - 1 do\n\t...\ndone",
         "Foreach loop" : "for elem in a_list do\n\t...\ndone",
         "Do .. while loop" : false,
-        "Foreach index and element loop" : false,
+        "Foreach index and element loop" : "List.iteri (fun i elem -> ...) a_list",
         "Infinite loop" : "while true do\n\t...\ndone",
         "if ... else if ... else" : "if b1 then\n\t...\nelse if b2 then\n\t...\nelse\n\t...",
         "Ternary operator" : "if b then _true else _false",
@@ -373,7 +373,7 @@
         "Implicit conversion of char to int" : false,
         "Format a string" : "Printf.sprintf \"%d\" n",
         "Template string" : false,
-        "Three-Way operator" : false
+        "Three-Way operator" : "compare a b"
     },
 
     "PHP" : {
