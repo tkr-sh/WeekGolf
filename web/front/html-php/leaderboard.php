@@ -197,7 +197,7 @@
                                 <div class="lb_bytes">
                                     <div class="vertical-align" style="height: 70px">
                                         <?= $total[$i][$j][3]?>
-                                        <div style="font-size: 10px; margin-top: -10px">Point<?= intval($total[$i][$j][3]) >= 2 ? 's':''?></div>
+                                        <div style="font-size: 10px; margin-top: -10px">Point<?= intval($total[$i][$j][3]) != 1 ? 's':''?></div>
                                     </div>
                                 </div>
                             </div>
@@ -314,7 +314,7 @@
                                 <div class="lb_bytes">
                                     <div class="vertical-align" style="height: 70px">
                                         <?= $row[$lang[$i]."_score"] ?>
-                                        <div style="font-size: 10px; margin-top: -10px">Point<?php if ( intval($row[$lang[$i]."_score"]) >= 2 ) echo 's';?></div>
+                                        <div style="font-size: 10px; margin-top: -10px">Point<?php if ( intval($row[$lang[$i]."_score"]) != 1 ) echo 's';?></div>
                                     </div>
                                 </div>
                             </div>
@@ -423,7 +423,7 @@
                 }
 
                 document.getElementById("leaderboard_img").src = `img/${lang.replace("cpp","c++").replace("js","javascript")}_white.svg`;
-                document.getElementById("leaderboard_title").textContent = language_div_length+" player"+(language_div_length==1?"s":"");
+                document.getElementById("leaderboard_title").textContent = language_div_length+" player"+(language_div_length==1?"":"s");
 
                 let a_lu = document.getElementsByClassName("leaderboard_users")[1].getElementsByTagName("a");
                 let tot_players = 0;

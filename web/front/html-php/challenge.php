@@ -272,7 +272,7 @@
                                 $diff = time() - $date;
                                 for ($i = 0; $i < 5; $i++){
                                     if ($diff < $time[$i+1])
-                                        return strval(floor($diff / $time[$i])) . " " . $name[$i] . strval(floor($diff / $time[$i]) < 2 ? '' : 's') . " ago";
+                                        return strval(floor($diff / $time[$i])) . " " . $name[$i] . strval(floor($diff / $time[$i]) == 1 ? '' : 's') . " ago";
                                 }
                             }
                                             
@@ -1789,7 +1789,8 @@
             // Function that updates the IDE of the history
             ///////////////////////////////////////////////
             function updateHistoryIde(n) {
-                historyIde.setValue(global_code[n], 1);
+                if (global_code[n] != undefined)
+                    historyIde.setValue(global_code[n], 1);
             }
 
             getHistory();
@@ -1835,7 +1836,7 @@
                         j++;
                     }
                 }
-                let textContent = `<img src="img/${lang}_white.svg" id="leaderboard_img"> <div id="leaderboard_title">${arr.length} player${arr.length>1?'s':''}</div>`;
+                let textContent = `<img src="img/${lang}_white.svg" id="leaderboard_img"> <div id="leaderboard_title">${arr.length} player${arr.length!=1?'s':''}</div>`;
 
                 let rank = 0;
                 let diff = 1;
@@ -2235,7 +2236,10 @@
                         button_show_solution[i].style.display = "none";
                     }
                 }
-                eval(`${button_show_solution[first_index].onclick}`.split("\n")[1]);
+
+                // If there is more than one element
+                if (!first)
+                    eval(`${button_show_solution[first_index].onclick}`.split("\n")[1]);
             }
 
             
@@ -2510,7 +2514,7 @@
                         }
                     }
                 }
-                const new_description = size + " byte"+(size==1?"s":"") + (localStorage.cursorposition == "true" ? getCursorPosition() : "");
+                const new_description = size + " byte"+(size==1?"":"s") + (localStorage.cursorposition == "true" ? getCursorPosition() : "");
                 if (new_description !== nbBytes.innerHTML)
                     nbBytes.innerHTML = new_description;
             }, 100);

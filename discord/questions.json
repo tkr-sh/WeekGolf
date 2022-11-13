@@ -137,8 +137,8 @@
         "answers": {
             "```\na ← 0\nb ← 1\nNext ← {\n\tsum ← +/ ⍵\n\tsum , ⎕ ← ⊃ ⍵\n}\nNext ⍣ 10 ⊢ a b```": "APL",
             "```bash\na=0\nb=1\n\nfor ((i=0; i<10; i++)); do\n\techo $a\n\ta=$((b-a))\n\tb=$((b+a))\ndone```": "Bash",
-            "```c\n#include <stdio.h>\n\nint main (void) {\n\tint a = 0, b = 1;\n\n\tfor (int i = 0; i < 10; i++){\n\t\tprintf(\"%d\n\", a);\n\t\ta = b - a;\n\t\tb += a;\n\t}\n\n\treturn 0;\n}```": "C",
-            "```cpp\n#include <iostream>\n\nint main() {\n\tint a = 0, b = 1;\n\n\tfor (int i = 0; i < 10; i++){\n\t\tstd::cout << a <<a std::endl;\n\t\ta = b - a;\n\t\tb += a;\n\t}\n}```": "C++",
+            "```c\n#include <stdio.h>\n\nint main (void) {\n\tint a = 0, b = 1;\n\n\tfor (int i = 0; i < 10; i++){\n\t\tprintf(\"%d\\n\", a);\n\t\ta = b - a;\n\t\tb += a;\n\t}\n\n\treturn 0;\n}```": "C",
+            "```cpp\n#include <iostream>\n\nint main() {\n\tint a = 0, b = 1;\n\n\tfor (int i = 0; i < 10; i++){\n\t\tstd::cout << a << std::endl;\n\t\ta = b - a;\n\t\tb += a;\n\t}\n}```": "C++",
             "```cs\n// Only works for C#10 and +\nint a = 0, b = 1;\n\nfor (int i = 0; i < 10; i++){\n\tConsole.WriteLine(a);\n\t(a, b) = (b, a + b);\n}```": "C#",
             "```clj\n(def fib-seq-seq\n((fn fib [a b] \n\t(lazy-seq (cons a (fib b (+ a b)))))\n0 1))\n\n(println (clojure.string/join \"\n\" (take 10 fib-seq-seq)))```": "Clojure",
             "```erl\ndefmodule Fib do \n\tdef fib(0) do 0 end\n\tdef fib(1) do 1 end\n\tdef fib(n) do fib(n-1) + fib(n-2) end\nend\n\nfor i <- 0..9 do\n\tIO.puts Fib.fib(i)\nend```": "Elixir",

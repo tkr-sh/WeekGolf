@@ -444,7 +444,7 @@
                             </div>
                             <img src="img/upvotewhite.svg" class="upvote" onclick="upvoteLang(${i})" style="display: ${upvoted_arr.includes(global_rep2[i][0])?'none':'block'}">
                             <img src="img/upvotegreen.svg" class="upvote" onclick="upvoteLang(${i})" style="display: ${upvoted_arr.includes(global_rep2[i][0])?'block':'none'}">
-                            <div class="textUpvote">${global_rep2[i][2]} vote${global_rep2[i][2]==1?"s":""}</div>
+                            <div class="textUpvote">${global_rep2[i][2]} vote${global_rep2[i][2]==1?"":"s"}</div>
                         </div>`
 
                     }
@@ -517,7 +517,7 @@
                         </div>
                         <img src="img/upvotewhite.svg" class="upvote" onclick="upvoteLang(${i})" style="display: ${upvoted_arr.includes(global_rep2[i][0])?'none':'block'}">
                         <img src="img/upvotegreen.svg" class="upvote" onclick="upvoteLang(${i})" style="display: ${upvoted_arr.includes(global_rep2[i][0])?'block':'none'}">
-                        <div class="textUpvote">${global_rep2[i][2]} vote${global_rep2[i][2]==1?"s":""}</div>
+                        <div class="textUpvote">${global_rep2[i][2]} vote${global_rep2[i][2]==1?"":"s"}</div>
                     </div>` 
                     
                 }
@@ -645,7 +645,7 @@
                     let img = new Image();
 
                     langName[i].textContent = arr[i][1];
-                    nbVote[i].textContent = (logged ? arr[i][2] : "?")+" vote" + (parseInt(arr[i][2])==1?"s":"");
+                    nbVote[i].textContent = (logged ? arr[i][2] : "?")+" vote" + (parseInt(arr[i][2])==1?"":"s");
 
                     img.src = `img/${arr[i][1].replace("#","s").replace("><>","fish").toLowerCase()}_white.svg`;
                     img.onerror = function(){
@@ -708,7 +708,7 @@
                 const uptot = document.getElementsByClassName("finalUpvote");
                 for (let i = 0; i < 2;i++){
                     if (uptot[i].getAttribute('value') === 'up' && i !== n ){
-                        document.getElementsByClassName("nb_vote")[i].innerHTML = (parseInt(document.getElementsByClassName("nb_vote")[i].innerHTML.split()[0])-1+" vote")+((parseInt(document.getElementsByClassName("nb_vote")[i].innerHTML.split()[0])-1==1)?"s":"");
+                        document.getElementsByClassName("nb_vote")[i].innerHTML = (parseInt(document.getElementsByClassName("nb_vote")[i].innerHTML.split()[0])-1+" vote")+((parseInt(document.getElementsByClassName("nb_vote")[i].innerHTML.split()[0])-1==1)?"":"s");
                         uptot[i].setAttribute('value',"notup");
                     }
                     uptot[i].style.width = "100px";
@@ -727,7 +727,7 @@
                 up.style.marginTop = b?"0px":"-30px"
                 up.style.filter = b?"drop-shadow(0px 0px 0px #FFF)":"drop-shadow(0px 0px 30px #FFF)";
                 console.log(b)
-                document.getElementsByClassName("nb_vote")[n].innerHTML = parseInt(document.getElementsByClassName("nb_vote")[n].innerHTML.split()[0])+(b?-1:1)+" vote"+((parseInt(document.getElementsByClassName("nb_vote")[n].innerHTML.split()[0])+(b?-1:1)==1)?"s":"");
+                document.getElementsByClassName("nb_vote")[n].innerHTML = parseInt(document.getElementsByClassName("nb_vote")[n].innerHTML.split()[0])+(b?-1:1)+" vote"+((parseInt(document.getElementsByClassName("nb_vote")[n].innerHTML.split()[0])+(b?-1:1)==1)?"":"s");
                 
                 const percentage = Number.isNaN(parseFloat(document.getElementsByClassName("nb_vote")[0].innerHTML.split()[0]) / (parseFloat(document.getElementsByClassName("nb_vote")[0].innerHTML.split()[0])+parseFloat(document.getElementsByClassName("nb_vote")[1].innerHTML.split()[0]))*100)? 50: parseFloat(document.getElementsByClassName("nb_vote")[0].innerHTML.split()[0]) / (parseFloat(document.getElementsByClassName("nb_vote")[0].innerHTML.split()[0])+parseFloat(document.getElementsByClassName("nb_vote")[1].innerHTML.split()[0]))*100;
                 

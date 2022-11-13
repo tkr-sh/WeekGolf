@@ -772,7 +772,7 @@
                 for (let i = 0; i < Math.min(3,content.length); i ++){
                     add += '<div class="subtitle_div" style="display: flex;justify-content: left; background-color: #222; width: calc(100% - 100px); border-radius: 5px; overflow: hidden;">'
                         add += "<div>"
-                            add += `<div class="title_challenge">${upvote[i]} upvote${upvote[i]>1?'s':''}</div>`
+                            add += `<div class="title_challenge">${upvote[i]} upvote${upvote[i]!=1?'s':''}</div>`
                             add += `<div style="margin-left: 10px; margin-top: -5px;font-size:15px">${content[i].replace(/</g,"&lt;")}</div>`
                         add += "</div>"
                     add += '</div>'
@@ -784,7 +784,7 @@
                     // For All Performances
                     add2 += `<div class="all_perf"  style="display: flex;justify-content: left;">
                                 <div>
-                                    <div class="title_challenge">${upvote[i]} upvote${upvote[i]>1?'s':''}</div>
+                                    <div class="title_challenge">${upvote[i]} upvote${upvote[i]!=1?'s':''}</div>
                                     <div style="margin-left: 10px; margin-top: -5px;font-size:15px">${content[i].replace(/</g,"&lt;")}</div>
                                 </div>
                             </div>`
