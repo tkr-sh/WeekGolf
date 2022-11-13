@@ -74,7 +74,7 @@
     "Q10" : {
         "type":"pick",
         "question":"Who is the user with the most points on WeekGolf?",
-        "answers": ["TKirishima", "Lyndon", "Steffan", "ShaneTheGamer","JoKing","Lynn","Natanael","Pardouin"," AlephSquirrel"],
+        "answers": ["TKirishima", "Lyndon", "Steffan", "ShaneTheGamer","JoKing","Lynn","Natanael","Pardouin","AlephSquirrel"],
         "correct": "Steffan",
         "proba": 1
     },
