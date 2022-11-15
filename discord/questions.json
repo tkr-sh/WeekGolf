@@ -74,8 +74,8 @@
     "Q10" : {
         "type":"pick",
         "question":"Who is the user with the most points on WeekGolf?",
-        "answers": ["TKirishima", "Lyndon", "Stefan", "ShaneTheGamer","JoKing","Lynn","Natanael","Pardouin"," AlephSquirrel"],
-        "correct": "ShaneTheGamer",
+        "answers": ["TKirishima", "Lyndon", "Steffan", "ShaneTheGamer","JoKing","Lynn","Natanael","Pardouin"," AlephSquirrel"],
+        "correct": "Steffan",
         "proba": 1
     },
 
@@ -248,5 +248,13 @@
             "```\nƓ;Ɠ;ƓU_I$×÷/2Ƥ$IE$?Ḣ;Ɗ9¡µS^µṀ_Ṃ```": "Basic Sequence"
         },
         "proba": 5
+    },
+
+    "Q21" : {
+        "type":"pick",
+        "question":"Which user stayed first the longest time?",
+        "answers": ["TKirishima", "Lyndon", "Steffan", "ShaneTheGamer","JoKing","Lynn","Natanael","Pardouin"," AlephSquirrel"],
+        "correct": "ShaneTheGamer",
+        "proba": 1
     }
 }
