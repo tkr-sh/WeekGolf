@@ -13,14 +13,14 @@ RUN adduser -h /home/weekgolf -g '' -s /bin/ash -G weekgolf -D weekgolf
 USER weekgolf:weekgolf
 WORKDIR /home/weekgolf
 
-RUN wget https://downloads.haskell.org/~ghc/9.4.2/ghc-9.4.2-x86_64-alpine3_12-linux-static-int_native.tar.xz && \
-    tar -xf ghc-9.4.2-x86_64-alpine3_12-linux-static-int_native.tar.xz && \
-    rm -rf ghc-9.4.2-x86_64-alpine3_12-linux-static-int_native.tar.xz && \
-    cd /home/weekgolf/ghc-9.4.2-x86_64-unknown-linux && \
+RUN wget https://downloads.haskell.org/~ghc/9.4.3/ghc-9.4.3-x86_64-alpine3_12-linux-static-int_native.tar.xz && \
+    tar -xf ghc-9.4.3-x86_64-alpine3_12-linux-static-int_native.tar.xz && \
+    rm -rf ghc-9.4.3-x86_64-alpine3_12-linux-static-int_native.tar.xz && \
+    cd /home/weekgolf/ghc-9.4.3-x86_64-unknown-linux && \
     ./configure --prefix=/home/weekgolf/ghc && \
     make install && \
     cd .. && \
-    rm -rf /home/weekgolf/ghc-9.4.2-x86_64-unknown-linux
+    rm -rf /home/weekgolf/ghc-9.4.3-x86_64-unknown-linux
 
 ######################################################################
 # final stage
