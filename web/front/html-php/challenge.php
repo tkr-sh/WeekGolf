@@ -1545,7 +1545,8 @@
         <!-- Word Wrap, Tabulation, Cursor Position, Show Invisible, Auto brackets, Show errors and Delete Indentation-->
         <script>
             // Capitalize
-            let capitalize = (str) => str[0].toUpperCase() + str.slice(1).toLowerCase();
+            const capitalize = (str) => str[0].toUpperCase() + str.slice(1).toLowerCase();
+            const escapeHtml = (str) => str.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 
             if (localStorage.tab == null) localStorage.tab = "false";
             if (localStorage.wordwrap == null) localStorage.wordwrap = "false";
@@ -1836,7 +1837,7 @@
                         j++;
                     }
                 }
-                let textContent = `<img src="img/${lang}_white.svg" id="leaderboard_img"> <div id="leaderboard_title">${arr.length} player${arr.length!=1?'s':''}</div>`;
+                let textContent = `<img src="img/${lang}_white.svg" id="leaderboard_img"> <div id="leaderboard_title">${arr.length} player${arr.length != 1 ? 's' : ''}</div>`;
 
                 let rank = 0;
                 let diff = 1;
@@ -1956,10 +1957,10 @@
                     for (let i = 0; i < parseInt(rep["len"]); i ++){
                         textContent += `>>> Test N°${i+1} State:${rep["success_arr"][i]?'✅':'❌'}<br>`;
                         textContent += `====== Input =========<br>${rep["inputs"][i]}`;
-                        textContent += `<br>====== Expected ======<br>${rep["expected"][i].replaceAll("\n","<br>")}`;
-                        textContent += `<br>====== Found ========<br>${rep["obtained"][i].replaceAll("\n","<br>")}`;
+                        textContent += `<br>====== Expected ======<br>${escapeHtml(rep["expected"][i]).replaceAll("\n","<br>")}`;
+                        textContent += `<br>====== Found ========<br>${escapeHtml(rep["obtained"][i]).replaceAll("\n","<br>")}`;
                         if (rep["error"][i] != "" && (localStorage.showerror == "true" || localStorage.showerror == null)){
-                            textContent += `<br>====== ERROR ========<br>${decodeURIComponent(rep["error"][i]).replaceAll("\n","<br>")}`;
+                            textContent += `<br>====== ERROR ========<br>${escapeHtml(decodeURIComponent(rep["error"][i])).replaceAll("\n","<br>")}`;
                         }   
 
                         textContent +="<br><br><br>"
@@ -2514,7 +2515,7 @@
                         }
                     }
                 }
-                const new_description = size + " byte"+(size==1?"":"s") + (localStorage.cursorposition == "true" ? getCursorPosition() : "");
+                const new_description = size + " byte"+(size != 1 ? "s":"") + (localStorage.cursorposition == "true" ? getCursorPosition() : "");
                 if (new_description !== nbBytes.innerHTML)
                     nbBytes.innerHTML = new_description;
             }, 100);
