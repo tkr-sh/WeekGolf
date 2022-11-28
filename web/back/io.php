@@ -112,7 +112,7 @@ if (isset($code) && isset($problem_id) && isset($lang)){
     }
 
     // Custom ASCII table if the language has its own encoding table
-    if ($lang != "vyxal" && $lang != "jelly" && $lang != "apl"){
+    if ($lang != "vyxal" && $lang != "jelly" && $lang != "apl" && $lang != "bqn"){
         $length_of_code = mb_strlen(str_replace("\r\n","\n",$code), '8bit');
     } else {
         $length_of_code = 0;
