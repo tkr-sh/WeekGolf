@@ -116,14 +116,20 @@ if (isset($code) && isset($problem_id) && isset($lang)){
         $length_of_code = mb_strlen(str_replace("\r\n","\n",$code), '8bit');
     } else {
         $length_of_code = 0;
-        if ($lang == "vyxal")
-            $str_vyxal = "λƛ¬∧⟑∨⟇÷×«\n»°•ß†€½∆ø↔¢⌐æʀʁɾɽÞƈ∞¨ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]`^_abcdefghijklmnopqrstuvwxyz{|}~↑↓∴∵›‹∷¤ð→←βτȧḃċḋėḟġḣḭŀṁṅȯṗṙṡṫẇẋẏż√⟨⟩‛₀₁₂₃₄₅₆₇₈¶⁋§ε¡∑¦≈µȦḂĊḊĖḞĠḢİĿṀṄȮṖṘṠṪẆẊẎŻ₌₍⁰¹²∇⌈⌊¯±₴…□↳↲⋏⋎꘍ꜝ℅≤≥≠⁼ƒɖ∪∩⊍£¥⇧⇩ǍǎǏǐǑǒǓǔ⁽‡≬⁺↵⅛¼¾Π„‟";
-        if ($lang == "apl")
-            $str_vyxal = "⌶%'⍺⍵_abcdefghijklmnopqrstuvwxyz¯.⍬0123456789⊢\$∆ABCDEFGHIJKLMNOPQRSTUVWXYZ?⍙ÁÂÃÇÈÊËÌÍÎÏÐÒÓÔÕÙÚÛÝþãìðòõ{}⊣⌷¨ÀÄÅÆ⍨ÉÑÖØÜßàáâäåæçèéêëíîïñ[/⌿\\⍀<≤=≥>≠∨∧-+÷×?∊⍴~↑↓⍳○*⌈⌊∇∘(⊂⊃∩∪⊥⊤|;,⍱⍲⍒⍋⍉⌽⊖⍟⌹!⍕⍎⍫⍪≡≢óôöø\"#&┘┐┌└┼─├┤┴┬│@ùúû^ü`:⍷⋄←→⍝)]⎕⍞⍣\n ⊆⍠⍤⌸⌺⍸⍥⍢√⊇…⌾⍮⍭⍧⍛";
-        if ($lang == "jelly")
-            $str_vyxal = "¡¢£¤¥¦©¬®µ½¿€ÆÇÐÑ×ØŒÞßæçðıȷñ÷øœþ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~¶\n°¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ƁƇƊƑƓƘⱮƝƤƬƲȤɓƈɗƒɠɦƙɱɲƥʠɼʂƭʋȥẠḄḌẸḤỊḲḶṂṆỌṚṢṬỤṾẈỴẒȦḂĊḊĖḞĠḢİĿṀṄȮṖṘṠṪẆẊẎŻạḅḍẹḥịḳḷṃṇọṛṣṭ§Äẉỵẓȧḃċḋėḟġḣŀṁṅȯṗṙṡṫẇẋẏż«»‘’“”";
+
+        switch ($lang) {
+            case "vyxal":
+                $SBCS = "λƛ¬∧⟑∨⟇÷×«\n»°•ß†€½∆ø↔¢⌐æʀʁɾɽÞƈ∞¨ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]`^_abcdefghijklmnopqrstuvwxyz{|}~↑↓∴∵›‹∷¤ð→←βτȧḃċḋėḟġḣḭŀṁṅȯṗṙṡṫẇẋẏż√⟨⟩‛₀₁₂₃₄₅₆₇₈¶⁋§ε¡∑¦≈µȦḂĊḊĖḞĠḢİĿṀṄȮṖṘṠṪẆẊẎŻ₌₍⁰¹²∇⌈⌊¯±₴…□↳↲⋏⋎꘍ꜝ℅≤≥≠⁼ƒɖ∪∩⊍£¥⇧⇩ǍǎǏǐǑǒǓǔ⁽‡≬⁺↵⅛¼¾Π„‟";
+            case "apl":
+                $SBCS = "⌶%'⍺⍵_abcdefghijklmnopqrstuvwxyz¯.⍬0123456789⊢\$∆ABCDEFGHIJKLMNOPQRSTUVWXYZ?⍙ÁÂÃÇÈÊËÌÍÎÏÐÒÓÔÕÙÚÛÝþãìðòõ{}⊣⌷¨ÀÄÅÆ⍨ÉÑÖØÜßàáâäåæçèéêëíîïñ[/⌿\\⍀<≤=≥>≠∨∧-+÷×?∊⍴~↑↓⍳○*⌈⌊∇∘(⊂⊃∩∪⊥⊤|;,⍱⍲⍒⍋⍉⌽⊖⍟⌹!⍕⍎⍫⍪≡≢óôöø\"#&┘┐┌└┼─├┤┴┬│@ùúû^ü`:⍷⋄←→⍝)]⎕⍞⍣\n ⊆⍠⍤⌸⌺⍸⍥⍢√⊇…⌾⍮⍭⍧⍛";
+            case "jelly":
+                $SBCS = "¡¢£¤¥¦©¬®µ½¿€ÆÇÐÑ×ØŒÞßæçðıȷñ÷øœþ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~¶\n°¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ƁƇƊƑƓƘⱮƝƤƬƲȤɓƈɗƒɠɦƙɱɲƥʠɼʂƭʋȥẠḄḌẸḤỊḲḶṂṆỌṚṢṬỤṾẈỴẒȦḂĊḊĖḞĠḢİĿṀṄȮṖṘṠṪẆẊẎŻạḅḍẹḥịḳḷṃṇọṛṣṭ§Äẉỵẓȧḃċḋėḟġḣŀṁṅȯṗṙṡṫẇẋẏż«»‘’“”";
+            case "bqn":
+                $SBCS = "\n\r\t !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~×÷⋆√⌊⌈¬∧∨≠≤≥≡≢⊣⊢⥊∾≍⋈↑↓↕«»⌽⍉⍋⍒⊏⊑⊐⊒∊⍷⊔˙˜˘¨⌜⁼´˝∘○⊸⟜⌾⊘◶⎉⚇⍟⎊⋄⇐←↩⟨⟩‿·𝕊𝕏𝕎𝔽𝔾𝕤𝕩𝕨𝕗𝕘π∞¯•";
+        }
+
         foreach (preg_split('//u', $code, -1, PREG_SPLIT_NO_EMPTY) as $char){
-            if (strpos($str_vyxal, $char) !== false){
+            if (strpos($SBCS, $char) !== false){
                 $length_of_code += 1;
             } else {
                 $length_of_code += 2;
@@ -262,7 +268,7 @@ if (isset($code) && isset($problem_id) && isset($lang)){
             $diff = $diff > 1000 ? 0 : $diff;
             $best_size = $best_size > 10000 ? "None" : $best_size;
             $best_score_user = $best_size > 10000 ? "nobody" : $best_score_user;
-            $bytes = "byte" . ($diff == 1 ? "" : "s");
+            $bytes = "byte" . ($diff != 1 ? "s" : "");
 
             esql("INSERT INTO Activity (title, content, owner_id, activity_date, major) VALUES(CONCAT('[$temp_lang] - ', ? ,' made an upgrade with $temp_lang!'), CONCAT('An upgrade on \"$problem_name\" with $temp_lang by ',  ?, ' has been made! With a total of: $length_of_code bytes! The previous score was $best_size bytes by ', ?, ' (Diff: $diff bytes)'),$user_id, NOW(), 2)", [$username, $username, $best_score_user], "sss");
 
@@ -351,6 +357,7 @@ function deleteLastChar($str){
         return $str;
     }
 }
+
 
 function calculateNumberOfPoint($new_bytes_nb, $before_bytes_nb, $total){
 

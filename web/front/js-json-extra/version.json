@@ -1,6 +1,7 @@
 {
 	"apl":"18.2.0",
 	"bash":"GNU bash, version 5.2.2(1)-release (x86_64-alpine-linux-musl)",
+	"bqn":"CBQN github 3431a38",
 	"c":"gcc (Alpine 12.2.1_git20220924-r2) 12.2.1 20220924",
 	"clojure":"Clojure 1.12.0-master-SNAPSHOT",
 	"cpp":"Alpine clang version 15.0.1",
@@ -10,7 +11,7 @@
 	"golfscript":"https://github.com/darrenks/golfscript cded542533c2c8f72ab2d5935714f739b0357690",
 	"haskell":"The Glorious Glasgow Haskell Compilation System, version 9.4.2",
 	"j":"jversion 903",
-	"java":"openjdk 17.0.4.1 2022-08-12",
+	"java":"openjdk 19.0.4.1 2022-08-12",
 	"javascript":"16.18.0",
 	"jelly":"github.com/DennisMitchell/jellylanguage.git 70c9fd93ab009c05dc396f8cc091f72b212fb188",
 	"julia":"julia version 1.8.2",

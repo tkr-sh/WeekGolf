@@ -19,6 +19,14 @@ read -r s
 echo "Hello WeekGolf!"`,
 
 
+    // BQN
+    ////////////////////////////
+    "bqn" : `# Get STDIN
+s ← •args
+
+# Write an answer using •Out
+•Out"Hello WeekGolf!"`,
+
 
 
 

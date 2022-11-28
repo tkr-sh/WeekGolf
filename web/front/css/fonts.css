@@ -3,7 +3,7 @@
     src: url(https://week.golf/includes/fonts/DejaVuSansMono.ttf);
 }
 
-#vyxal_keyboard, #apl_keyboard {
+#vyxal_keyboard, #apl_keyboard, #bqn_keyboard {
     font-family: "DejaVu Sans Mono", monospace;
     width: calc(90% - 50px);
     margin-left: 5%;
@@ -15,7 +15,7 @@
     margin-bottom: 10px;
 }
 
-.char_vyxal, .char_apl {
+.char_vyxal, .char_apl, .char_bqn {
     cursor: pointer;
     transition: .2s;
     background-color: var(--darker-color);

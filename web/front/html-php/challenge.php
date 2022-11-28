@@ -111,6 +111,8 @@
                 switch ($lang){
                     case "Apl":
                         return "APL";
+                    case "Bqn":
+                        return "BQN";
                     case "Cs":
                         return "C#";
                     case "Cpp":
@@ -121,8 +123,6 @@
                         return "JavaScript";
                     case "Golfscript":
                         return "GolfScript";
-                    case "Php":
-                        return "PHP";
                     case "Php":
                         return "PHP";
                     default:
@@ -1007,6 +1007,244 @@
                 </div>
             </div>
 
+            <div class="keyboard" id="bqn_keyboard">
+                <span style="color: #fff; font-size: 40px; text-align: center; font-weight: 900; width: 100%; margin-top: -7px; margin-bottom: 20px">
+                    BQN
+                </span>
+                <div class="char_bqn">
+                    <span>×</span>
+                </div>
+                <div class="char_bqn">
+                    <span>÷</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⋆</span>
+                </div>
+                <div class="char_bqn">
+                    <span>√</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⌊</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⌈</span>
+                </div>
+                <div class="char_bqn">
+                    <span>¬</span>
+                </div>
+                <div class="char_bqn">
+                    <span>∧</span>
+                </div>
+                <div class="char_bqn">
+                    <span>∨</span>
+                </div>
+                <div class="char_bqn">
+                    <span>≠</span>
+                </div>
+                <div class="char_bqn">
+                    <span>≤</span>
+                </div>
+                <div class="char_bqn">
+                    <span>≥</span>
+                </div>
+                <div class="char_bqn">
+                    <span>≡</span>
+                </div>
+                <div class="char_bqn">
+                    <span>≢</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⊣</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⊢</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⥊</span>
+                </div>
+                <div class="char_bqn">
+                    <span>∾</span>
+                </div>
+                <div class="char_bqn">
+                    <span>≍</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⋈</span>
+                </div>
+                <div class="char_bqn">
+                    <span>↑</span>
+                </div>
+                <div class="char_bqn">
+                    <span>↓</span>
+                </div>
+                <div class="char_bqn">
+                    <span>↕</span>
+                </div>
+                <div class="char_bqn">
+                    <span>«</span>
+                </div>
+                <div class="char_bqn">
+                    <span>»</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⌽</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⍉</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⍋</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⍒</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⊏</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⊑</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⊐</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⊒</span>
+                </div>
+                <div class="char_bqn">
+                    <span>∊</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⍷</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⊔</span>
+                </div>
+                <div class="char_bqn">
+                    <span>˙</span>
+                </div>
+                <div class="char_bqn">
+                    <span>˜</span>
+                </div>
+                <div class="char_bqn">
+                    <span>˘</span>
+                </div>
+                <div class="char_bqn">
+                    <span>¨</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⌜</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⁼</span>
+                </div>
+                <div class="char_bqn">
+                    <span>´</span>
+                </div>
+                <div class="char_bqn">
+                    <span>˝</span>
+                </div>
+                <div class="char_bqn">
+                    <span>∘</span>
+                </div>
+                <div class="char_bqn">
+                    <span>○</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⊸</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⟜</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⌾</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⊘</span>
+                </div>
+                <div class="char_bqn">
+                    <span>◶</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⎉</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⚇</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⍟</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⎊</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⋄</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⇐</span>
+                </div>
+                <div class="char_bqn">
+                    <span>←</span>
+                </div>
+                <div class="char_bqn">
+                    <span>↩</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⟨</span>
+                </div>
+                <div class="char_bqn">
+                    <span>⟩</span>
+                </div>
+                <div class="char_bqn">
+                    <span>‿</span>
+                </div>
+                <div class="char_bqn">
+                    <span>·</span>
+                </div>
+                <div class="char_bqn">
+                    <span>𝕊</span>
+                </div>
+                <div class="char_bqn">
+                    <span>𝕏</span>
+                </div>
+                <div class="char_bqn">
+                    <span>𝕎</span>
+                </div>
+                <div class="char_bqn">
+                    <span>𝔽</span>
+                </div>
+                <div class="char_bqn">
+                    <span>𝔾</span>
+                </div>
+                <div class="char_bqn">
+                    <span>𝕤</span>
+                </div>
+                <div class="char_bqn">
+                    <span>𝕩</span>
+                </div>
+                <div class="char_bqn">
+                    <span>𝕨</span>
+                </div>
+                <div class="char_bqn">
+                    <span>𝕗</span>
+                </div>
+                <div class="char_bqn">
+                    <span>𝕘</span>
+                </div>
+                <div class="char_bqn">
+                    <span>π</span>
+                </div>
+                <div class="char_bqn">
+                    <span>∞</span>
+                </div>
+                <div class="char_bqn">
+                    <span>¯</span>
+                </div>
+                <div class="char_bqn">
+                    <span>•</span>
+                </div>
+            </div>
+
+
             <div class="keyboard" id="apl_keyboard">
                 <span style="color: #fff; font-size: 40px; text-align: center; font-weight: 900; width: 100%; margin-top: -7px; margin-bottom: 20px">
                     APL
@@ -1360,6 +1598,7 @@
                             </div>
                             <div class="keyboard_button" id="vyxal_kb_bt">Vyxal</div>
                             <div class="keyboard_button" id="apl_kb_bt">APL</div>
+                            <div class="keyboard_button" id="bqn_kb_bt">BQN</div>
                             <div class="keyboard_button" id="none_kb_bt">None</div>
                         </td>
                     </tr>
@@ -1546,7 +1785,7 @@
         <script>
             // Capitalize
             const capitalize = (str) => str[0].toUpperCase() + str.slice(1).toLowerCase();
-            const escapeHtml = (str) => str.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+            const escapeHtmlRev = (str) => str.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 
             if (localStorage.tab == null) localStorage.tab = "false";
             if (localStorage.wordwrap == null) localStorage.wordwrap = "false";
@@ -1904,6 +2143,7 @@
                 const correspondance = {
                     "Apl": "apl",
                     "Bash": "bash",
+                    "Bqn":"bqn",
                     "C++": "cpp",
                     "C": "c",
                     "C#": "csharp",
@@ -1957,10 +2197,10 @@
                     for (let i = 0; i < parseInt(rep["len"]); i ++){
                         textContent += `>>> Test N°${i+1} State:${rep["success_arr"][i]?'✅':'❌'}<br>`;
                         textContent += `====== Input =========<br>${rep["inputs"][i]}`;
-                        textContent += `<br>====== Expected ======<br>${escapeHtml(rep["expected"][i]).replaceAll("\n","<br>")}`;
-                        textContent += `<br>====== Found ========<br>${escapeHtml(rep["obtained"][i]).replaceAll("\n","<br>")}`;
+                        textContent += `<br>====== Expected ======<br>${escapeHtmlRev(rep["expected"][i]).replaceAll("\n","<br>")}`;
+                        textContent += `<br>====== Found ========<br>${escapeHtmlRev(rep["obtained"][i]).replaceAll("\n","<br>")}`;
                         if (rep["error"][i] != "" && (localStorage.showerror == "true" || localStorage.showerror == null)){
-                            textContent += `<br>====== ERROR ========<br>${escapeHtml(decodeURIComponent(rep["error"][i])).replaceAll("\n","<br>")}`;
+                            textContent += `<br>====== ERROR ========<br>${escapeHtmlRev(decodeURIComponent(rep["error"][i])).replaceAll("\n","<br>")}`;
                         }   
 
                         textContent +="<br><br><br>"
@@ -1997,6 +2237,7 @@
                 const correspondance = {
                     "Apl": "apl",
                     "Bash": "sh",
+                    "Bqn":"php",
                     "C++": "c_cpp",
                     "C": "c_cpp",
                     "C#": "csharp",
@@ -2496,26 +2737,29 @@
             const nbBytes = document.getElementById("nb_byte");
             window.setInterval(function(){
                 let code = mainIde.getValue().replaceAll("\r\n","\n");
-                if (localStorage.selectedLanguage  != "vyxal" && localStorage.selectedLanguage != "jelly"  && localStorage.selectedLanguage != "apl"){
+                if (!["vyxal", "jelly", "apl", "bqn"].includes(localStorage.selectedLanguage)){
                     var size = (new TextEncoder().encode(code)).length;
                 } else {
-                    var str_vyxal;
-                    if (localStorage.selectedLanguage == "vyxal")
-                        str_vyxal = "λƛ¬∧⟑∨⟇÷×«\n»°•ß†€½∆ø↔¢⌐æʀʁɾɽÞƈ∞¨ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]`^_abcdefghijklmnopqrstuvwxyz{|}~↑↓∴∵›‹∷¤ð→←βτȧḃċḋėḟġḣḭŀṁṅȯṗṙṡṫẇẋẏż√⟨⟩‛₀₁₂₃₄₅₆₇₈¶⁋§ε¡∑¦≈µȦḂĊḊĖḞĠḢİĿṀṄȮṖṘṠṪẆẊẎŻ₌₍⁰¹²∇⌈⌊¯±₴…□↳↲⋏⋎꘍ꜝ℅≤≥≠⁼ƒɖ∪∩⊍£¥⇧⇩ǍǎǏǐǑǒǓǔ⁽‡≬⁺↵⅛¼¾Π„‟";
-                    else if (localStorage.selectedLanguage == "apl")
-                        str_vyxal = "⌶%'⍺⍵_abcdefghijklmnopqrstuvwxyz¯.⍬0123456789⊢$∆ABCDEFGHIJKLMNOPQRSTUVWXYZ?⍙ÁÂÃÇÈÊËÌÍÎÏÐÒÓÔÕÙÚÛÝþãìðòõ{}⊣⌷¨ÀÄÅÆ⍨ÉÑÖØÜßàáâäåæçèéêëíîïñ[/⌿\\⍀<≤=≥>≠∨∧-+÷×?∊⍴~↑↓⍳○*⌈⌊∇∘(⊂⊃∩∪⊥⊤|;,⍱⍲⍒⍋⍉⌽⊖⍟⌹!⍕⍎⍫⍪≡≢óôöø\"#&┘┐┌└┼─├┤┴┬│@ùúû^ü`:⍷⋄←→⍝)]⎕⍞⍣\n ⊆⍠⍤⌸⌺⍸⍥⍢√⊇…⌾⍮⍭⍧⍛";
-                    else
-                        str_vyxal = "¡¢£¤¥¦©¬®µ½¿€ÆÇÐÑ×ØŒÞßæçðıȷñ÷øœþ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~¶\n°¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ƁƇƊƑƓƘⱮƝƤƬƲȤɓƈɗƒɠɦƙɱɲƥʠɼʂƭʋȥẠḄḌẸḤỊḲḶṂṆỌṚṢṬỤṾẈỴẒȦḂĊḊĖḞĠḢİĿṀṄȮṖṘṠṪẆẊẎŻạḅḍẹḥịḳḷṃṇọṛṣṭ§Äẉỵẓȧḃċḋėḟġḣŀṁṅȯṗṙṡṫẇẋẏż«»‘’“”";
+                    var SBCS;
+                    switch (localStorage.selectLanguage) {
+                        case "vyxal":
+                            SBCS = "λƛ¬∧⟑∨⟇÷×«\n»°•ß†€½∆ø↔¢⌐æʀʁɾɽÞƈ∞¨ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]`^_abcdefghijklmnopqrstuvwxyz{|}~↑↓∴∵›‹∷¤ð→←βτȧḃċḋėḟġḣḭŀṁṅȯṗṙṡṫẇẋẏż√⟨⟩‛₀₁₂₃₄₅₆₇₈¶⁋§ε¡∑¦≈µȦḂĊḊĖḞĠḢİĿṀṄȮṖṘṠṪẆẊẎŻ₌₍⁰¹²∇⌈⌊¯±₴…□↳↲⋏⋎꘍ꜝ℅≤≥≠⁼ƒɖ∪∩⊍£¥⇧⇩ǍǎǏǐǑǒǓǔ⁽‡≬⁺↵⅛¼¾Π„‟";
+                        case "apl":
+                            SBCS = "⌶%'⍺⍵_abcdefghijklmnopqrstuvwxyz¯.⍬0123456789⊢$∆ABCDEFGHIJKLMNOPQRSTUVWXYZ?⍙ÁÂÃÇÈÊËÌÍÎÏÐÒÓÔÕÙÚÛÝþãìðòõ{}⊣⌷¨ÀÄÅÆ⍨ÉÑÖØÜßàáâäåæçèéêëíîïñ[/⌿\\⍀<≤=≥>≠∨∧-+÷×?∊⍴~↑↓⍳○*⌈⌊∇∘(⊂⊃∩∪⊥⊤|;,⍱⍲⍒⍋⍉⌽⊖⍟⌹!⍕⍎⍫⍪≡≢óôöø\"#&┘┐┌└┼─├┤┴┬│@ùúû^ü`:⍷⋄←→⍝)]⎕⍞⍣\n ⊆⍠⍤⌸⌺⍸⍥⍢√⊇…⌾⍮⍭⍧⍛";
+                        case "bqn":
+                            SBCS = "\n\r\t !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~×÷⋆√⌊⌈¬∧∨≠≤≥≡≢⊣⊢⥊∾≍⋈↑↓↕«»⌽⍉⍋⍒⊏⊑⊐⊒∊⍷⊔˙˜˘¨⌜⁼´˝∘○⊸⟜⌾⊘◶⎉⚇⍟⎊⋄⇐←↩⟨⟩‿·𝕊𝕏𝕎𝔽𝔾𝕤𝕩𝕨𝕗𝕘π∞¯•"
+                        case "jelly":
+                            SBCS = "¡¢£¤¥¦©¬®µ½¿€ÆÇÐÑ×ØŒÞßæçðıȷñ÷øœþ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~¶\n°¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ƁƇƊƑƓƘⱮƝƤƬƲȤɓƈɗƒɠɦƙɱɲƥʠɼʂƭʋȥẠḄḌẸḤỊḲḶṂṆỌṚṢṬỤṾẈỴẒȦḂĊḊĖḞĠḢİĿṀṄȮṖṘṠṪẆẊẎŻạḅḍẹḥịḳḷṃṇọṛṣṭ§Äẉỵẓȧḃċḋėḟġḣŀṁṅȯṗṙṡṫẇẋẏż«»‘’“”";
+                        default:
+                            SBCS = [...Array(128).keys()].map(n=>String.fromCharCode(n)).join` `
+                    }
+
                     var size = 0;
-                    for (let c = 0; c < code.length; c++){
-                        if (str_vyxal.includes(code[c])){
-                            size ++;
-                        } else {
-                            size += 2;
-                        }
+                    for (c of code){
+                        size += 1 + !SBCS.includes(c)
                     }
                 }
-                const new_description = size + " byte"+(size != 1 ? "s":"") + (localStorage.cursorposition == "true" ? getCursorPosition() : "");
+                const new_description = size + " byte"+(size !=1 ?"s":"") + (localStorage.cursorposition == "true" ? getCursorPosition() : "");
                 if (new_description !== nbBytes.innerHTML)
                     nbBytes.innerHTML = new_description;
             }, 100);
@@ -2638,6 +2882,7 @@
         <script>
             const vyxal_keyboard = document.getElementById("vyxal_keyboard");
             const apl_keyboard = document.getElementById("apl_keyboard");
+            const bqn_keyboard = document.getElementById("bqn_keyboard");
 
             
             // Function to add chars when you click on them
@@ -2684,12 +2929,16 @@
             } else if (localStorage.keyboard == "apl"){
                 apl_keyboard.style.display = "apl";
                 addEventListenerFromKeys("apl");
+            } else if (localStorage.keyboard == "bqn"){
+                apl_keyboard.style.display = "bqn";
+                addEventListenerFromKeys("bqn");
             }
 
 
 
             vyxal_keyboard.style.display = localStorage.keyboard == "vyxal" ? "flex" : "none";
             apl_keyboard.style.display = localStorage.keyboard == "apl" ? "flex" : "none";
+            bqn_keyboard.style.display = localStorage.keyboard == "bqn" ? "flex" : "none";
 
             // Vyxal Button
             ///////////////////////
@@ -2697,13 +2946,16 @@
                 if (localStorage.keyboard == "vyxal"){
                     vyxal_keyboard.style.display =  "none";
                     apl_keyboard.style.display =  "none";
+                    bqn_keyboard.style.display =  "none";
                     localStorage.keyboard = "none";
                     removeEventListenerFromKeys("vyxal");
                 } else {
                     vyxal_keyboard.style.display =  "flex";
                     apl_keyboard.style.display =  "none";
+                    bqn_keyboard.style.display =  "none";
                     localStorage.keyboard = "vyxal";
                     removeEventListenerFromKeys("apl");
+                    removeEventListenerFromKeys("bqn");
                     addEventListenerFromKeys("vyxal");
                 }
             });
@@ -2714,24 +2966,51 @@
                 if (localStorage.keyboard == "apl"){
                     vyxal_keyboard.style.display =  "none";
                     apl_keyboard.style.display =  "none";
+                    bqn_keyboard.style.display =  "none";
                     localStorage.keyboard = "none";
                     removeEventListenerFromKeys("apl");
                 } else {
                     vyxal_keyboard.style.display =  "none";
                     apl_keyboard.style.display =  "flex";
+                    bqn_keyboard.style.display =  "none";
                     localStorage.keyboard = "apl";
                     removeEventListenerFromKeys("vyxal");
+                    removeEventListenerFromKeys("bqn");
                     addEventListenerFromKeys("apl");
                 }
             });
+
+
+            // BQN Button
+            ///////////////////////
+            document.getElementById("bqn_kb_bt").addEventListener("click", function(){
+                if (localStorage.keyboard == "bqn"){
+                    vyxal_keyboard.style.display =  "none";
+                    bqn_keyboard.style.display =  "none";
+                    apl_keyboard.style.display =  "none";
+                    localStorage.keyboard = "none";
+                    removeEventListenerFromKeys("bqn");
+                } else {
+                    vyxal_keyboard.style.display =  "none";
+                    bqn_keyboard.style.display =  "flex";
+                    apl_keyboard.style.display =  "none";
+                    localStorage.keyboard = "bqn";
+                    removeEventListenerFromKeys("vyxal");
+                    removeEventListenerFromKeys("apl");
+                    addEventListenerFromKeys("bqn");
+                }
+            });
+
 
             // None Button
             ////////////////////////////
             document.getElementById("none_kb_bt").addEventListener("click", function(){
                 vyxal_keyboard.style.display = "none";
                 apl_keyboard.style.display = "none";
+                bqn_keyboard.style.display = "none";
                 removeEventListenerFromKeys("vyxal");
                 removeEventListenerFromKeys("apl");
+                removeEventListenerFromKeys("bqn");
                 localStorage.keyboard = "none" ;
             });
         </script>
@@ -2864,6 +3143,8 @@
                 switch (lang){
                     case "Apl":
                         return "APL";
+                    case "Bqn":
+                        return "BQN";
                     case "Cs":
                         return "C#";
                     case "Cpp":
@@ -2874,8 +3155,6 @@
                         return "JavaScript";
                     case "Golfscript":
                         return "GolfScript";
-                    case "Php":
-                        return "PHP";
                     case "Php":
                         return "PHP";
                     default:
@@ -3150,7 +3429,7 @@
                     ?>
                     // Up Solution [ Ctrl + Alt + Up ]
                     if (e.keyCode == 38 && window.event.altKey) {
-                        window.location.href = "https://week.golf/challenge.php?id=<?= $request_id - 1?>"
+                        window.location.href = "https://week.golf/challenge.php?id=<?= $request_id + 1?>"
                     }
                     // Down Solution [ Ctrl + Alt + Down ]
                     if (e.keyCode == 40 && window.event.altKey) {
