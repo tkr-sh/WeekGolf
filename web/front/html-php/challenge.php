@@ -56,7 +56,7 @@
         <!---- Text ---->
         <meta property="og:site_name" content="WeekGolf" />
         <meta property="og:title" content="Challenge <?=$request_id?>: <?= $result['title'] ?>" />
-        <meta property="og:description" content="<?= substr($result['descript'], 0, 500) . '...' ?>" />
+        <meta property="og:description" content="<?= htmlspecialchars(substr($result['descript'], 0, 500)) . '...' ?>" />
 
         <!-- Title -->
         <title>WeekGolf</title>
@@ -1717,11 +1717,11 @@
             </div>
 
             <table style="width: 100%; height: 100px">
-                <tr>
-                    <td style="width: 5%"></td>
+                <tr style="height 100%">
+                    <td style="width: 5%; height 100%"></td>
 
                     <!-- Mean -->
-                    <td style="width: 44.5%">
+                    <td style="width: 44.5%; height 100%">
                         <div id="del_vote" onclick="delNote()">
                             DELETE VOTE
                         </div>
@@ -1730,7 +1730,7 @@
                     <td style="width: 1%"></td>
 
                     <!-- Voters -->
-                    <td style="width: 44.5%">
+                    <td style="width: 44.5%; height 100%">
                         <div id="send_vote" onclick="sendNote()">
                             SEND VOTE
                         </div>
@@ -2615,7 +2615,7 @@
 
                 bestAnswer = rep["code"];
                 bestAnswerLang = rep["lang"];
-                changingLanguage((localStorage.selectedLanguage == null) ? 21 : sorted_languages.indexOf(localStorage.selectedLanguage), first = true);
+                changingLanguage((localStorage.selectedLanguage == null) ? 23 : sorted_languages.indexOf(localStorage.selectedLanguage), first = true);
             }
         </script>
 
