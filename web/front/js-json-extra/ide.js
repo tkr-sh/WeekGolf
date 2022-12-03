@@ -73,8 +73,6 @@ function solutions(lang){
     }
 }
 
-setTimeout('solutions("python")', 1000);
-
 
 
 function solutiondN(lang, n, str){

@@ -46,6 +46,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <!-- Meta preview -->
         <!---- Image ---->
         <meta property="og:image" content="https://week.golf/img/preview.png" />
@@ -57,6 +58,7 @@
         <meta property="og:site_name" content="WeekGolf" />
         <meta property="og:title" content="Challenge <?=$request_id?>: <?= $result['title'] ?>" />
         <meta property="og:description" content="<?= htmlspecialchars(substr($result['descript'], 0, 500)) . '...' ?>" />
+
 
         <!-- Title -->
         <title>WeekGolf</title>
@@ -2279,12 +2281,16 @@
                 }
                 let mainIde = document.getElementById("mainIde");
 
+                // Changing the main IDE
                 editor = ace.edit("mainIde");
-                // Changing color in IDE
                 console.log(`ace/mode/${correspondance[nameLang]}`)
                 editor.session.setMode(`ace/mode/${correspondance[nameLang]}`);
+
+                // Modify the content of the solution IDE
                 solutions(correspondance[nameLang])
             }
+
+            solutions(localStorage.selectedLanguage != null ? localStorage.selectedLanguage : "Python");
         </script>
 
         <?php
@@ -2448,7 +2454,9 @@
                 selected_answer_id = golf_id;
 
                 // Set the code to the IDE
-                ace.edit("solution_ide_0").setValue(code, -1);
+                const solution_ide = ace.edit("solution_ide_0");
+                solution_ide.setValue(code, -1);
+                solution_ide.session.setMode(`ace/mode/${correspondance[localStorage.selectedLanguage.toUpperCase()[0] + localStorage.selectedLanguage.substring(1)]}`);
 
                 // Set the title
                 document.getElementById("solution_title").textContent = title;
@@ -2659,12 +2667,12 @@
                 // Changing the name of the selected language in the green button
                 document.getElementById("selected_language").textContent = (sorted_languages[n] != "cs" )?sorted_languages[n][0].toUpperCase() + sorted_languages[n].substring(1).toLowerCase():"C#";
                 
-                // Changing the selected language for the IDE
-                changeSelectedLanguageIde(( sorted_languages[n] != "cs" ) ? sorted_languages[n][0].toUpperCase() + sorted_languages[n].substring(1).toLowerCase():"C#");
-    
                 // Changing the leaderboard lang
                 showLeaderboard(localStorage.selectedLanguage);
-
+                
+                // Changing the selected language for the IDE
+                changeSelectedLanguageIde(localStorage.selectedLanguage != "cs" ? capitalize(localStorage.selectedLanguage) : "C#");
+    
                 // Changing the image for history
                 document.getElementById("history_image_lang").src = `img/${localStorage.selectedLanguage}_white.svg`;
 
