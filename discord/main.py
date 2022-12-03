@@ -137,12 +137,20 @@ def main(color_list, logo_list, name_list,votes_list):
 
         # Logo
         ## Get the image
-        response = requests.get(f"https://week.golf/img/{logo_list[i]}")
-        temp_svg = response.content
-        temp_logo = BytesIO()
+        try:
+            response = requests.get(f"https://week.golf/img/{logo_list[i]}")
+            temp_svg = response.content
+            temp_logo = BytesIO()
 
-        ## Convert SVG to PNG
-        cairosvg.svg2png(bytestring=temp_svg, write_to=temp_logo)
+            ## Convert SVG to PNG
+            cairosvg.svg2png(bytestring=temp_svg, write_to=temp_logo)
+        except Exception as err:
+            response = requests.get(f"https://week.golf/img/question.svg")
+            temp_svg = response.content
+            temp_logo = BytesIO()
+
+            ## Convert SVG to PNG
+            cairosvg.svg2png(bytestring=temp_svg, write_to=temp_logo)
 
         ## The image in .png
         temp_logo = Image.open(temp_logo)
@@ -158,7 +166,7 @@ def main(color_list, logo_list, name_list,votes_list):
         draw.text((x_lang, y_lang_offset_list[i]), name_list[i], font=fnt90, fill=(255, 255, 255, 255))
 
         ## The vote number
-        vote_txt = votes_list[i] + "\n "[i<2] + "vote" + ["","s"][int(votes_list[i]) != 1]
+        vote_txt = votes_list[i] + "\n "[i<2] + "vote" + ["","s"][int(votes_list[i]) > 1]
         w, _ = draw.textsize(vote_txt, font=fnt90)
         x_lang = [1050, 1024 + (1024 - w)/2,(1024 - w)/2][(i == 0) + (i < 2)]
         draw.text((x_lang, y_vote_offset_list[i]), vote_txt, font=fnt90, fill=(255, 255, 255, 255))
@@ -461,10 +469,10 @@ def int_to_en(n: int) -> str:
 async def on_message(message):
     global last_message, last_message_up, waiting_for_response, waiting_for_response_up, quiz_state, global_correct, players, players_score, players_this_round, players_correct_this_round
 
-    splitable: bool = str(message.content) != ""
-
     # If it's not the bot itself
     if str(message.author) != "WeekGolf#3860" and str(message.author) != "WeekGolfBeta#2377" and str(message.guild.id) == SERVER_ID:
+
+        can_be_split: bool = str(message.content) != ""
 
         # Show the top image
         if str(message.content) == "$show top" or str(message.content) == "$st":
@@ -498,7 +506,7 @@ async def on_message(message):
 
 
         # Info
-        elif splitable and str(message.content).split()[0] == "$info":
+        elif can_be_split and str(message.content).split()[0] == "$info":
             # Sending the Request
             rep = requests.get("https://week.golf/description.json").json()
 
@@ -522,7 +530,7 @@ async def on_message(message):
             characteristics = send_correct_text(rep[lang]["characteristics"])
             history = send_correct_text(rep[lang]["history"])
             new_embed.add_field(name="History", value=history, inline=False)
-            new_embed.add_field(name="Caracteristics", value=characteristics, inline=False)
+            new_embed.add_field(name="Characteristics", value=characteristics, inline=False)
             new_embed.add_field(name="Example of program", value=f"```{langToExtension(lang)}\n"+rep[lang]["program"]+"\n```", inline=False)
             new_embed.set_thumbnail(url=f"https://week.golf/img/{lang.lower()}.png")
 
@@ -533,7 +541,7 @@ async def on_message(message):
             players.append(str(message.author))
             await message.channel.send(random_quiz_msg(str(message.author).split("#")[0]))
 
-        elif str(message.content).lower() in "abcd" and quiz_state == 2 and str(message.author) not in players_this_round   :
+        elif str(message.content).lower() in "abcd" and quiz_state == 2 and str(message.author) not in players_this_round:
             if str(message.content).lower() == "abcd"[global_correct]:
                 score = len(players) * 100 - players_correct_this_round * 100
                 players_score[players.index(str(message.author))] += score
@@ -546,7 +554,7 @@ async def on_message(message):
 
 
         # Quiz
-        elif splitable and ("$quiz" in str(message.content).split() and "start" in str(message.content).split()) or str(message.content) == "$qs":
+        elif can_be_split and ("$quiz" in str(message.content).split() and "start" in str(message.content).split()) or str(message.content) == "$qs":
             if quiz_state == 1:
                 await message.channel.send("Game is already starting...")
             elif quiz_state == 2:
@@ -618,7 +626,6 @@ async def on_message(message):
                     await message.channel.send("Not enough players. Quiz aborted (||**RIP.**||)")
 
                 quiz_state = 0
-
 
 
 
