@@ -26,6 +26,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Meta preview -->
+        <!---- Image ---->
+        <meta property="og:image" content="https://week.golf/img/preview.png" />
+        <meta property="og:image:alt" content="WeekGolf's logo" />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
+        <meta property="og:image:type" content="png" />
+        <!---- Text ---->
+        <meta property="og:site_name" content="WeekGolf" />
+        <meta property="og:title" content="Profile<?= $correct_id ? ' of '. $result['username'] : '' ?>" />
+        <meta property="og:description" content="This is the page were you can see the information about <?= $correct_id ? $result['username'] : 'someone' ?>" />
 
         <!-- Title -->
         <title>WeekGolf</title>

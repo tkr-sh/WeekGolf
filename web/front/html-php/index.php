@@ -5,6 +5,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Meta preview -->
+        <!---- Image ---->
+        <meta property="og:image" content="https://week.golf/img/preview.png" />
+        <meta property="og:image:alt" content="WeekGolf's logo" />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
+        <meta property="og:image:type" content="png" />
+        <!---- Text ---->
+        <meta property="og:site_name" content="WeekGolf" />
+        <meta property="og:title" content="Welcome to WeekGolf!" />
+        <meta property="og:description" content="WeekGolf is a web-site about code golf. Code golf is a type of recreational computer programming competition in which participants strive to achieve the shortest possible source code that solves a certain problem. Each week there is a new challenge that people are solving in different languages" />
 
         <!-- Title -->
         <title>WeekGolf</title>
