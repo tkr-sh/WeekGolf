@@ -10,7 +10,7 @@
     "Q2" : {
         "type":"pick",
         "question":"How many programming languages are there on WeekGolf?",
-        "answers": ["-1", "31", "16", "25", "27", "29", "21", "28", "30", "33", "38"],
+        "answers": ["√-1", "31", "16", "25", "27", "29", "21", "28", "30", "33", "38"],
         "correct": "30",
         "proba": 1
     },

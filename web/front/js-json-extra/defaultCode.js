@@ -317,6 +317,14 @@ fn main() {
     println!("{}",buffer);
 }`,
 
+    // Sass
+    //////////////////////////////
+    "Sass" : `// Get STDIN
+$s: see();
+
+// Write an answer using @debug
+@debug "Hello WeekGolf!";`,
+
 
     // vyxal
     //////////////////////////////
