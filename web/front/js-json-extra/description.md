@@ -113,10 +113,14 @@
   - [History](#history-27)
   - [Characteristics](#characteristics-27)
   - [Program](#program-27)
-- [Vyxal](#vyxal)
+- [Sass](#sass)
   - [History](#history-28)
   - [Characteristics](#characteristics-28)
   - [Program](#program-28)
+- [Vyxal](#vyxal)
+  - [History](#history-29)
+  - [Characteristics](#characteristics-29)
+  - [Program](#program-29)
   
 # Main links
 https://en.wikipedia.org/wiki/Object-oriented_programming
@@ -885,6 +889,34 @@ Rust entered the TOP20 of the <a href="https://www.tiobe.com/tiobe-index/">TIOBE
             a = b - a;
             b += a;
         }
+    }
+
+
+
+
+<!-- Sass -->
+# Sass
+## History
+Sass (Syntactically Awesome Style Sheets) is an imperative language created by <a href="https://en.wikipedia.org/wiki/Hampton_Lintorn-Catlin">Hampton Catlin</a> and its officially first stable version was released in 2006.
+There are a lot of implementations of Sass, in Dart (which is the major one), Ruby, JavaScript, C++, Java, PHP and so on.
+Although Sass was not designed to be a programming language, in practice it is, and Sass is even turing complete.
+Basically Sass was created to facilitate the writing of CSS, adding several features like functions, loops, mixins etc.
+But with the addition of all this, there was also the addition of an @debug, which allows to print to the STDOUT.
+There are 2 main families in Sass: Sass and Scss.
+Sass uses the offside rule like Python, and has no braces and semicolons, while Scss uses braces and semicolons. It's a bit like having one version in Python, and the other in Rust/C (syntactically speaking)
+
+## Characteristics
+- Paradigms: Imperatice.
+- Sass is a High level language
+
+## Program
+    $a: 0;
+    $b: 0;
+    
+    @for $i from 0 to 10 {
+        @debug $a;
+        $a: $b - $a; // $b-$a doesn't work
+        $b: $b + $a;
     }
 
 

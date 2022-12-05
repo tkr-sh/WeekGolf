@@ -492,6 +492,36 @@
         "Three-Way operator" : "<=>"
     },
     
+
+    "Sass" : {
+        "Variable declaration" : "$s: \"a variable\"",
+        "Constant declaration" : false,
+        "Function declaration" : "@function a_function($argument){\n\t@return argument;\n}",
+        "Lambda declaration" : false,
+        "While loop" : "@while $b {\n\t...\n}",
+        "For loop" : "@for $i from 0 to n {\n\t...\n}",
+        "Foreach loop" : "@each $e in a_list {\n\t...\n}",
+        "Do .. while loop" : false,
+        "Foreach index and element loop" : false,
+        "Infinite loop" : "@while 1{...}",
+        "if ... else if ... else" : "@if $b1 {\n\t...\n} @else if $b2 {\n\t...\n } @else {\n\t...\n}",
+        "Ternary operator" : "if($b, $true, $false)",
+        "Try ... Catch" : false,
+        "Switch" : false,
+        "Type of the %" : "",
+        "Top level constructor" : false,
+        "Get a line of STDIN" : "get();",
+        "Get all STDIN" : "see();",
+        "Get a char STDIN" : "getc();",
+        "Print without a new line at the end" : false,
+        "Print with a new line at the end" : "@debug",
+        "Implicit conversion of bool to int" : true,
+        "Implicit conversion of char to int" : false,
+        "Format a string" : false,
+        "Template string" : "\"#{$var1}, #{$var2}\"",
+        "Three-Way operator" : false
+    },
+    
     "Vyxal" : {
         "Variable declaration" : "`a variable` →s",
         "Constant declaration" : false,

@@ -167,6 +167,12 @@
 		"program" : "fn main() {\n    let mut a = 0;\n    let mut b = 1;\n    \n    for i in 0..10 {\n        println!(\"{}\", a);\n        a = b - a;\n        b += a;\n    }\n}"
 	},
 
+	"Sass" : {
+		"history" : "Sass (Syntactically Awesome Style Sheets) is an imperative language created by <a href=\"https://en.wikipedia.org/wiki/Hampton_Lintorn-Catlin\">Hampton Catlin</a> and its officially first stable version was released in 2006.\nThere are a lot of implementations of Sass, in Dart (which is the major one), Ruby, JavaScript, C++, Java, PHP and so on.\nAlthough Sass was not designed to be a programming language, in practice it is, and Sass is even turing complete.\nBasically Sass was created to facilitate the writing of CSS, adding several features like functions, loops, mixins etc.\nBut with the addition of all this, there was also the addition of an @debug, which allows to print to the STDOUT.\nThere are 2 main families in Sass: Sass and Scss.\nSass uses the offside rule like Python, and has no braces and semicolons, while Scss uses braces and semicolons. It's a bit like having one version in Python, and the other in Rust/C (syntactically speaking)",
+		"characteristics" : "- Paradigms: Imperatice.\n- Sass is a High level language",
+		"program" : "$a: 0;\n$b: 0;\n\n@for $i from 0 to 10 {\n    @debug $a;\n    $a: $b - $a; // $b-$a doesn't work\n    $b: $b + $a;\n}"
+	},
+
 	"Vyxal" : {
 		"history" : "Vyxal is a multi-paradigm language (concurrent, esoetric, imperative and functional) created by <a href=\"https://github.com/Lyxal\">Lyxal</a> in 2020.\nVyxal is an esoteric language only made for code golf even if it can be used to make programs like a <a href=\"https://github.com/Lyxal/2048-in-Vyxal\">2048 game</a>.\nVyxal uses its own encoding table, like Jelly or APL, because the ASCII table does not have enough characters.\nVyxal has had two major releases, even though it is a fairly recent language (2020).\nIt is one of the shortest languages on WeekGolf, competing with Jelly.",
 		"characteristics" : "- Paradigms: <a href=\"https://en.wikipedia.org/wiki/Concurrent_computing\">Concurrent</a>,  <a href=\"https://en.wikipedia.org/wiki/Imperative_programming\">Imperative</a>,  <a href=\"https://en.wikipedia.org/wiki/Functional_programming\">Functional</a>, <a href=\"https://en.wikipedia.org/wiki/Esoteric_programming_language\">Esoteric</a>.\n- Vyxal is a high level language",

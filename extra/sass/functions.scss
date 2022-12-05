@@ -1,0 +1,450 @@
+
+
+
+// Function to get a line of STDIN
+@function get(){
+	// total string
+	$tot: '';
+
+	// Current char
+	$current_char: str-slice($STDIN, 0, 1);
+
+	// While the char isnt a \n or nothing
+	@while $current_char != "" and $current_char != "\a"{
+		$STDIN: str-slice($STDIN, 2) !global; // Modifying the STDIN
+		$tot: $tot + $current_char; // Adding the current char to total
+		$current_char: str-slice($STDIN, 0, 1); // Updating the current char
+	}
+	// @debug $current_char;
+
+	// Escape the separator
+	$STDIN: str-slice($STDIN, 2) !global;
+
+	// Returning the total
+	@return $tot;
+}
+
+
+// Function to get a char of STDIN
+@function getc(){
+	$char: str-slice($STDIN, 0, 1); // Getting the char
+	$STDIN: str-slice($STDIN, 2) !global; // Modifying the STDIN
+
+	@return $char;
+}
+
+
+// Function to get all the STDIN
+@function see(){
+	$temp_stdin: $STDIN;
+	$STDIN: "" !global; // Modifying the STDIN
+
+	@return $temp_stdin;
+}
+
+
+// Ord of a char
+@function ord($char){
+	// Every char in the ascii table
+	$strings: '\00' '\01' '\02' '\03' '\04' '\05' '\06' '\07' '\08' '\09' '\0a' '\0b' '\0c' '\0d' '\0e' '\0f' '\10' '\11' '\12' '\13' '\14' '\15' '\16' '\17' '\18' '\19' '\1a' '\1b' '\1c' '\1d' '\1e' '\1f' ' ' '!' '"' '#' '$' '%' '&' '\'' '(' ')' '*' '+' ',' '-' '.' '/' '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' ':' ';' '<' '=' '>' '?' '@' 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z' '[' '\\' ']' '^' '_' '`' 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z' '{' '|' '}' '~';
+
+	@if index($strings, $char) {
+		@return index($strings, $char)-1;
+	} @else {
+		@return -1;
+	}
+}
+
+// Char from an ord
+@function chr($ord){
+	// Every char in the ascii table
+	$strings: '\00' '\01' '\02' '\03' '\04' '\05' '\06' '\07' '\08' '\09' '\n' '\0b' '\0c' '\r' '\0e' '\0f' '\10' '\11' '\12' '\13' '\14' '\15' '\16' '\17' '\18' '\19' '\1a' '\1b' '\1c' '\1d' '\1e' '\1f' ' ' '!' '"' '#' '$' '%' '&' '\'' '(' ')' '*' '+' ',' '-' '.' '/' '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' ':' ';' '<' '=' '>' '?' '@' 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z' '[' '\\' ']' '^' '_' '`' 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z' '{' '|' '}' '~';
+
+	@if ($ord >= 0 and $ord < 128) {
+		@return nth($strings, $ord);
+	} @else {
+		@return null;
+	}
+}
+
+
+// Convert a string to an array
+@function str-to-arr($string) {
+	$arr: ();
+
+	@for $i from 1 through str-length($string) {
+		$arr: append($arr, str-slice($string, $i, $i));
+	}
+	
+	@return $arr;
+}
+
+
+// If a string or char is alpha
+@function isalpha($string){
+	@each $c in str-to-arr($string) {
+		// 	 [ Under A  ] -- [  Over z   ] -- [       Between Z and a       ]
+		@if (ord($c) < 65 or ord($c) > 122 or (ord($c) > 90 and ord($c) < 97)){
+			@return false;
+		}
+	}
+	@return true;
+}
+
+
+// If a string or char is a composed of digits
+@function isdigit($string){
+	@each $c in str-to-arr($string) {
+		@if (ord($c) < 48 or ord($c) > 57){
+			@return false;
+		}
+	}
+	@return true;
+}
+
+// If a string or char is a composed of digits or alpha
+@function isalnum($string){
+	@each $c in str-to-arr($string) {
+		@if (not isalpha($c) and not isdigit(($c))){
+			@return false;
+		}
+	}
+	@return true;
+}
+
+// Power function
+@function pow($base, $exponent) {
+	@if ($exponent == 0){
+		@return 1;
+	} @else if ($exponent > 0) {
+		$result: 1;
+		@for $_ from 1 through $exponent {
+		  $result: $result * $base;
+		}
+		@return $result;
+	} @else {
+		$result: 1;
+		@for $_ from 1 through -$exponent {
+		  $result: calc($result / $base);
+		}
+		@return $result;
+	}
+}
+
+
+// Function to convert string to a number
+@function number($string) {
+	// Bool
+	$negative: false;
+
+	// Tot
+	$result: 0;
+	$index_dot: -1;
+	$i: 0;
+	$digits: 0;
+  
+	@each $char in str-to-arr($string) {
+		$val: ord($char);
+		
+		// Unknown char
+		@if $char != "-" and $char != "." and not isdigit($char) {
+			@warn "Unknown character `#{$char}`.";
+			@return -1;
+		}
+	
+		// If negative
+		@if $char == '-' and $i == 0 {
+			$negative: true;
+		} @else if $char == '-' and $i != 0 { // if there is a random minus
+			@warn "Unknown character: -";
+			@return -1;
+		} @else if $char == '.' {
+			$index_dot: $i;
+		} @else {
+			$val: $val - 48;
+			$result: $result + $val * pow(10 , str-length($string) - $digits - 1);
+			$digits: $digits + 1;
+		}
+
+		$i: $i + 1;
+	}
+  
+	@if ($index_dot != -1){
+		$result: calc($result / pow(10 , str-length($string) - $index_dot + if($negative, 1, 0)));
+	}
+
+
+	@return if($negative, $result * -1, $result);
+}
+
+
+// Function to convert a number to string
+@function str($n) {
+	$tot: if($n < 0, '-', '');
+	$n: if($n < 0, -$n, $n);
+	$n: $n * pow(10, 10);
+	$temp_arr: ();
+	$is_float: false;
+	$found_number: false;
+
+	// Putting all numbers in an array
+	@for $i from 25 through 0 {
+		$mod: $n % pow(10, $i);
+		$result: floor(calc($mod / (pow(10,$i - 1))));
+		@if ($i < 11 and $result > 0) {
+			$is_float: true;
+		}
+		$temp_arr: append($temp_arr, $result);
+	}
+
+
+	// Transposing the array in a string
+	$i: 0;
+	@each $number in $temp_arr {
+		@if ($number > 0 and not $found_number) {
+			$tot: $tot + chr($number + 49);
+			$found_number: true;
+		} @else if ($found_number) {
+			$tot: $tot + chr($number + 49);
+		}
+
+		
+		// If its a zer0.
+		@if ($i == 14 and not $found_number){
+			$tot: $tot + "0";
+		}
+
+		// If its a float, add a dot
+		@if ($i == 14 and $is_float) {
+			$tot: $tot + ".";
+		}
+
+		// If its an int
+		@if ($i == 14 and not $is_float) {
+			@return $tot;
+		}
+
+		$i: $i + 1;
+	}
+
+
+	@return $tot;
+}
+
+@function reverse($iterable) {
+    // If its a string
+    @if (type-of($iterable) == "string") {
+        $string: $iterable;
+        $reverse-string: "";
+
+        @for $i from 1 through str-length($string) {
+            $reverse-string: str-slice($string, $i, $i) + $reverse-string;
+        }
+
+        @return $reverse-string;
+    }
+
+    // Else a list
+    @else {
+        $list: $iterable;
+        $reverse-list: ();
+
+        @for $i from 1 through length($list) {
+            $reverse-list: insert($reverse-list, 1, nth($list, $i));
+        }
+
+        @return $reverse-list;
+    }
+}
+
+
+@function convert($n, $b) {
+    @if ($n == 0){
+        @return "0";
+	}
+    
+	$digits: "";
+    @while ($n > 0){
+        $digits: $digits + if($n % $b >= 10, chr($n % $b + 56) , chr($n % $b + 49));
+        $n: floor(calc($n / $b));
+	}
+
+    @return reverse(str-slice($digits,0));
+}
+
+
+@function map($func, $iterable) {
+	$new_it: ();
+
+	@if type-of($iterable) == 'string' {
+		$iterable: str-to-arr($iterable);
+	}
+
+	@each $elem in $iterable {
+		$new_it: append($new_it, call(get-function($func), $elem));
+	}
+
+	@return $new_it;
+}
+
+
+@function filter($func, $iterable) {
+	$new_list: ();
+
+	@each $elem in $iterable {
+		@if call(get-function($func), $elem){
+			$new_list: append($new_list, $elem);
+		}
+	}
+
+	@return $new_list;
+}
+
+
+@function count($iterable, $search) {
+	$count: 0;
+
+	@if type-of($iterable) == "string" {
+		$iterable: str-to-arr($iterable);
+	}
+
+	@each $elem in $iterable {
+		@if $elem == $search {
+			$count: $count + 1;
+		}
+	}
+
+	@return $count;
+}
+
+
+@function split($string, $sep: " ") {
+    $split-arr: ();
+    $index : str-index($string, $sep);
+
+    @while $index != null {
+        $item: str-slice($string, 1, $index - 1);
+        $split-arr: append($split-arr, $item);
+        $string: str-slice($string, $index + 1);
+        $index : str-index($string, $sep);
+    }
+
+    @return append($split-arr, $string);
+}
+
+
+@function sub($list, $from: 1, $to: -1) {
+    $new_list: ();
+
+	@if type-of($value: $list) == "string" {
+		$list: str-to-arr($list);
+	}
+
+    @if $to <= 0 {
+        $to: $to % length($list);
+
+        @if $to == 0 {
+            $to: length($list);
+        }
+    }
+
+    @for $i from $from through $to {
+        @if $i <= length($list) {
+            $new_list: append($new_list, nth($list, $i));
+        }
+    }
+
+    @return $new_list;
+}
+
+
+@function str-join($list, $sep: " ") {
+    $string: "";
+
+    @each $value in sub($list, 1, -1) {
+        $string: $string + $value + $sep;
+    }
+
+    @return ($string + nth($list, -1));
+}
+
+
+@function replace($string, $origin, $to) {
+
+    $list: ();
+	$temp_str: "";
+
+	@each $char in str-to-arr($string) {
+		@if $char == $sep {
+			$list: append($list, $temp_str);
+			$temp_str: "";
+		} @else {
+			$temp_str: $temp_str + $char;
+		}
+	}
+
+	@return join(split($string, $origin), (), $to);
+}
+
+
+@function remove($list, $index) {
+    $new_list: ();
+
+    @for $i from 1 to length($list) {
+        @if $i != $index {
+            $new_list: append($new_list, nth($list, $i));
+        }
+    }
+
+    @return $new_list;
+}
+
+@function insert($list, $index, $val) {
+    @if length($list) == 0 {
+        @return ($val);
+    }
+
+    @if $index == 1 {
+        @return join(($val), $list);
+    } @else if $index == length($list) {
+        @return join($list, ($val));
+    }
+
+    @return join(join($list1: sub($list, 1, $index), $list2: ($val)), sub($list, if($index < length($list), $index + 1, length($list)), length($list)));
+}
+
+
+@function sort($list) {
+    $less:  ();
+    $equal: ();
+    $large: ();
+  
+    @if length($list) > 1 {
+      $seed: nth($list, ceil(calc(length($list) / 2)));
+  
+      @each $item in $list {
+        @if ($item == $seed) {
+          $equal: append($equal, $item);
+        } @else if ($item < $seed) {
+          $less: append($less, $item);
+        } @else if ($item > $seed) {
+          $large: append($large, $item);
+        }
+      }
+  
+      @return join(join(sort($less), $equal), sort($large));
+    }
+  
+    @return $list;
+}
+
+
+@function sum($list) {
+    $tot: 0;
+
+    @each $val in $list {
+        $tot: $tot + $val;
+    }
+
+    @return $tot;
+}
