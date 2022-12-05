@@ -365,7 +365,7 @@
         "Type of the %" : "Truncated",
         "Top level constructor" : false,
         "Get a line of STDIN" : "read_line()",
-        "Get all STDIN" : false,
+        "Get all STDIN" : "really_input_string stdin (in_channel_length stdin)",
         "Get a char STDIN" : "input_char stdin",
         "Print without a new line at the end" : "print_string s",
         "Print with a new line at the end" : "print_endline s",
