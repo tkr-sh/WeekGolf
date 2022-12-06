@@ -515,7 +515,7 @@
         "Get a char STDIN" : "getc();",
         "Print without a new line at the end" : false,
         "Print with a new line at the end" : "@debug",
-        "Implicit conversion of bool to int" : true,
+        "Implicit conversion of bool to int" : false,
         "Implicit conversion of char to int" : false,
         "Format a string" : false,
         "Template string" : "\"#{$var1}, #{$var2}\"",
