@@ -38,7 +38,7 @@ do
     len=$(wc -l STDOUT | awk '{ print $1 }')
 
     while read line; do
-        test=$(echo "$line" | sed -r 's/prog_temp\.scss\:[0-9]+\sDEBUG:\s//g')
+        test=$(echo "$line" | sed -r 's/prog_temp\.scss\:[0-9]+\sDEBUG:\s?//g')
         if [ $i == $((len)) ]; then
                 stdout="$stdout$test"
         else
