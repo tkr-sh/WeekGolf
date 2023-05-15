@@ -1,0 +1,122 @@
+@import "./Variables.scss";
+
+header.nav {
+    position: fixed;
+    top: 0px;
+    display: flex;
+    width: 100vw;
+    height: 100px;
+    justify-content: left;
+    align-items: center;
+    background: linear-gradient($bg-theme-color, $darken-bg-color);
+    transition: .3s;
+    z-index: 9999999;
+
+    .title-page {
+        font-size: 40px;
+        font-weight: 600;
+        transition: .3s;
+        padding-left: 10px;
+    
+        .green {
+            color: $golf-color;
+        }
+    }
+
+    .content-pages {
+        position: relative;
+
+        .scroll-nav {
+            @include flex-center;
+            justify-content: left;
+            gap: 5px;
+            margin-left: 10px;
+            position: relative;
+            overflow: auto;
+            padding-right: 10px;
+            width: 100%;
+
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+              
+            scrollbar-color: #fff5 #0002;
+
+            button {
+                border: none;
+                color: $txt-color;
+                padding: 10px;
+                padding-inline: 20px;
+                border-radius: 5px;
+                font-size: 25px;
+                background-color: $rgba-5-fade-color;
+                
+                &:hover {
+                    background-color: $rgba-5-fade-lighten;
+                }
+            }
+        }
+
+
+        // &::before {
+        //     content: "";
+        //     position: absolute;
+        //     background: linear-gradient(90deg, $bg-theme-color, #0000);
+        //     height: 100%;
+        //     width: 100px;
+        //     pointer-events: none;
+
+        // }
+
+        // &::after {
+        //     content: "";
+        //     position: fixed;
+        //     background: linear-gradient(-90deg, $bg-theme-color, #0000);
+        //     height: 60px;
+        //     width: 100px;
+        //     right: 0;
+        //     pointer-events: none;
+        // }
+    }
+
+    .shadow-left {
+        left: 0;
+        position: absolute;
+        background: linear-gradient(90deg, $bg-theme-color, #0000);
+        height: 100%;
+        width: 100px;
+        z-index: 2;
+        margin-left: 10px;
+        pointer-events: none;
+    }
+
+    .shadow-right {
+        right: 0;
+        top: 0;
+        position: absolute;
+        background: linear-gradient(-90deg, $bg-theme-color, #0000);
+        height: 100%;
+        width: 100px;
+        z-index: 2;
+        margin-left: 10px;
+        pointer-events: none;
+    }
+
+
+    &.scrolled { 
+        span {
+            font-size: 30px;
+        }
+
+        height: 60px;
+
+        .content-pages {
+            button {
+                font-size: 16px;
+                padding: 7px;
+                padding-inline: 14px;
+            }
+        }
+    }
+}

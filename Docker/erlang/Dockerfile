@@ -1,0 +1,1 @@
+FROM erlang:26.0-rc2.0.0-alpine

@@ -1,0 +1,183 @@
+{
+    "apl": {
+        "test": "out\u2190{\n\u2395\u2190\u2375\n}\nout \u235e\nout \u235e\nout \u235e\n",
+        "extension": "apl",
+        "version": "dyalog"
+    },
+    "bash": {
+        "extension": "sh",
+        "test": "dd",
+        "version": "bash --version"
+    },
+    "bqn": {
+        "extension": "bqn",
+        "test": "\u2022Out\u00a8 \u2022args"
+    },
+    "c": {
+        "test": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    char * line = NULL;\n    size_t len = 0;\n    ssize_t read;\n    while ((read = getline(&line, &len, stdin)) != -1) {\n        printf(\"%s\", line);\n    }\n    if (line)\n        free(line);\n    exit(EXIT_SUCCESS);\n}",
+        "extension": "c",
+        "version": "gcc --version"
+    },
+    "clojure": {
+        "extension": "clj",
+        "test": "(println (read-line))\n(println (read-line))\n(println (read-line))\n",
+        "version": "clj --version",
+        "regex": "(\\d+\\.\\d+\\.\\d+\\.\\d+)"
+    },
+    "cpp": {
+        "extension": "cpp",
+        "test": "#include <iostream>\n#include <string>\nint main() { std::string a, b, c; std::cin >> a >> b >> c; std::cout << a << '\\\\n' << b << '\\\\n' << c << std::endl; }",
+        "version": "clang++ --version"
+    },
+    "csharp": {
+        "extension": "cs",
+        "test": "Console.WriteLine(Console.ReadLine());Console.WriteLine(Console.ReadLine());Console.WriteLine(Console.ReadLine());",
+        "version": "dotnet --version"
+    },
+    "elixir": {
+        "extension": "exs",
+        "test": "line=IO.read(:stdio, :line)\nIO.write(line)\nline=IO.read(:stdio, :line)\nIO.write(line)\nline=IO.read(:stdio, :line)\nIO.write(line);",
+        "version": "elixir --version",
+        "regex": "Elixir (\\d+\\.\\d+\\.\\d+)"
+    },
+    "erlang": {
+        "extension": "erl",
+        "test": "-module(prog).\n-export([print_stdin/0]).\nprint_stdin() ->\n    print_stdin(\"\").\nprint_stdin(Data) ->\n    case io:get_line(\"\") of\n        eof -> ok;\n        Line -> \n            io:write(Line),\n            print_stdin(Data ++ Line)\n    end.\n",
+        "version": "erl -version",
+        "regex": "(\\d+\\.\\d+)"
+    },
+    "fsharp": {
+        "extension": "fs",
+        "test": "[for i in 1..3 do printfn \"%s\" (System.Console.ReadLine())]",
+        "version": "dotnet --version"
+    },
+    "go": {
+        "extension": "go",
+        "test": "package main\nimport \"fmt\"\nfunc main() {\nfor i := 1; i <= 3; i++ {\nvar input string\n_, err := fmt.Scanln(&input)\nif err != nil {fmt.Println(\"Error reading input:\", err)\nreturn}\nfmt.Printf(\"%s\\\\n\", input)\n}\n}\n",
+        "version": "go version"
+    },
+    "golfscript": {
+        "extension": "golfscript",
+        "test": "",
+        "version": "ruby /golfscript/golfscript.rb --version"
+    },
+    "haskell": {
+        "extension": "hs",
+        "test": "import System.IO\n\nmain = do\n    z <- getLine\n    putStrLn z\n    z <- getLine\n    putStrLn z\n    z <- getLine\n    putStrLn z",
+        "version": "ghc --version"
+    },
+    "j": {
+        "extension": "ijs",
+        "test": "a=: 1!:1 <3\necho a",
+        "version": "/j903/jconsole.sh --version",
+        "regex": "j(\\d+)"
+    },
+    "java": {
+        "extension": "java",
+        "test": "import java.util.Scanner;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        while (scanner.hasNextLine()) {\n            System.out.println(scanner.nextLine());\n        }\n        scanner.close();\n    }\n}",
+        "version": "java --version",
+        "regex": "openjdk (\\d+)"
+    },
+    "javascript": {
+        "test": "console.log(prompt());console.log(prompt());console.log(prompt());",
+        "extension": "js",
+        "version": "node --version"
+    },
+    "jelly": {
+        "extension": "jelly",
+        "test": "\u201c3\u1e05a\u0117;\u0153\u00bb",
+        "version": "$HOME/.local/bin/jelly --version"
+    },
+    "julia": {
+        "extension": "jl",
+        "test": "input = readlines()\nfor line in input\n    println(line)\nend",
+        "version": "julia --version"
+    },
+    "k": {
+        "extension": "k",
+        "test": "`0:0:0",
+        "version": "/k/k --version"
+    },
+    "kotlin": {
+        "extension": "kt",
+        "test": "fun main() {println(readLine())\nprintln(readLine())\nprintln(readLine())\n}",
+        "version": "kotlinc -version"
+    },
+    "lua": {
+        "extension": "lua",
+        "test": "print(io.read(\"*l\"))\nprint(io.read(\"*l\"))\nprint(io.read(\"*l\"))\n",
+        "version": "lua5.4 -v"
+    },
+    "node": {
+        "test": "console.log(prompt());console.log(prompt());console.log(prompt());",
+        "extension": "js",
+        "version": "node --version"
+    },
+    "ocaml": {
+        "extension": "ml",
+        "test": "let line = read_line () in\nprint_string line;print_string \"\\\\n\";let line2 = read_line () in\nprint_string line2;print_string \"\\\\n\";let line3 = read_line () in\nprint_string line3;\nprint_string \"\\\\n\"",
+        "version": "ocamlc --version"
+    },
+    "perl": {
+        "extension": "pl",
+        "test": "print<>",
+        "version": "perl --version"
+    },
+    "php": {
+        "extension": "php",
+        "test": "<?php\necho fgets(STDIN);\necho fgets(STDIN);\necho fgets(STDIN);\n",
+        "version": "php --version"
+    },
+    "powershell": {
+        "extension": "ps1",
+        "test": "while ($line = [Console]::In.ReadLine()) {\nWrite-Host $line\n}",
+        "version": "pwsh --version"
+    },
+    "prolog": {
+        "extension": "pl",
+        "test": ":-\nread_line_to_string(user_input,A),\nread_line_to_string(user_input,B),\nread_line_to_string(user_input,C),\nwriteln(A),\nwriteln(B),\nwrite(C).",
+        "version": "swipl --version"
+    },
+    "python": {
+        "test": "print(open(0).read()[:-1])",
+        "extension": "py",
+        "version": "python --version",
+        "regex": "(\\d+\\.\\d+\\.[0-9a]+)"
+    },
+    "r": {
+        "extension": "r",
+        "test": "input <- scan(file = \"stdin\", what = character(), quiet = TRUE)\ncat(input, sep = \"\n\")",
+        "version": "R --version"
+    },
+    "raku": {
+        "extension": "raku",
+        "test": "print slurp",
+        "version": "raku --version",
+        "regex": "(\\d+\\.\\d+)"
+    },
+    "ruby": {
+        "extension": "rb",
+        "test": "$><<[*$<]*''",
+        "version": "ruby --version"
+    },
+    "rust": {
+        "extension": "rs",
+        "test": "use std::io::{self, BufRead};\nfn main() {\n    let stdin = io::stdin();\n    for line in stdin.lock().lines() {\n        println!(\"{}\", line.unwrap());\n    }\n}",
+        "version": "rustc --version"
+    },
+    "sass": {
+        "extension": "scss",
+        "test": "@debug see();",
+        "version": "sass --version"
+    },
+    "scala": {
+        "extension": "scala",
+        "test": "@main def HelloWorld(args: String*): Unit =\n  println(\"Hello, World!\")",
+        "version": "scala --version"
+    },
+    "vyxal": {
+        "extension": "vyxal",
+        "test": "",
+        "version": "vyxal --help"
+    }
+}

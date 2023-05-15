@@ -1,0 +1,1 @@
+FROM ruby:3.2.2-alpine3.17

@@ -1,0 +1,118 @@
+@import "./Variables.scss";
+
+
+.PickLang {
+    width: 70vw;
+    height: auto;
+    position: fixed;
+    top: 50vh;
+    left: 0;
+    transition: 0;
+    z-index: 1e11;
+    display: flex;
+    flex-direction: column;
+    margin-inline: 15vw;
+    padding: 20px;
+    gap: 10px;
+    background-color: $lighten-bg-theme-color;
+    border-radius: 5px;
+    transform: translateY(-50%);
+
+
+    h1 {
+        font-size: 28px;
+        font-weight: 600;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .search {
+        width: 50%;
+        background-color: $darken-bg-theme-color;
+        color: $txt-color-rgba;
+        margin-left: 25%;
+        border-radius: 10px;
+    }
+
+    main.pick-lang {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: start;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        gap: 5px;
+
+        button {
+            border: none;
+            border-radius: 5px;
+            width: 180px;
+            height: 50px;
+            background-color: $darken-bg-theme-color;
+
+            
+            @include flex-center;
+            position: relative;
+            overflow: hidden;
+            
+            img {
+                &.color {
+                    display: block;
+                }
+
+                &.white {
+                    display: none;
+                }
+                height: 80%;
+                z-index: 3;
+            }
+
+            .bg {
+                z-index: 2;
+                content: "I";
+                font-size: 999px;
+                font-weight: 900;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                color: inherit;
+                transform: translate(-100%);
+                transition: .3s;
+                left: 0;
+            }
+
+
+            // On hover
+            &:hover {
+
+                .color {
+                    display: none;
+                }
+
+                .white {
+                    display: block;
+                }
+
+                .bg  {
+                    transform: translate(0%);
+                }
+            }
+        }
+    }
+
+
+    @media (width <= 800px) {
+        width: calc(95vw - 10px);
+        margin-inline: 2.5vw;
+        padding: 5px;
+
+        main.pick-lang {
+            button {
+                height: 35px;
+                width: 120px;
+            }
+        }
+    }
+}

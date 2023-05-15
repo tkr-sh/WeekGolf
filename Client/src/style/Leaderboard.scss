@@ -1,0 +1,93 @@
+@import "./Variables.scss";
+
+.content-leaderboard {
+    width: 100%;
+    height: 100%;
+    @include flex-center;
+}
+
+.Leaderboard {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+
+
+    &.split {
+        gap: 15px;
+        height: 90%;
+
+        header {
+            border-radius: 15px;
+        }
+
+        & > section {
+            gap: 15px;
+
+            & > * {
+                border-radius: 15px;
+            }
+        }
+    }
+
+
+    header {
+        height: 80px;
+        @include flex-center;
+        background-color: $lighten-bg-theme-color-2;
+        font-weight: 700 !important;
+    }
+
+    & > section {
+        display: flex;
+        flex-direction: row;
+        height: calc(100% - 80px);
+        overflow: hidden;
+
+        & > * {
+            height: 100%;
+            overflow: auto;
+        }
+
+        nav {
+            width: 20%;
+            background-color: $lighten-bg-theme-color;
+
+            ul {
+                list-style: none;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    background-color: $lighten-bg-theme-color;
+                    cursor: pointer;
+                    min-height: 40px;
+                    @include flex-center;
+                    gap: 5px;
+
+                    @media (width <= 900px) {
+                        span {
+                            display: none;
+                        }
+                    }
+
+                    img {
+                        height: 25px;
+                    }
+
+                    &:hover {
+                        filter: brightness(1.15);
+                    }
+                }
+            }
+        }
+
+        main {
+            width: 80%;
+            background-color: $bg-theme-color;
+        }
+    }
+}

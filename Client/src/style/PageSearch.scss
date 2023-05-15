@@ -1,0 +1,44 @@
+@import "./Variables.scss";
+
+.page-search {
+    width: 100%;
+    min-height: 50px;
+    border-radius: 10px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+
+
+    button {
+        all: unset;
+        width: 25px;
+        border-radius: 5px;
+        text-align: center;
+        transition: .3s;
+        cursor: pointer;
+        background-color: $fade-color;
+
+        
+        
+        &:hover {
+            background-color: $fade-lighten;
+        }
+
+
+        &.selected {
+            background-color: $golf-color;
+
+            &:hover {
+                background-color: $main-color;
+            }
+        }
+    }
+
+    img {
+        height: 18px;
+        cursor: pointer;
+    }
+}

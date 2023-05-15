@@ -1,0 +1,133 @@
+@import "./Variables.scss";
+
+.content-lotw {
+    width: 90vw;
+    height: 90vh;
+    height: 90dvh;
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+    @include flex-center;
+    z-index: 99999999999999;
+    gap: 10px;
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        min-width: 25%;
+        height: 100%;
+        overflow: scroll;
+
+        ul {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: scroll;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            li {
+                background-color: $bg-theme-color;
+                border-radius: 5px;
+                padding-block: 5px;
+                cursor: pointer;
+                @include flex-center;
+                gap: 5px;
+
+                &:hover {
+                    background-color: $lighten-bg-theme-color-2;
+                }
+
+                img {
+                    height: 20px;
+                }
+
+                &.lotw {
+                    order: -1;
+                    background-color: $main-color;
+
+                    &:hover {
+                        background-color: $ide-color;
+                    }
+
+                    &::after {
+                        content: " - LOTW";
+                        font-weight: 900;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+        height: 100%;
+        background-color: $bg-theme-color;
+        border-radius: 10px;
+        padding: 20px;
+        overflow: scroll;
+
+
+        // Title
+        h1 {
+            font-size: 40px;
+            margin-block: 0px;
+        }
+
+        // Section 
+        h2 {
+            text-align: left;
+            margin: 0;
+        }
+
+        .line {
+            width: 100%;
+            height: 3px;
+            border-radius: 100px;
+            background-color: $fade-color;
+        }
+
+        // History
+        p {
+            text-align: left;
+            display: block;
+        }
+
+        .spacer {
+            margin-top: 10px;
+            display: block;
+        }
+
+        // Characteristics
+        ul {
+            text-align: left;
+        }
+
+
+        // Program
+        pre {
+            text-align: left;
+            background-color: $darken-bg-theme-color;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            border: none;
+            color: $txt-color;
+            border-radius: 5px;
+            font-size: 24px;
+            padding-inline: 1vw;
+            background-color: $main-color;
+            font-weight: 700;
+
+            &:hover {
+                background-color: $ide-color;
+            }
+        }
+    }
+}

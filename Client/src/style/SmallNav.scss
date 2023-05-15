@@ -1,0 +1,138 @@
+@import "./Variables.scss";
+
+
+nav.small {
+    width: 75px;
+    min-height: 100vh;
+    height: auto;
+
+    // Position
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    /// Flex
+    @include flex-center;
+    justify-content: start;
+    flex-direction: column;
+    padding-block: 10px;
+    padding-bottom: 20px;
+    gap: 5px;
+
+    // Scroll
+    overflow: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    scrollbar-width: none; 
+
+    // Color    
+    background: $darken-bg-theme-color;
+
+    .sep {
+        min-height: 3px;
+        width: 45px;
+        border-radius: 2px;
+        background-color: #fff5;
+    }
+
+
+    button {
+        border: none;
+        border-radius: 50%;
+        background-color: #fff2;
+        width: 50px;
+        aspect-ratio: 1/1;
+        color: $txt-color;
+        font-weight: 600;
+        font-size: 18px;
+        overflow: none;
+        position: relative;
+        @include flex-center;
+        overflow: hidden;
+
+        .special {
+            filter: brightness(0) saturate(100%) invert(61%) sepia(15%) saturate(1159%) hue-rotate($hue) brightness(102%) contrast(98%);
+        }
+
+        .pfp {
+            min-width: 50px;
+            min-height: 50px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            filter: none;
+        }
+        
+        img {
+            height: 55%;
+        }
+
+        &::before {
+            content: "";
+            height: 10px;
+            width: 10px;
+            display: block;
+            position: absolute;
+            border-radius: 5px;
+            transition: .3s;
+
+            // Top
+            top: 50%;
+            // Left
+            left: -5px;
+            // Both
+            transform: translate(calc(-100% - 8px), -50%);
+            background-color: $txt-color;
+        }
+
+        &:hover {
+            background-color: #fff4;
+            border-radius: 30%;
+
+            &::before {
+                height: 20px;
+                left: 0;
+            }
+
+            .special {
+                filter: brightness(1);
+            }
+        }
+
+        &.selected {
+            border-radius: 30%;
+            background-color: $golf-color;
+        }
+
+        &.selected::before {
+            height: 40px !important;
+            left: 0 !important; 
+        } 
+
+        &.weekgolf:hover {
+            background-color: $golf-color;
+        }
+
+        &.discord:hover {
+            background-color: #5865F2;
+        }
+        &.github:hover {
+            background-color: #000;
+        }
+        &.mail:hover {
+            background-color: #6D4AFF;
+        }
+        &.nouser_white:hover {
+            background-color: $golf-color;
+        }
+    }
+}
+
+.layout-nav-small {
+    position: fixed;
+    overflow: auto;
+    width: calc(100vw - 75px);
+    margin-left: 75px;
+    height: 100%;
+}

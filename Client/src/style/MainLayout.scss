@@ -1,0 +1,73 @@
+
+
+
+
+
+
+
+
+
+
+
+
+@import "./Variables.scss";
+@import "./Font.scss";
+
+
+html, body {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+* {
+    transition: .3s;
+}
+
+#root > * {
+    background-color: $bg-color;
+}
+
+
+.monaco-editor {
+    transition: 0s !important;
+    
+    * {
+        transition: 0s !important;
+    }
+} 
+
+
+.monaco-mouse-cursor-text {
+    transition: .05s !important;
+}
+
+
+html, body {
+    background-color: $bg-color;
+    color: $txt-color;
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+main.layout {
+    min-height: calc(100vh - 200px);
+    overflow: auto;
+    // height: calc(100vh - 200px)
+    background-color: $bg-color;
+}
+
+.background-shadow {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0008;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0s;
+    z-index: 1e10;
+    cursor: pointer;
+}

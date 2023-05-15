@@ -1,0 +1,215 @@
+@import "./Variables.scss";
+
+.SearchData {
+    width: 90vw;
+    height: 90vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0;
+    z-index: 1e11;
+    display: flex;
+    flex-direction: row;
+    margin-inline: 5vw;
+    margin-block: 5vh;
+    gap: 10px;
+
+
+    aside, main {
+        background-color: $darken-bg-color-2;
+        height: 100%;
+        border-radius: 10px;
+        @include flex-center;
+        flex-direction: column;
+        position: relative;
+
+        h1 {
+            position: absolute;
+            top: 0;
+            font-size: 38px;
+            height: 50px;
+            font-weight: 600;
+            margin: 0;
+            @include flex-center;
+            width: 100%;
+            background-color: inherit;
+            border-radius: inherit;
+        }
+    }
+
+    aside {
+        width: 20%;
+        overflow: hidden;
+
+        h2 {
+            margin: 0;
+        }
+
+        .line {
+            width: 100%;
+            height: 4px;
+            background-color: $rgba-5-fade-color;
+            border-radius: 2px;
+            margin-bottom: 10px;
+        }
+
+        .filter-content {
+            width: 90%;
+            text-align: left;
+
+            input {
+                outline: none;
+                border: none;
+                font-size: 18px;
+                color: #fff;
+                font-weight: 500;
+                text-align: left;
+                height: 30px;
+                border-radius: 5px;
+                background-color: $bg-theme-color;
+                padding-inline: 10px;
+                width: calc(100% - 20px);
+                font-family: 'Poppins';
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+        overflow: hidden;
+
+        .content-data {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            height: 100%;
+            justify-content: start;
+            padding-inline: 5%;
+            gap: 5px;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+    }
+
+
+    @media (width <= 800px) {
+        display: flex;
+        flex-direction: column;
+        height: 98% !important;
+        margin-block: 1%;
+        
+        aside, main {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 30px !important;
+        }
+    }
+}
+
+
+
+
+
+// The PerformanceFormat element
+.PerformanceFormat {
+    width: 100%; // Sets the width of the element to 100% of its parent
+    padding: 10px; // Adds 10 pixels of padding to the element
+    background-color: $bg-theme-color; // Sets the background color to a variable value
+    display: flex; // Displays the element as a flex container
+    justify-content: space-between; // Positions the child elements with space between them
+    border-radius: 5px; // Rounds the corners of the element
+    position: relative; // Sets the position of the element to relative
+    overflow: hidden; // Hides any overflowing content
+    min-height: 60px;
+    cursor: pointer;
+
+    // The main-info child element
+    .main-info {
+        display: flex; // Displays the element as a flex container
+        gap: 5px; // Adds a 5 pixel gap between the child elements
+        z-index: 9; // Sets the stacking order of the element
+
+        // The lang-icon child element
+        .lang-icon {
+            width: 60px; // Sets the width of the element to 60 pixels
+            height: 60px; // Sets the height of the element to 60 pixels
+            background-color: $main-color; // Sets the background color to a variable value
+            border-radius: 5px; // Rounds the corners of the element
+            @include flex-center; // Uses a mixin to center the child element
+
+            // The img element within the lang-icon element
+            img {
+                width: 70%; // Sets the width of the image to 70% of its parent
+            }
+        }
+
+        // The txt-info child element
+        .txt-info {
+            display: flex; // Displays the element as a flex container
+            flex-direction: column; // Sets the flex direction to column
+
+            // The h2 and h3 elements within the txt-info element
+            h2, h3 {
+                margin: 0; // Removes any margins from the elements
+                text-align: left; // Sets the text alignment to left
+                pointer-events: none; // Disables pointer events on the elements
+            }
+
+            h2 {
+                font-weight: 600; // Sets the font weight of the h2 element to 600 (bold)
+            }
+
+            h3 {
+                font-weight: 500; // Sets the font weight of the h3 element to 500 (semi-bold)
+            }
+        }
+    }
+
+    // The bytes child element
+    .bytes {
+        background-color: $rgba-5-fade-color; // Sets the background color to a variable value
+        border-radius: 5px; // Rounds the corners of the element
+        padding-inline: 10px; // Adds 10 pixels of horizontal padding to the element
+        @include flex-center; // Uses a mixin to center the child element
+        flex-direction: column; // Sets the flex direction to column
+
+        // The h2 element within the bytes element
+        h2 {
+            margin: 0; // Removes any margins from the element
+            font-weight: 500; // Sets the font weight of the element to 500 (semi-bold)
+            font-size: 32px; // Sets the font size of the element to 32 pixels
+            height: 36px; // Sets the height of the element to 36 pixels
+            z-index: 9; // Sets the stacking order of the element
+            pointer-events: none; // Disables pointer events on the element
+        }
+    }
+
+
+    // Creates a pseudo-element before
+    &::before {
+        content: ""; // Make it pseudo
+        position: absolute; // Set is position to absolute
+        transition: .5s; // Add a transitiion of 0.5s
+        top: 0px; // Set it to the top
+        left: 0px; // Set it to the left
+        width: 100%; // Make its width to 100%
+        height: 100%; // Make its height to 100%
+        opacity: var(--opacity-before); // Changes it's opacity
+        background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), $rgba-7-main-color, transparent 60%); // Make it's background a round
+    }
+
+
+    @media (width <= 800px) {
+        .txt-info {
+            h2 {
+                font-size: 16px;
+                line-height: 20px;
+            }
+            h3 {
+                font-size: 14px;
+            }
+        }
+    }
+}

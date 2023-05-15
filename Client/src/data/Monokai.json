@@ -1,0 +1,73 @@
+{
+	"base": "vs-dark",
+	"inherit": true,
+	"theme": "dark",
+	"rules": [
+		{ "token": "invalid", "foreground": "#f44747" },
+		{ "token": "emphasis", "fontStyle": "italic" },
+		{ "token": "strong", "fontStyle": "bold" },
+
+		{ "token": "variable", "foreground": "#A6E22E" },
+		{ "token": "variable.predefined", "foreground": "#4864AA" },
+		{ "token": "variable.parameter", "foreground": "#9CDCFE" },
+		{ "token": "constant", "foreground": "#569CD6" },
+		{ "token": "comment", "foreground": "#75715e" },
+		{ "token": "number", "foreground": "#ae81ff" },
+		{ "token": "function", "foreground": "#66d9ef" },
+		{ "token": "number.hex", "foreground": "#5BB498" },
+		{ "token": "regexp", "foreground": "#B46695" },
+		{ "token": "annotation", "foreground": "#cc6666" },
+		{ "token": "type", "foreground": "#66d9ef" },
+		{ "token": "object", "foreground": "#A6E22E" },
+		{ "token": "class.cs", "foreground": "#A6E22E" },
+		{ "token": "namespace", "foreground": "#A6E22E" },
+
+		{ "token": "delimiter", "foreground": "#DCDCDC" },
+		{ "token": "delimiter.html", "foreground": "#808080" },
+		{ "token": "delimiter.xml", "foreground": "#808080" },
+
+		{ "token": "tag", "foreground": "#569CD6" },
+		{ "token": "tag.id.pug", "foreground": "#4F76AC" },
+		{ "token": "tag.class.pug", "foreground": "#4F76AC" },
+		{ "token": "meta.scss", "foreground": "#A79873" },
+		{ "token": "meta.tag", "foreground": "#e6db74" },
+		{ "token": "metatag", "foreground": "#fd971f" },
+		{ "token": "metatag.content.html", "foreground": "#9CDCFE" },
+		{ "token": "metatag.html", "foreground": "#569CD6" },
+		{ "token": "metatag.xml", "foreground": "#569CD6" },
+		{ "token": "metatag.php", "fontStyle": "bold" },
+
+		{ "token": "key", "foreground": "#9CDCFE" },
+		{ "token": "string.key.json", "foreground": "#9CDCFE" },
+		{ "token": "string.value.json", "foreground": "#e6db74" },
+
+		{ "token": "attribute.name", "foreground": "#9CDCFE" },
+		{ "token": "attribute.value", "foreground": "#e6db74" },
+		{ "token": "attribute.value.number.css", "foreground": "#ae81ff" },
+		{ "token": "attribute.value.unit.css", "foreground": "#ae81ff" },
+		{ "token": "attribute.value.hex.css", "foreground": "#D4D4D4" },
+
+		{ "token": "string", "foreground": "#e6db74" },
+		{ "token": "string.sql", "foreground": "#FF0000" },
+
+		{ "token": "keyword", "foreground": "#569CD6" },
+		{ "token": "keyword.flow", "foreground": "#C586C0" },
+		{ "token": "keyword.json", "foreground": "#e6db74" },
+		{ "token": "keyword.flow.scss", "foreground": "#569CD6" },
+
+		{ "token": "operator.scss", "foreground": "#909090" },
+		{ "token": "operator.sql", "foreground": "#778899" },
+		{ "token": "operator.swift", "foreground": "#909090" },
+		{ "token": "predefined.sql", "foreground": "#FF00FF" }
+	],
+	"colors": {
+		"editor.foreground": "#F8F8F2",
+		"editor.background": "#272822",
+		"editor.selectionBackground": "#49483E",
+		"editor.lineHighlightBackground": "#3E3D32",
+		"editorCursor.foreground": "#F8F8F0",
+		"editorWhitespace.foreground": "#3B3A32",
+		"editorIndentGuide.activeBackground": "#9D550FB0",
+		"editor.selectionHighlightBorder": "#ADD6FF26"
+	}
+}

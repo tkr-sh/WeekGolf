@@ -1,0 +1,161 @@
+
+@import "./Variables.scss";
+
+
+.FAQ {
+    text-align: left;
+    padding-inline: 5%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+
+    a {
+        text-align: left;
+        color: $golf-color;
+        display: inline;
+
+        &:hover {
+            color: $ide-color;
+        }
+    }
+
+    h1 {
+        font-size: 50px;
+        color: $txt-color;
+        margin: 0;
+
+        span {
+            display: block;
+            float: left;
+            position: relative;
+        }
+
+        .hide {
+            opacity: 0;
+            z-index: 0;
+            color: $txt-color-rgba;
+            transition: .5s;
+        }
+
+        .letter {
+            z-index: 9;
+
+            &:hover {
+                & + .hide {
+                    opacity: 1;
+                    margin-left: 0 !important;
+                }
+            }
+        }
+    }
+
+    h2 {
+        margin: 0;
+        margin-top: 10px;
+    }
+
+
+    p {
+        margin-top: 0;
+    }
+
+
+    .line {
+        width: 100%;
+        height: 4px;
+        background-color: $rgba-5-fade-color;
+        border-radius: 2px;
+        margin-bottom: 10px;
+
+        &.big {
+            height: 6px;
+            border-radius: 3px;
+        }
+    }
+
+    nav, .version {
+        width: 100%;
+        background-color: $bg-theme-color;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        gap: 5px;
+
+        button {
+            background-color: $lighten-bg-theme-color-2;
+            color: $txt-color;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            padding-block: 10px;
+            padding-inline: 20px;
+            font-weight: 600;
+
+            &:hover {
+                background-color: $lighten-bg-theme-color-3;
+            }
+        }
+    }
+
+
+    .version {
+        display: flex;
+
+        .lang {
+            width: 170px;
+            border-radius: 5px;
+            text-align: center;
+            overflow: hidden;
+            background-color: $lighten-bg-theme-color-2;
+
+            .lang-name {
+                position: relative;
+                flex-direction: column;
+                @include flex-center;
+                padding-block: 5px;
+
+
+                span {
+                    margin-top: -3px;
+                    z-index: 1;
+                }
+
+                img {
+                    height: 30px;
+                    z-index: 1;
+                }
+            }
+            
+
+            .bg-color {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            &:hover {
+                .bg-color {
+                    opacity: 1;
+                }
+            }
+
+            footer {
+                position: relative;
+                width: 100%;
+                height: 30px;
+                @include flex-center;
+                background-color: $darken-bg-theme-color;
+
+                span {
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import "./Variables.scss";
+
+section.ValidateEmail {
+    background-color: $lighten-bg-theme-color;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    transition: 0s;
+    background: linear-gradient(140deg, $main-color, $lighten-bg-theme-color);
+    @include flex-center;
+
+    main {
+        background-color: $rgba-main-color;
+        padding-inline: 10px;
+        padding-block: 20px;
+        border-radius: 5px;
+        @include flex-center;
+        flex-direction: column;
+        color: $txt-color;
+
+        h1 {
+            margin: 0;
+        }
+
+        textarea {
+            border: none;
+            outline: none;
+            resize:none;
+            height: 30px;
+            width: 90%;
+            text-align: center;
+            border-radius: 15px;
+            line-height: 30px;
+            font-size: 16px;
+            background-color: $lighten-bg-theme-color-3;
+            margin-block: 15px;
+            font-weight: 700;
+            color: $txt-color;
+        }
+
+        button {
+            background-color: $golf-color;
+            color: $txt-color;
+            border: none;
+            font-weight: 700;
+            font-size: 20px;
+            padding-block: 5px;
+            padding-inline: 15px;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: $main-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,352 @@
+@import "./Variables.scss";
+
+a {
+    color: $main-color;
+}
+
+.Settings {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    gap: 25px;
+    // background-color: ;
+
+    .title-category {
+        font-size: 34px;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .title {
+        font-size: 26px;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    nav {
+        min-width: 175px;
+        height: 100%;
+        @include flex-center;
+        flex-direction: column;
+        gap: 5px;
+
+        button {
+            border: none;
+            font-weight: 600;
+            padding-block: 4px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-align: left;
+            width: calc(100% - 20px);
+            margin-left: 20px;
+            color: $txt-color;
+            background-color: $rgba-fade-color;
+
+            &:hover {
+                background-color: $fade-color-2;
+            }
+        }
+
+        .category {
+            margin-top: 10px;
+            width: 100%;
+            margin-left: 0px;
+        }
+    }
+
+    main {
+        flex-grow: 100;
+        overflow: auto;
+        padding-top: 30px;
+    }
+
+
+    .line, .line-category {
+        width: 100%;
+        height: 2px;
+        background-color: #fff3;
+        border-radius: 1px;
+        margin-bottom: 10px;
+    }
+
+    .line-category {
+        height: 4px;
+        border-radius: 2px;
+    }
+
+
+    &.big {
+        width: calc(600px + 40%);
+        margin-left: calc(30% - 300px);
+    }
+
+    
+    .content-section {
+        text-align: left;
+
+
+        input[type="color"] {
+            display: none;
+        }
+    
+        // Selector of color
+        .color-selector {
+            width: max(30%, 100px);
+            height: 50px;
+            border: none;
+            border-radius: inherit;
+            display: block;
+            background-color: $main-color;
+            border-radius: 5px;
+            position: relative;
+            cursor: pointer;
+
+            img {
+                height: 30px;
+                width: 30px;
+                display: block;
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+
+            }
+
+            &:hover {
+                filter: brightness(1.1);
+            }
+        }
+        
+
+        // Form
+        form {
+            button {
+                @include flex-center;
+                width: min(110px, calc(10% + 10px));
+                height: 35px;
+                border: none;
+                border-radius: 5px;
+                background-color: $golf-color;
+                margin-top: 5px;
+
+                &:hover {
+                    background-color: $main-color;
+                }
+
+                img {
+                    height: 25px;
+                }
+            }
+
+            input[type="email"], input[type="name"] {
+                border: none;
+                border-radius: 5px;
+                padding-block: 5px;
+                padding-inline: 10px;
+                font-size: 16px;
+                font-weight: 500;
+                width: 400px;
+                max-width: calc(100% - 30px);
+                margin-left: 2px;
+                background-color: $lighten-bg-color;
+                color: $txt-color;
+                font-family: inherit;
+            }
+        }
+
+
+        // Country
+        .country {
+            height: 50px;
+            display: block;
+            border-radius: 5px;
+            margin-block: 10px;
+        }
+
+        // Discord
+        .discord {
+            background-color: #5165f6;
+            font-size: 20px;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            height: 35px;
+            
+            a {
+                padding-inline: 10px;
+                color: $txt-color;
+                text-decoration: none;
+            }
+        }
+
+        // Textarea 
+        textarea {
+            transition: 0s;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: calc(100% - 30px);
+            margin-left: 2px;
+            background-color: $lighten-bg-color;
+            color: $txt-color;
+            font-family: inherit;
+        }
+
+
+
+        // Things common to every content
+        .upload-img {
+            position: absolute;
+            opacity: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        input[type="file"]{
+            display: none;
+        }
+
+
+
+        // Banner
+        .content-banner {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 20px;
+            object-fit: cover;
+            background-color: $lightest-color;
+            @include flex-center;
+            cursor: pointer;
+            position: relative;
+
+            .upload-img {
+                height: 80%;
+            }
+
+            .banner {
+                border-radius: 20px;
+                height: 140px;
+                width: calc(100% - 10px);
+                object-fit: cover;
+            }
+
+            &:hover {
+                border-radius: 5px;
+                background: $fade-color-2;
+
+                .banner {
+                    border-radius: 5px;
+                    filter: brightness(0.7);
+                }
+
+                .upload-img {
+                    opacity: 1;
+                }
+            }
+        }
+
+
+
+        // Profile picture
+        .content-pfp {
+            width: min(110px, calc(10% + 10px));
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            background-color: $lightest-color;
+            @include flex-center;
+            cursor: pointer;
+            position: relative;
+
+            
+            .pfp {
+                width: 90%;
+                border-radius: 50%;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+            }
+
+
+            &:hover {
+                border-radius: 30%;
+                background: $fade-color-2;
+
+                .pfp {
+                    border-radius: 30%;
+                    filter: brightness(0.7);
+                }
+
+                .upload-img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    button.quit {
+        background-color: #F24;
+        border: none;
+        border-radius: 5px;
+        font-weight: 700;
+        color: $txt-color;
+        padding-inline: 20px;
+        font-size: 20px;
+        padding-block: 10px;
+
+
+        &:hover {
+            background-color: #F46;
+            padding-inline: 5px;
+            padding-block: 5px;
+
+            span {
+                font-size: 25px;
+                font-weight: 900;
+            }
+        }
+    }
+}
+
+
+
+.list-layout {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+
+    label {
+        @include flex-center;
+        flex-direction: column;
+        gap: 5px;
+
+        svg {
+            width: 200px;
+            height: 100px;
+            border-radius: 5px;
+
+            .main-color {
+                fill: $main-color;
+            }
+
+            .gray {
+                fill: $lighten-bg-color;
+            }
+
+            .dark {
+                fill: $darken-bg-theme-color;
+            }
+
+            .white {
+                fill: $darken-txt-color;
+            }
+        }
+
+        input[type="radio"] {
+            transform: scale(1.5);
+        }
+    }
+}

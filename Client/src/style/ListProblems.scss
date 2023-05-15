@@ -1,0 +1,195 @@
+@import "./Variables.scss";
+
+
+
+.ListProblems {
+    overflow: hidden;
+    height: 100%;
+
+    .timer-content {
+        width: 100%;
+        height: 70px;
+        @include flex-center;
+
+        .timer-problem {
+            background-color: $bg-theme-color;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            display: display block;
+            position: relative;
+            padding-inline: 20px;
+            padding-block: 5px;
+        }
+
+        &.scrolled {
+            height: 50px;
+
+            .timer-problem {
+                height: 50px;
+                padding: 0;
+                width: 85%;
+                border-top-right-radius: 0px;
+                border-top-left-radius: 0px;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+                @include flex-center;
+            }
+        }
+    }
+
+
+    select {
+        border: none;
+        border-radius: 3px;
+        color: $txt-color;
+        font-weight: 700;
+        font-size: 16px;
+        background-color: $darker-color-2;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1.15);
+        }
+    }
+
+    
+    main {
+        height: calc(100% - 70px);
+
+        button, a {
+            height: 80px !important;
+        }
+
+        &.multiple {
+            width: 100%;
+
+            .list {
+                width: 98% !important;
+                padding-inline: 1%;
+
+                button, a {
+                    height: 100px !important;
+                }
+            }
+        }
+
+        &.lot {
+            .notif {
+                font-size: 14px !important;
+            }
+
+            button, a {
+                height: 120px !important;
+            }
+
+            h1 {
+                font-size: 18px !important;
+            }
+
+            .lang {
+                height: 20px;
+                width: 20px !important;
+            }
+
+            .list {
+                gap: 4px !important;
+            }
+        }
+    }
+
+
+    .list {
+        width: 80%;
+        padding-inline: 10%;
+        padding-block: 20px;
+        padding-bottom: 30px;
+        @include flex-center;
+        justify-content: flex-start;
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        overflow: scroll;
+        height: calc(100% - 70px);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding-top: 40px;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        a:nth-child(1) {
+            z-index: 2;
+        }
+
+        a:nth-child(2) {
+            z-index: 1;
+        }
+
+        
+        button, a {
+            width: 100%;
+            border-radius: 10px;
+            color: $txt-color-rgba;
+            border: none;
+            background-color: $darker-color-2;
+            position: relative;
+            height: 100px;
+
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .id {
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+            }
+
+            .lang {
+                position: absolute;
+                bottom: 5px;
+                left: 5px;
+                width: 35px;
+            }
+
+            .notif {
+                position: absolute;
+                font-weight: 900;
+                background-color: #f24;
+                right: -15px;
+                top: 5px;
+                padding-inline: 15px;
+                padding-block: 5px;
+                font-size: 16px;
+                border-radius: 1000px;
+                z-index: 9;
+            }
+
+            .note {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                @include flex-center;
+                gap: 2px;
+                
+                img {
+                    height: 15px;
+                }
+            }
+
+            &:hover {
+                filter: brightness(1.05);
+                color: $txt-color;
+                transform: translateY(-3px);
+                box-shadow: 0px 10px 10px #0004;
+
+                .notif {
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+}

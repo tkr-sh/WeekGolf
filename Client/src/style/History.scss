@@ -1,0 +1,71 @@
+@import "./Variables.scss";
+
+div.shadow {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background-color: #0008;
+    z-index: 9999998;
+    cursor: pointer;
+}
+
+.History {
+    position: fixed;
+    width: 80vw;
+    height: 80vh;
+    top: 10vh;
+    left: 10vw;
+    background-color: $bg-theme-color;
+    border-radius: 10px;
+    z-index: 9999999;
+    @include flex-center;
+    flex-direction: column;
+
+    h1 {
+        font-size: 40px;
+        margin: 10px;
+        height: 50px;
+        min-height: 50px;
+    }
+
+    & > div {
+        height: calc(100% - 70px);
+        width: 100%;
+        @include flex-center;
+
+
+        aside {
+            width: 100px;
+            @include flex-center;
+            align-items: right;
+            justify-content: start;
+            overflow: auto;
+            gap: 5px;
+            height: 100%;
+            flex-direction: column;
+            
+
+            button {
+                background-color: $main-color;
+                border: none;
+                border-radius: 5px;
+                width: 90%;
+                color: $txt-color;
+                font-weight: 600;
+                padding-block: 5px;
+
+                &:hover {
+                    filter: brightness(110%);
+                }
+            }
+        }
+
+        main {
+            height: calc(100% - 20px);
+            width: 100%;
+            padding: 10px;
+        }
+    }
+}

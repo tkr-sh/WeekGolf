@@ -1,0 +1,42 @@
+[
+    {
+        "icon": "settings",
+        "link": "/settings",
+        "title": "Settings"
+    }, 
+    {
+        "icon": "weekgolfwhite",
+        "link": "/problems",
+        "title": "Problems"
+    },
+    {
+        "icon": "question",
+        "link": "/faq",
+        "title": "FAQ"
+    },
+    {
+        "icon": "vote",
+        "link": "/vote",
+        "title": "Vote"
+    },
+    {
+        "icon": "trophie",
+        "link": "/leaderboard",
+        "title": "Leaderboard"
+    },
+    {
+        "icon": "clock",
+        "link": "/activity",
+        "title": "Activity"
+    },
+    {
+        "icon": "stats",
+        "link": "/statistics",
+        "title": "Statistics"
+    },
+    {
+        "icon": "translate",
+        "link": "/translate",
+        "title": "Translate"
+    }
+]

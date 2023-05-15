@@ -1,0 +1,909 @@
+@import "./Variables.scss";
+
+
+// Set the style for the bytes to appear
+.ide-bytes {
+    position: absolute;
+    bottom: 0px;
+    right: 17px;
+    z-index: 1;
+    color: $txt-color-rgba;
+    font-size: 20px;
+    text-align: right;
+}
+
+
+.Problem {
+    @include flex-center;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-block: 20px;
+    gap: 10px;
+    position: relative;
+
+
+    .description {
+        width: 90%;
+        background-color: $bg-theme-color;
+        border-radius: 10px;
+        overflow: hidden;
+        @include flex-center;
+        flex-direction: column;
+        padding-bottom: 10px;
+        position: relative;
+
+        h1 {
+            font-size: 32px;
+            margin-block: 10px;
+        }
+
+        .next, .previous {
+            position: absolute;
+            top: 7.5px;
+            height: 50px;
+            color: $txt-color;
+            border: none;
+            background-color: $darker-color-2;
+            font-size: 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            padding-inline: 20px;
+            @include flex-center;
+
+            &:hover {
+                background-color: $golf-color;
+            }
+        }
+
+        .previous {
+            right: 15px;
+
+
+            &::after {
+                content: ">";
+                transition: .3s;
+                opacity: 0;
+                margin-left: -10px;
+                font-size: 10px;
+            }
+
+            &:hover {
+                &::after {
+                    opacity: 1;
+                    margin-right: -10px;
+                    margin-left: 5px;
+                    font-size: 20px;
+                }
+            }
+           
+        }
+
+        .next {
+            left: 15px;
+
+            &::before {
+                content: "<";
+                transition: .3s;
+                opacity: 0;
+                margin-right: -10px;
+                font-size: 10px;
+            }
+
+            &:hover {
+                &::before {
+                    opacity: 1;
+                    margin-right: 5px;
+                    margin-left: -10px;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .text, .more-info, .example {
+            background-color: $lighten-bg-theme-color;
+            @include flex-center;
+            justify-content: start;
+            flex-direction: column;
+            border-radius: 5px;
+            color: $txt-color-rgba;
+            padding-inline: 20px;
+            padding-bottom: 5px;
+
+            .content-ide {
+                width: 100%;
+                @include flex-center;
+                gap: 10px;
+
+            }
+
+            p {
+                margin: 0;
+                width: 100%;
+                p {
+                    margin-block: 7px;
+                    text-align: left;
+                    width: 100%;
+                    display: block;
+                    white-space: pre-line;
+                }
+            }
+
+            &::before {
+                content: "UWU";
+                width: 100%;
+                text-align: left;
+                font-size: 14px;
+                font-weight: 900;
+                color: $rgba-5-fade-lighten;
+            }
+        }
+
+        &.opaque {
+            .text, .more-info, .example {
+                color: $txt-color;
+                font-weight: 500;
+            }
+        }
+
+        .text {
+            grid-area: text;
+
+            &::before {
+                content: "DESCRIPTION"
+            }
+        }
+        .more-info {
+            grid-area: more-info;
+            &::before {
+                content: "MORE INFO"
+            }
+        }
+        .example {
+            grid-area: example;
+            &::before {
+                content: "EXAMPLE"
+            }
+        }
+
+        .description-problem {
+            width: calc(100% - 30px);
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, auto);
+            grid-template-areas:
+            "text text text more-info"
+            "example example example example";
+        }
+    }
+
+    & > .lotw {
+        background-color: $main-color;
+        border: none;
+        border-radius: 100px;
+        color: $txt-color;
+        font-weight: 900;
+        font-size: 24px;
+        padding-inline: 15px;
+        padding-block: 5px;
+        overflow: hidden;
+
+        .hide {
+            opacity: 0;
+
+            &:nth-child(1) {
+                margin-left: -97px;
+            }
+            &:nth-child(2) {
+                margin-left: -10px;
+            }
+            &:nth-child(3) {
+                margin-left: -26px;
+            }
+            &:nth-child(4) {
+                margin-left: -36px;
+            }
+        }
+
+        &:hover {
+            filter: brightness(1.2);
+
+            .hide {
+                opacity: 0.6;
+                margin-left: 0 !important;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    time {
+        width: auto;
+        background-color: $darken-bg-theme-color;
+
+        font-size: 20px;
+        font-weight: 600;
+        padding-inline: 20px;
+        padding-block: 10px;
+        border-radius: 50px;
+    }
+
+    section.solution {
+        $size-solution: 60px;
+        width: $size-solution;
+        height: $size-solution;
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: $darken-bg-color-2;
+
+        &.closed {
+            &:hover {
+                box-shadow: 0 0 20px $main-color;
+            }
+        }
+
+        &.opened {
+            width: 90%;
+            height: 500px;
+            // border-radius: calc($size-solution / 2);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            width: 100%;
+            height: $size-solution;
+
+            button {
+                border: none;
+                width: 100%;
+                height: 100%;
+                background-color: $golf-color;
+
+                &:hover {
+                    background-color: $main-color;
+                    filter: brightness(1.1);
+                }
+                
+                img {
+                    height: calc($size-solution * 2 / 3);
+                }
+            }
+        }
+
+        main {
+            $padding-main: 10px;
+            width: calc(100% - $padding-main * 2);
+            padding: $padding-main;
+            height: calc(500px - $size-solution - $padding-main * 2);
+            display: flex;
+            gap: 5px;
+            flex-direction: row;
+
+            button.change-language {
+                width: 60px;
+                min-width: 60px;
+                height: 100%;
+                border: none;
+                border-radius: 5px;
+                background-color: $golf-color;
+                @include flex-center;
+
+                &:hover {
+                    background-color: $main-color;
+                }
+
+                img {
+                    width: 40px;
+                }
+            }
+
+            nav {
+                width: 100px;
+                min-width: 100px;
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                height: 100%;
+                overflow: auto;
+
+                textarea {
+                    width: calc(100% - 20px);
+                    padding-inline: 10px;
+                    @include flex-center;
+                    border: 0;
+                    border-radius: 10px;
+                    resize: none;
+                    color: $txt-color;
+                    background-color: $lighten-bg-color;
+                    height: 30px;
+                    line-height: 30px;
+                }
+
+                button {
+                    border: none;
+                    border-radius: 5px;
+                    color: $txt-color;
+                    background-color: $golf-color;
+                    font-weight: 600;
+                    font-size: 16px;
+                    padding-block: 5px;
+
+                    &:hover {
+                        background-color: $main-color;
+                        filter: brightness(1.05);
+                    }
+                }
+            }
+
+            main {
+                height: calc(100% - 20px);
+                flex-direction: column;
+                width: calc(100% - 170px);
+
+                section.comments {
+                    min-height: calc(50% - 20px);
+                    gap: 5px;
+                    min-width: 100%;
+                    max-width: 100%;
+                    overflow: auto;
+                    padding-left: 2px;
+
+                    .content-scroll {
+                        display: flex;
+                        flex-direction: row;
+                        min-height: 100%;
+                        width: auto;
+                        gap: 5px;
+
+                        & > * {
+                            // min-height: 100%;
+                        }
+
+                        textarea {
+                            color: $txt-color;
+                            border: none;
+                            border-radius: 5px;
+                            background-color: $bg-theme-color;
+                            resize: horizontal;
+                            transition: 0s;
+                            min-width: 200px;
+                        }
+
+                        button.send {
+                            border: none;
+                            min-width: 50px;
+                            max-width: 50px;
+                            border-radius: 5px;
+                            background-color: $golf-color;
+                            @include flex-center;
+
+                            img {
+                                width: 80%;
+                            }
+
+                            &:hover {
+                                background-color: $main-color;
+                                filter: brightness(1.1);
+                            }
+                        }
+
+                        article {
+                            background-color: $bg-theme-color;
+                            border-radius: 5px;
+                            position: relative;
+                            display: flex;
+                            min-width: 250px;
+
+                            div.vote-content {
+                                height: 100%;
+                                width: 30px;
+                                @include flex-center;
+                                flex-direction: column;
+
+                                div {
+                                    cursor: pointer;
+                                    border: none;
+                                    background-color: #0000;
+                                    border-left: 12px solid transparent; // adjust the size as needed
+                                    border-right: 12px solid transparent; // adjust the size as needed
+                                    border-bottom: 12px solid $txt-color; // adjust the size and color as needed
+
+                                    &.voted {
+                                        border-bottom: 12px solid $main-color; // adjust the size and color as needed
+                                    }
+                                }
+                            }
+
+                            .comment-content {
+                                height: 100%;
+                                width: calc(100% - 30px);
+                                
+                                .comment {
+                                    height: calc(100% - 20px);
+                                    text-align: left;
+                                    padding-inline: 10px;
+                                    width: calc(100% - 20px);
+                                }
+
+                                footer {
+                                    font-size: 12px;
+                                    padding-right: 3px;
+                                    text-align: right;
+                                }
+                            }
+
+                            &:hover {
+                                background-color: $lighten-bg-theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & > main {
+        width: 90%;
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        z-index: 5;
+
+
+        // The buttons
+        .buttons {
+            margin-top: -20px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
+
+            div {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+            }
+
+
+            button {
+                border: none;
+                background-color: $main-color;
+                border-radius: 5px;
+                color: $txt-color;
+                font-size: 20px;
+                font-weight: 600;
+                padding: 10px;
+                @include flex-center;
+
+                img {
+                    width: 30px;
+                }
+
+                &.fullscreen:hover img {
+                    transform: scale(0.8);
+                }
+
+                &.smallscreen:hover img {
+                    transform: scale(1.2);
+                }
+
+                &.lang {
+                    padding-inline: 15px;
+                }
+
+                &.run {
+                    span {
+                        transform: translateX(-7px);
+
+                        &::before {
+                            content: ">";
+                            opacity: 0;
+                            transition: .3s ;
+                        }
+
+                        &:hover {
+                            transform: translateX(0px);
+
+                            &::before {
+                                margin-left: 0px;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    filter: brightness(1.1);
+                }
+            }
+        }
+
+        // The main editor
+        main {
+            width: 100%;
+        }
+
+        section.settings-section {
+            display: flex;
+            gap: 5px;
+            align-items: start;
+            justify-content: space-between;
+            position: relative;
+
+            .delete, .previous {
+                border: none;
+                background-color: $main-color;
+                border-radius: 5px;
+                color: $txt-color;
+                font-size: 20px;
+                font-weight: 600;
+                padding: 10px;
+                @include flex-center;
+
+                img {
+                    height: 30px;
+                }
+    
+                &:hover {
+                    filter: brightness(1.1);
+                }
+            }
+
+            .settings {
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                height: 50px;
+
+                .settings-button {
+                    border: none;
+                    color: $txt-color;
+                    border-radius: 5px;
+                    background-color: $main-color;
+                    overflow: hidden;
+                    cursor: pointer;
+                    padding: 10px;
+                    height: 30px;
+                    @include flex-center;
+
+
+                    img {
+                        height: 30px;
+                    }
+                }
+
+                main {
+                    min-height: 50px;
+                    background-color: $bg-theme-color;
+                    height: auto;
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    padding: 10px;
+                    gap: 5px;
+                    width: calc(100% - 20px);
+
+                    article {
+                        background-color: $darken-bg-theme-color;
+                        width: 260px;
+                        border-radius: 5px;
+                        padding: 10px;
+                        text-align: left;
+
+                        h1 {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+
+
+            &.open {
+                margin-bottom: 60px;
+                height: auto;
+
+                .settings {
+                    position: absolute;
+                    margin-top: 60px;
+                    width: 100%;
+                    overflow: visible;
+
+
+                    .settings-button {
+                        border-bottom-left-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                    }
+                }
+            }
+        }
+
+
+        // The output section
+        .output {
+            display: flex;
+            width: 100%;
+            gap: 5px;
+            min-height: 200px;
+
+            nav {
+                width: 400px;
+                background-color: $lighten-bg-theme-color;
+                border-radius: 5px;
+                @include flex-center;
+                justify-content: start;
+                flex-direction: column;
+                gap: 5px;
+                padding-block: 10px;
+                max-height: 40vh;
+                overflow: auto;
+
+                button {
+                    border: none;
+                    width: 90%;
+                    border-radius: 5px;
+                    background-color: $lighten-bg-theme-color-2;
+                    color: $txt-color-rgba;
+                    font-size: 20px;
+                    font-weight: 700;
+                    padding-block: 5px;
+                    overflow: auto;
+                    min-height: 40px;
+
+                    
+                    &.valid {
+                        background-color: hsl(120, 30%, 50%);
+                        order: 99;
+                    }
+                    
+                    &.invalid {
+                        background-color: hsl(0, 30%, 50%);
+                        order: 0;
+                    }
+
+                    &:hover {
+                        filter: brightness(1.1);
+                        color: $txt-color;
+                    }
+
+                }
+            }
+        }
+        
+        // The console
+        .console {
+            background-color: $darken-bg-color-3;
+            white-space: pre;
+            text-align: left;
+            padding: 10px;
+            font-family: 'Ubuntu Mono', monospace;
+            border-radius: 5px;
+            width: 100%;
+            max-width: calc(100% - 150px);
+            overflow: auto;
+            max-height: 40vh;
+            overflow: auto;
+
+
+            span {
+                &.launch {
+                    color: $fade-lighten;
+                }
+
+                &.weekgolf {
+                    color: $golf-color;
+                }
+
+                &.name {
+                    color: $main-color;
+                }
+
+                &.at {
+                    color: $txt-color-rgba;
+                }
+
+                &.light {
+                    color: $lightest-color;
+                }
+
+                &.wave {
+                    color: $txt-color;
+                    font-weight: 900;
+                } 
+            }
+        }
+
+        &.fullscreen {
+            bottom: 0;
+            height: 100%;
+            gap: 0px !important;
+            display: block;
+
+
+            .buttons {
+                min-height: 50px;
+                background-color: $bg-color;
+            }
+
+            main {
+                width: 100%;
+                height: 50%;
+            }
+
+            .output {
+                width: 100%;
+                height: 50%;
+                gap: 0px;
+                .console {
+                    height: 100%;
+                    border-radius: 0px;
+                }
+                border-radius: 0px;
+            }
+
+            section.settings-section {
+                background-color: $bg-color;
+                * {
+                    border-radius: 0px !important;
+                }
+            }
+        }
+    }
+
+
+    .Leaderboard {
+        height: 100vh !important;
+
+        main {
+            padding-top: 10px;
+            @include flex-center;
+            justify-content: start;
+            flex-direction: column;
+        }
+
+        .lang-img {
+            margin-top: 0px;
+            width: 60px;
+        }
+
+        h3, h4 {
+            margin: 0;
+        }
+
+        h4 {
+            font-weight: 500;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+.note-problem {
+    margin-block: 20px;
+    width: 90%;
+    height: 100px;
+    @include flex-center;
+    flex-direction: column;
+    gap: 5px;
+
+    header {
+        width: 100%;
+        @include flex-center;
+        gap: 10px !important;
+
+        div {
+            background-color: $darken-bg-color-2;
+            width: 100%;
+            padding-block: 5px;
+            border-radius: 5px;
+        }
+    }
+
+    main {
+        width: calc(100% - 20px);
+        padding-inline: 10px;
+        background-color: $darken-bg-color-2;
+        height: auto;
+        @include flex-center;
+        padding-block: 5px;
+        border-radius: 5px;
+
+        button {
+            background-color: #0000;
+            border: none;
+
+            img {
+                width: 100%;
+                max-height: 50px;
+            }
+        }
+    }
+
+    footer {
+        @include flex-center;
+        width: 100%;
+        gap: 5px;
+
+        button {
+            border: none;
+            color: $txt-color;
+            background-color: $link-color;
+            width: 100%;
+            padding-block: 5px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 24px;
+
+            &:hover {
+                filter: brightness(110%);
+            }
+
+            @media (width <= 800px) {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+
+
+dialog {
+    position: fixed;
+    bottom: 0;
+    height: 70px;
+    display: block;
+    width: 100%;
+    background-color: #0000;
+    border: none;
+    z-index: 999999999;
+
+    main {
+        @include flex-center;
+        flex-direction: column;
+        position: absolute;
+        right: 40px;
+        width: 100%;
+        background-color: $rgba-5-fade-color;
+        color: $txt-color;
+        max-width: 300px;
+        height: 70px;
+        border-radius: 5px;
+        font-weight: 600;
+        transition-delay: .3s;
+        cursor: pointer;
+
+        &:hover:not(:has(button:hover)) {
+            transform: scale(0.8);
+            opacity: 0.6;
+        }
+
+        span {
+            width: 100%;
+        }
+        
+        button {
+            width: calc(100% - 20px);
+            background-color: $fade-color;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            color: $txt-color;
+            font-weight: 900;
+            cursor: pointer;
+            
+            &:hover {
+                transform: scale(1.03);
+                filter: brightness(115%);
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+:root {
+    // The Hue
+    --hue:  calc(120deg - 50deg);
+
+    // Editor color
+    --ide-color: hsl(120, 95%, 56%);
+    // Light color
+    --lightest-color: hsl(120, 71%, 77%);
+    // Main color
+    --rgba-7-main-color: hsl(120, 60%, 50%, 0.7);
+    --rgba-main-color: hsl(120, 60%, 50%, 0.3);
+    --main-color: hsl(120, 60%, 50%);
+    --golf-color: hsl(120, 57%, 47%);
+    --darker-color-2: hsl(120, 50%, 40%);
+    --link-color: hsl(120, 38%, 57%);
+    // Fade colors
+    --rgba-5-fade-color: hsla(120, 23%, 57%, 0.5);
+    --rgba-5-fade-lighten: hsla(120, 71%, 77%, 0.5);
+    --rgba-fade-color: hsla(120, 23%, 57%, 0.8);
+    --fade-color: hsl(120, 23%, 57%);
+    --fade-color-2: hsl(120, 23%, 60%);
+    --fade-lighten: hsl(120, 71%, 77%);
+    
+    // Background colors
+    //// Theme
+    --lighten-bg-theme-color-3: hsl(120, 20%, 30%);
+    --lighten-bg-theme-color-2: hsl(120, 20%, 24%);
+    --lighten-bg-theme-color: hsl(120, 20%, 20%);
+    --bg-theme-color: hsl(120, 20%, 17%);
+    --darken-bg-theme-color: hsl(120, 20%, 15%);
+    //// Not very themed
+    --lighten-bg-color: hsl(120, 4%, 20%);
+    --bg-color: hsl(120, 4%, 16%);
+    --darken-bg-color: hsl(120, 4%, 15%);
+    --darken-bg-color-2: hsl(120, 12%, 13%); 
+    --darken-bg-color-3: hsl(120, 12%, 9%); 
+
+    // Text color
+    --txt-color: hsl(0, 0%, 100%);
+    --txt-color-rgba: hsl(0, 0%, 100%, 0.5);
+    --darken-txt-color: hsl(120, 50%, 95%);
+    --darken-txt-color-20: hsl(120, 15%, 80%);
+}
+
+// The Hue
+$hue: var(--hue);
+// Editor color
+$ide-color: var(--ide-color);
+// Light color
+$lightest-color: var(--lightest-color);
+// Main color
+$rgba-7-main-color: var(--rgba-7-main-color);
+$rgba-main-color: var(--rgba-main-color);
+$main-color: var(--main-color);
+$golf-color: var(--golf-color);
+$darker-color-2: var(--darker-color-2);
+$link-color: var(--link-color);
+// Fade colors
+$rgba-5-fade-color: var(--rgba-5-fade-color);
+$rgba-5-fade-lighten: var(--rgba-5-fade-lighten);
+$rgba-fade-color: var(--rgba-fade-color);
+$fade-color: var(--fade-color);
+$fade-color-2: var(--fade-color-2);
+$fade-lighten: var(--fade-lighten);
+
+// Background colors
+//// Theme
+$lighten-bg-theme-color-3: var(--lighten-bg-theme-color-3);
+$lighten-bg-theme-color-2: var(--lighten-bg-theme-color-2);
+$lighten-bg-theme-color: var(--lighten-bg-theme-color);
+$bg-theme-color: var(--bg-theme-color);
+$darken-bg-theme-color: var(--darken-bg-theme-color);
+//// Not very themed
+$lighten-bg-color: var(--lighten-bg-color);
+$bg-color: var(--bg-color);
+$darken-bg-color: var(--darken-bg-color);
+$darken-bg-color-2: var(--darken-bg-color-2);
+$darken-bg-color-3: var(--darken-bg-color-3);
+// Text color
+$txt-color: var(--txt-color);
+$txt-color-rgba: var(--txt-color-rgba);
+$darken-txt-color: var(--darken-txt-color);
+$darken-txt-color-20: var(--darken-txt-color-20);
+
+
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+

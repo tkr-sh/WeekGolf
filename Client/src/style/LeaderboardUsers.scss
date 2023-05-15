@@ -1,0 +1,83 @@
+@import "./Variables.scss";
+
+
+.LeaderboardUsers {
+    width: 96%;
+    list-style: none;
+    padding: 2%;
+    margin: 0;
+    gap: 5px;
+    display: flex;
+    flex-direction: column  ;
+
+    a {
+        color: $txt-color;
+        text-decoration: none;
+
+        li {
+            $li-height: 55px;
+            background-color: $darken-bg-theme-color;
+            border-radius: 5px;
+            @include flex-center;
+            justify-content: left;
+            padding-inline: 5px;
+            width: calc(100% - 10px);
+            height: $li-height;
+            gap: 5px;
+            position: relative;
+
+            .rank, .content-pfp, .nb-bytes {
+                height: 80%;
+                @include flex-center;
+                background-color: $rgba-5-fade-color;
+                padding-inline: 5px;
+                border-radius: 5px;
+                min-width: calc($li-height * 0.8 - 10px);
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .content-pfp {
+                background-color: $txt-color;
+                min-width: none;
+                padding: 0;
+                aspect-ratio: 1/1;
+
+                img {
+                    height: calc(100% - 4px);
+                    aspect-ratio: 1/1;
+                    border-radius: 5px;
+                    object-fit: cover;
+                }
+            }
+
+            h1 {
+                font-weight: 500;
+                font-size: 18px;
+            }
+
+            .nb-bytes {
+                z-index: 1;
+                position: absolute;
+                right: 5px;
+                flex-direction: column;
+
+                .value {
+                    font-size: 22px;
+                    font-weight: 500;
+                    line-height: 22px;
+                }
+
+                .type {
+                    font-size: 10px;
+                    line-height: 10px;
+                    font-weight: 400;
+                }
+            }
+
+            &:hover {
+                filter: brightness(0.9);
+            }
+        }
+    }
+}

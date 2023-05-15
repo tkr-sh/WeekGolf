@@ -1,0 +1,18 @@
+[
+    {
+        "icon": "github",
+        "link": "https://github.com/aderepas/WeekGolf"
+    }, 
+    {
+        "icon": "discord",
+        "link": "https://discord.gg/CqrbqSkdX3"
+    },
+    {
+        "icon": "mail",
+        "link": "mailto:admin@week.golf"
+    },
+    {
+        "icon": "nouser_white",
+        "link": "/profile"
+    }
+]

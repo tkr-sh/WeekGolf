@@ -1,0 +1,160 @@
+@import './Variables.scss';
+
+.activity {
+    width: 100%;
+    height: 100%;
+    @include flex-center;
+    position: relative;
+    z-index: 1;
+    padding-top: 10px;
+    
+    .SearchData {
+        position: relative;
+        width: 98% !important;
+        height: 90%;
+        margin: 0;
+    
+        main {
+            section {
+                width: 98% !important;
+            }
+        }
+    }
+}
+
+
+
+.FormatActivity {
+    width: 100%;
+    display: flex;
+    height: 60px;
+    min-height: 60px;
+    gap: 5px;
+    color: $txt-color;
+    text-decoration: none;
+
+    .lang-icon {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+        @include flex-center;
+        border-radius: 5px;
+        background-color: $rgba-5-fade-color;
+
+        &.up {
+            background: linear-gradient($rgba-5-fade-color, $darker-color-2);
+
+            &:hover {
+                background: linear-gradient($rgba-5-fade-color, $golf-color);
+            }
+        }
+
+        img {
+            width: 70%;
+        }
+    }
+
+    main {
+        width: 100%;
+        background-color: $lighten-bg-theme-color-2;
+        display: flex;
+        // flex-direction: row;
+        flex-direction: column;
+        padding-inline: 15px;
+        height: 27.5px;
+        padding-block: 16.25px;
+
+        &.best::before {
+            content: ""; // Make it pseudo
+            position: absolute; // Set is position to absolute
+            transition: .5s; // Add a transitiion of 0.5s
+            top: 0px; // Set it to the top
+            left: 0px; // Set it to the left
+            width: 100%; // Make its width to 100%
+            height: 100%; // Make its height to 100%
+            opacity: var(--opacity-before); // Changes it's opacity
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), var(--lang-color), transparent 100%); // Make it's background a round
+        }
+
+
+        &.upgrade {
+            background: linear-gradient($lighten-bg-theme-color-2, $lighten-bg-theme-color-2, $rgba-5-fade-color, $golf-color);
+            background-size: 20px 120px; 
+            transition: 1s;
+        }
+        &.upgrade:hover {
+            // background-position: -24000px; 
+            background-position: bottom; 
+        }
+
+        .txt-info {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            // width: 30%;
+            height: 100%;
+            width: 100%;
+            gap: 5px;
+        }
+
+        .info {
+            // width: 70%;
+            display: flex;
+            align-items: start;
+            // flex-wrap: nowrap;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 10px;
+            z-index: 1;
+            pointer-events: none;
+            width: 100%;
+            justify-content: left;
+            font-size: 12px;
+            
+
+            b {
+                font-weight: 600;
+            }
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        h3 {
+            font-size: 12px;
+            font-weight: 500;
+            margin: 0;
+            pointer-events: none;
+        }
+
+        &.row {
+            flex-direction: row;
+            
+            .txt-info {
+                width: 30%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                gap: 0px;
+            }
+
+            .info {
+                width: 70%;
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+    @media (width <= 800px) {
+        main {
+            .info {
+                font-size: 8px !important;
+            }
+        }
+    }
+}

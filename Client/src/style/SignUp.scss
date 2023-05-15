@@ -1,0 +1,338 @@
+@import "./Variables.scss";
+
+
+// Sign up
+.SignUp {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    transition: 0s;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+
+
+    .OR {
+        width: 50px;
+        text-align: center;
+        font-size: 30px;
+        color: #fff;
+        position: relative;
+        display: block;
+    }
+    
+
+    // Green circle a the right
+    #circle-green {
+        background-color: $main-color;
+        height: 2000px;
+        width: 2000px;
+        border-radius: 1000px;
+        transition: .3s;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(calc(100% - 50vw), -50%);
+    }
+
+    // Change of form: From login to sign up and reverse
+    .change-form {
+        width: 40vw;
+        position: absolute;
+        height: 100vh;
+        right: 0;
+        top: 0;
+        @include flex-center;
+        flex-direction: column;
+
+        // The text
+        span {
+            color: #fff;
+            text-align: center;
+            font-size: 50px;
+            font-weight: 800;
+        }
+
+        // Link to change
+        a {
+            width: 300px;
+            height: 200px;
+            @include flex-center;
+            position: relative;
+        }
+
+        // The button
+        button {
+            width: 100%;
+            height: 60px;
+            border-radius: 35px;
+            border: $txt-color solid 5px;
+            color: $txt-color;
+            text-align: center;
+            font-size: 38px;
+            font-weight: 800;
+            transition: .5s;
+            background-color: $main-color;
+
+            &:hover { 
+                filter: brightness(1.1);
+            }
+        }
+
+
+        // The content of the images
+        .img-content {
+            @include flex-center;
+
+            // the golfer
+            #golfer {
+                height: 200px;
+                position: relative;
+            }
+            
+            // the week golf logo
+            #logo_golf {
+                height: 150px;
+                position: relative;
+                margin-top: 50px;
+            }
+        }
+
+        .OR {
+            display: none;
+        }
+    }
+    
+    // The main part where the form is
+    main {
+        height: 100vh;
+        width: 60vw;
+        left: 0;
+        color: white;
+        @include flex-center;
+        flex-direction: column;
+        z-index: 2;
+        
+        // the title
+        h1 {
+            font-weight: 700;
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+    
+    form {
+        width: 100%;
+        height: auto;
+        @include flex-center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #eye {
+        display: block;
+        position: absolute;
+        right: 5px;
+        height: 100%;
+    }
+    
+    .textarea {
+        width: 450px;
+        text-align: left;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #444;
+        outline: none;
+        border: none;
+        display: grid;
+        grid-template-columns: 50px 400px;
+        padding: 0 0.4rem;
+        position: relative;
+
+        .icon-input {
+            width: 25px;
+            margin-top: 7.5px;
+            text-align: center;
+            margin-left: 10px;
+        }
+
+        input {
+            background: none;
+            outline: none;
+            border: none;
+            line-height: 1;
+            font-size: 25px;
+            color: #fff;
+            font-weight: 500;
+        }
+    }
+    
+    #checked {
+        width: 20px;
+        height: 20px;
+        border: 3px solid #777;
+        top: 8px;
+        right: 10px;
+        display:inline-block;
+        position: relative;
+        background-color: #222;
+        border-radius: 5px;
+        transition: .3s;
+    }
+    
+
+    label {
+        width: auto;
+        display: block;
+        height: auto !important;
+    }
+
+    button.submit {
+        margin-top: 10px;
+        width: 450px;
+        height: 60px;
+        border-radius: 35px;
+        border: none;
+        color: $txt-color;
+        text-align: center;
+        font-size: 38px;
+        font-weight: 800;
+        background-color: $darker-color-2;
+
+        &:hover {
+            background-color: $golf-color;
+        }
+    }
+    
+    #eye {
+        margin-left: 10px;
+    }
+    
+    #content-oauth2 {
+        width: 450px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2vw;
+    }
+    
+    .box-oauth2{
+        height: 45px;
+        width: 100px;
+        border-radius: 7px;
+        background-color: #f35;
+        transition: .5s;
+        text-align: center;
+        padding-top: 5px;
+        cursor: pointer;
+
+        img {
+            height: 40px;
+        }
+
+        &.discord {
+            background-color: #5165f6;
+        }
+
+        &.stack {
+            background-color: #f48023;
+        }
+
+        &.github {
+            background-color: #151515;
+        }
+        
+        &:hover {
+            filter: brightness(120%);
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+/*
+__________                                            __              
+\______   \ ____   ____________   ____   ____   _____|__|__  __ ____  
+ |       _// __ \ /  ___/\____ \ /  _ \ /    \ /  ___/  \  \/ // __ \ 
+ |    |   \  ___/ \___ \ |  |_> >  <_> )   |  \\___ \|  |\   /\  ___/ 
+ |____|_  /\___  >____  >|   __/ \____/|___|  /____  >__| \_/  \___  >
+        \/     \/     \/ |__|               \/     \/              \/
+*/
+@media screen and (max-width: 1000px) {
+
+    #circle-green {
+        transform: translate(calc(100% - 50vw), -40%) !important;
+    }
+
+    #golfer {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 750px) {
+    #circle-green {
+        display: none;
+    }
+
+    .SignUp{
+        flex-direction: column;
+        @include flex-center;
+
+
+        main {
+            width: 100vw;
+            height: auto;
+        }
+
+        .OR {
+            display: none;
+        }
+
+        aside {
+            .OR {
+                display: block !important;
+            }
+        }
+        
+        .change-form {
+            width: 100vw;
+            position: relative;
+            height: auto;
+            justify-content: start;
+            height: 20vh;
+            a {
+                text-decoration: none;
+                height: 60px;
+            }
+
+            span {
+                display: none;
+            }
+
+            .img-content {
+                display: none;
+            }
+
+            button {
+                background-color: $bg-color !important;
+                text-decoration: dotted !important;
+                outline: none !important;
+
+                &:hover {
+                    background-color: $lighten-bg-color !important;
+                }
+            }
+        }
+    }
+}

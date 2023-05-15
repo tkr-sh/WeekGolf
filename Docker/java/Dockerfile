@@ -1,0 +1,1 @@
+FROM openjdk:21-bullseye

@@ -1,0 +1,78 @@
+@import "./Variables.scss";
+
+footer.basic {
+    height: 200px;
+    padding-inline: 10vw;
+    width: 80vw;
+    background-color: $darken-bg-theme-color;
+    @include flex-center;
+    flex-direction: column;
+
+
+    main {
+        width: 100%;
+        @include flex-center;
+        flex-direction: row;
+
+        .left, .right {
+            display: flex;
+            width: 50%;
+        }
+
+        .right {
+            justify-content: right;
+            img {
+                height: 80px;
+            }
+        }
+
+        .left {
+            align-items: center;
+            flex-direction: column;
+
+            .icon {
+                width: 25px;
+            }
+
+            button {
+                border: none;
+                background-color: $txt-color;
+                padding-block: 5px;
+                padding-inline: 15px;
+                font-weight: 600;
+                border-radius: 4px;
+
+                &:hover {
+                    background-color: $darken-txt-color-20;
+                }
+            }
+            
+
+            section {
+                display: flex;
+                justify-content: left;
+                width: 100%;
+                gap: 5px;
+            }
+
+            span {
+                font-weight: 600;
+                font-size: 30px;
+            }
+
+            .green {
+                color: $golf-color;
+            }
+        }
+    }
+
+    @media (width <= 600px) {
+        padding-inline: 1vw;
+        width: 98vw;
+    }
+}
+
+.credentials {
+    height: 20px;
+    font-size: 12px;
+}
