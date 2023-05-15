@@ -18,6 +18,7 @@
   * [<img src="../assets/folder-python.svg" style="height: 30px; display: inline; transform: translateY(5px)"> python](#img-srcassetsfolder-pythonsvg-styleheight-30px-display-inline-transform-translatey5px-python)
   * [<img src="../assets/folder-sass.svg" style="height: 30px; display: inline; transform: translateY(5px)"> style](#img-srcassetsfolder-sasssvg-styleheight-30px-display-inline-transform-translatey5px-style)
   * [<img src="../assets/folder-utils.svg" style="height: 30px; display: inline; transform: translateY(5px)"> utils](#img-srcassetsfolder-utilssvg-styleheight-30px-display-inline-transform-translatey5px-utils)
+* [How to test ?](#how-to-test-)
 
 <!-- vim-markdown-toc -->
 
@@ -73,3 +74,12 @@ In this directory there are files in `.scss` that are just stylesheets written i
 
 ### <img src="../assets/folder-utils.svg" style="height: 30px; display: inline; transform: translateY(5px)"> utils
 In this directory there are files in `.tsx?` that are useful functions that are going to be used in components.
+
+## How to test ?
+Here is the list of commands that you can do on a Unix system to test the code on local:
+```sh
+git clone https://github.com/aderepas/WeekGolf
+cd WeekGolf/Client
+npm i
+npm start
+```a
