@@ -303,25 +303,7 @@ CREATE TABLE Comments (
 ------------------
 -- Description:
 -- This table corresponds to the events that occur on WeekGolf
-CREATE TABLE OldActivity (
-	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE, -- ID of this activity
-	title TEXT, -- Title of this activity
-	content TEXT, -- Content of this activity
-	-- bytes INT UNSGINED,
-	-- oldBytes  INT UNSGINED,
-	-- oldUser VARCHAR(24),
-	-- lang VARCHAR(16),
-	-- problem_id INT,
-
-    owner_id INT UNSIGNED NOT NULL, -- To whom this activity belongs
-	activity_date DATETIME NOT NULL, -- When did this activity occured
-	major TINYINT DEFAULT 0, -- 0: No major  |  1: Golf  |  2: Upgrade
-
-    FOREIGN KEY (owner_id) REFERENCES Users(id)
-);
-
-
-CREATE TABLE NewActivity (
+CREATE TABLE Activity (
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE, -- ID of this activity
 	title TEXT NOT NULL, -- Title of this activity
 	content TEXT, -- Content of this activity
