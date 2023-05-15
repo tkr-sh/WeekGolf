@@ -231,6 +231,15 @@ $s = fgets(STDIN);
 echo "Hello WeekGolf!";`,
 
 
+    // PowerShell
+    //////////////////////////////
+    "powershell" : `# Get STDIN
+$s = $input;
+
+# Write an answer (implicit output)
+"Hello WeekGolf!"`,
+
+
     // Prolog
     //////////////////////////////
     "prolog": `% :- Will be executed
