@@ -8,7 +8,7 @@ Here you can find things about:
 - The back-end (in `/Server`)
 - The database (in `/Server/src/db`)
 - The discord bot (in `/Discord`)
-- The point system (in `/point_system`)
+- The point system (in `/PointSystem`)
 - The dockers (in `/Docker`)
 
 
