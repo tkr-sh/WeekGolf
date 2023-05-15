@@ -19,8 +19,8 @@ console.log({
 const conn = mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
-    password: "root",
-    database: "weekgolf",
+    password: "testtest",
+    database: "weekgolfdev",
     multipleStatements: true
 });
 

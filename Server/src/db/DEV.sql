@@ -122,6 +122,7 @@ CREATE TABLE UserLanguages (
 	ocaml_score INT UNSIGNED NOT NULL DEFAULT 0,
 	perl_score INT UNSIGNED NOT NULL DEFAULT 0,
 	php_score INT UNSIGNED NOT NULL DEFAULT 0,
+	powershell_score INT UNSIGNED NOT NULL DEFAULT 0,
 	prolog_score INT UNSIGNED NOT NULL DEFAULT 0,
 	python_score INT UNSIGNED NOT NULL DEFAULT 0,
 	r_score INT UNSIGNED NOT NULL DEFAULT 0,
@@ -149,6 +150,27 @@ CREATE TABLE UserLanguages (
 CREATE TABLE Friends (
 	follower_id INT NOT NULL,
 	following_id INT NOT NULL
+);
+
+
+
+-----------------
+---- PROBLEM ----
+-----------------
+-- Description:
+-- This table is also of great importance since it is the table that contains the problems (for once the name is explicit...)
+CREATE TABLE Problems (
+    id INT PRIMARY KEY AUTO_INCREMENT UNIQUE, -- ID of Problem (you can see them on https://week.golf/problems.html)
+    title VARCHAR(64), -- Title of the problem
+    descript TEXT, -- Description of the problem
+	date_enable DATETIME, -- Date where the problem start
+	date_end DATETIME, -- Date where the problem ends
+	update_state TINYINT DEFAULT 0, -- 0 is not updated and 1 is updated
+	show_case INT DEFAULT 7, -- Number of test case that are shown
+	random_case INT DEFAULT 6, -- Number of "random"/hidden test case
+	sum_votes INT DEFAULT 0, -- Sum of votes
+	voters INT DEFAULT 0, -- Number of people who voted
+	lotw VARCHAR(16) DEFAULT NULL -- Language Of The Week
 );
 
 
@@ -223,27 +245,6 @@ CREATE TABLE UpvoteLang (
 	final TINYINT DEFAULT 0, -- If it's a upvote_final or not. 0 if not final. 1 if yes. More info about upvote_final in the previous table
 
     FOREIGN KEY (phase_id) REFERENCES Phases(id)
-);
-
-
-
------------------
----- PROBLEM ----
------------------
--- Description:
--- This table is also of great importance since it is the table that contains the problems (for once the name is explicit...)
-CREATE TABLE Problems (
-    id INT PRIMARY KEY AUTO_INCREMENT UNIQUE, -- ID of Problem (you can see them on https://week.golf/problems.html)
-    title VARCHAR(64), -- Title of the problem
-    descript TEXT, -- Description of the problem
-	date_enable DATETIME, -- Date where the problem start
-	date_end DATETIME, -- Date where the problem ends
-	update_state TINYINT DEFAULT 0, -- 0 is not updated and 1 is updated
-	show_case INT DEFAULT 7, -- Number of test case that are shown
-	random_case INT DEFAULT 6, -- Number of "random"/hidden test case
-	sum_votes INT DEFAULT 0, -- Sum of votes
-	voters INT DEFAULT 0, -- Number of people who voted
-	lotw VARCHAR(16) DEFAULT NULL -- Language Of The Week
 );
 
 
