@@ -15,6 +15,7 @@
         * [sample.sql](#samplesql)
         * [DEV.sql](#devsql)
     * [<img src="../assets/folder-controller.svg" style="height: 30px; display: inline; transform: translateY(5px)"> config](#img-srcassetsfolder-controllersvg-styleheight-30px-display-inline-transform-translatey5px-config)
+* [How to test ?](#how-to-test-)
 
 <!-- vim-markdown-toc -->
 
@@ -59,3 +60,17 @@ The definition of tables for the database.
 
 ###  <img src="../assets/folder-controller.svg" style="height: 30px; display: inline; transform: translateY(5px)"> config
 The directory to configure the connection to the DataBase
+
+## How to test ?
+To test the code on local, first you'll need to initialize the back-end.
+```sh
+git clone https://github.com/aderepas/WeekGolf
+cd WeekGolf/Server
+npm i
+```
+After that, we need to create the database
+```sh
+db_name_weekgolf='weekgolfdev'
+mysql -u username -p -e "CREATE DATABASE $db_name_weekgolf; USE $db_name_weekgolf; source src/db/DEV.sql;"
+mysql -u username -p "$db_name_weekgolf" < src/db/sample.sql
+```
