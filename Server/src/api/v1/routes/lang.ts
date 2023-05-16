@@ -1,8 +1,9 @@
-import { Request, Response } from "express";
+import { Request, Response,  } from "express";
 import conn from "../../../config/initDB";
 import { AuthenticatedRequest } from "../middleware/verifyToken";
 import sqlExec from "../utils/sqlExec";
-
+import { request } from "request-promise";
+import axios from "axios";
 
 
 /**
@@ -597,4 +598,28 @@ export const getPersonnalUpvotes =  async (req: AuthenticatedRequest, res: Respo
     }
 
     res.json(languages.map((langJSON: languagesJSONType) => langJSON.lang));
+}
+
+
+
+
+
+export const getStatus =  async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+
+
+    // Define the URL that we want to write to
+    const requestURL: string = "http://217.69.14.183/status";
+    //const requestURL: string = "http://localhost:5800/status"
+
+    const options = {
+        method: 'GET',
+        url: requestURL,
+    };
+
+    await axios(options)
+    .then(response => {
+        console.log(response);
+        console.log(response.data);
+        res.json(response.data);
+    })
 }

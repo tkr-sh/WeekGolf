@@ -1,0 +1,30 @@
+@import "./Variables.scss";
+
+.Status {
+    margin-block: 30px;
+    width: 90vw;
+    margin-left: 5vw;
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+
+    tr {
+        td {
+            &:nth-child(1) {
+                width: 200px;
+                background-color: $darken-bg-color-3;
+                font-weight: 600;
+                padding-block: 4px;
+            }
+            &:nth-child(2) {
+                color: #000;
+            }
+        }
+
+        &:hover {
+            filter: brightness(140%);
+        }
+
+        transition: 0.6s;
+    }
+}

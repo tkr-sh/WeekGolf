@@ -138,6 +138,13 @@ const FAQ: Component = () => {
                     <li>The version of Prolog, is the version of SWI-Prolog</li>
                 </ul>
         },
+        {
+            question: "Is this language working ?",
+            answer: <span>
+                Sometimes, language can be slow or have a problem and don't work..<br/>
+                You can see the state of every language here: <A href="/status">here</A>
+            </span>
+        },
     ];
 
 

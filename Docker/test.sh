@@ -14,7 +14,7 @@ cd test
 cp ../$lang/launch.sh .
 
 # Add the program to test to the file
-echo $testprogram > "prog.$ext"
+echo -e "$testprogram" > "prog.$ext"
 
 
 # Create files with random values

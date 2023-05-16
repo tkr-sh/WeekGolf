@@ -14,6 +14,7 @@ def unit(n):
     else:
         return f"{round(n*1000,2)}ms"
 
+status = {}
 for k,_ in dic.items():
     start_time = time()
     result = run(['./test.sh', k], capture_output=True, text=True)
@@ -24,4 +25,8 @@ for k,_ in dic.items():
     else:
         print("DOWN",k)
 
-    # print(result)
+    status[k] = round((end_time - start_time) * 1000, 2) if "SUCCESS" in result.stdout else -1
+
+json.dump
+json.dump(status, open("status.json", 'w'), indent=4)
+# print(result)

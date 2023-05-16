@@ -86,6 +86,19 @@ const waitForFile = (path: string, callback: Function,) => {
 
 
 // Create the app
+//// Get the versions
+app.get('/versions', async (req: Request, res: Response) => {
+    const data = await readFileContents("versions.json");
+    res.send(data);
+});
+
+//// Get the status of languages
+app.get("/status", async (req: Request, res: Response) => {
+    const data = await readFileContents("status.json");
+    res.send(data);
+});
+
+//// Post a language
 app.post('/', async (req: Request, res: Response) => {
     // Extract the data
     let { lang, code, inputs } = req.body;

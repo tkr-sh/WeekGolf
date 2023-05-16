@@ -24,6 +24,7 @@ import StockToken from './pages/stockToken';
 import ValidateEmail from './pages/ValidateEmail';
 import Stats from './pages/Stats';
 import MetaTags from './components/MetaTags';
+import Status from './pages/Status';
 
 
 const App: Component = () => {
@@ -52,6 +53,7 @@ const App: Component = () => {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/problem" element={<Problem />} />
             <Route path="/statistics" element={<Stats />} />
+            <Route path="/status" element={<Status />} />
             <Route path="/*" element={<Error />} />
           </Route>
           <Route path="/sign-up" element={localStorage.getItem('token') !== null && localStorage.getItem('token') !== undefined ? <MainLayout children={<ListProblems/>}/> : <SignUp /> } />
