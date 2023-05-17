@@ -35,7 +35,7 @@ console.log(process.env.SESSION_KEY)
 
 // Set up session middleware for discord link
 const sessionMiddleware = session({
-    secret: process.env.SESSION_KEY ?? "x9LJlCuZ78itUQs8EymzfWYB66qJ6_G5999hmgSqn2VoUDqWZoMjVqN8KtFD7j1-tGY4",
+    secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: true,
 });
