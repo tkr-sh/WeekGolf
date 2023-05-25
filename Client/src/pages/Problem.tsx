@@ -419,7 +419,7 @@ const Problem: Component = () => {
                     input: rep.data.inputs[i],
                     expected: rep.data.expectedOutputs[i],
                     obtained: rep.data.outputs[i],
-                    error: rep.data.errors.length > i ? rep.data.errors[i] : "",
+                    error: rep.data.errors[i],
                 })
             }
 
