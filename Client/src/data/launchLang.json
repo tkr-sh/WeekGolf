@@ -22,6 +22,7 @@
     "k": "k",
     "kotlin": "kotlinc",
     "lua": "lua5.4",
+    "nim": "nim c -r prog.nim",
     "node": "node",
     "javascript": "node",
     "js": "node",

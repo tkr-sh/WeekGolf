@@ -38,5 +38,6 @@
     "sass": "scss",
     "scss": "scss",
     "scala": "scala",
-    "vyxal": "vyxal"
+    "vyxal": "vyxal",
+    "nim": "nim"
 }

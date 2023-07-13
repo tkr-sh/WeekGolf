@@ -202,6 +202,14 @@ s = io.read()
 -- Write an answer using print
 print("Hello WeekGolf!")`,
 
+    // Nim
+    /////////////////////////////////
+    "nim": `# Get STDIN
+var s: string = readLine(stdin)
+
+# Write an answer using echo
+echo "Hello WeekGolf!"
+`,
 
     // ocaml
     //////////////////////////////
