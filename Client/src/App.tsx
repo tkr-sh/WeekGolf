@@ -26,6 +26,7 @@ import Stats from './pages/Stats';
 import MetaTags from './components/MetaTags';
 import Status from './pages/Status';
 
+console.log("test")
 
 const App: Component = () => {
   return (

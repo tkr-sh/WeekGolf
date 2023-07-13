@@ -179,5 +179,10 @@
         "extension": "vyxal",
         "test": "",
         "version": "vyxal --help"
+    },
+    "nim": {
+        "extension": "nim",
+        "test": "import std/rdstdin\necho readLineFromStdin()",
+        "version": "nim --version"
     }
 }

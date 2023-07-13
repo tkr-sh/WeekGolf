@@ -55,6 +55,22 @@
             width: 20%;
             background-color: $lighten-bg-theme-color;
 
+            &::-webkit-scrollbar {
+                width: 15px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background-color: #0001; /* Background color of the scrollbar track */
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background-color: #fff3; /* Color of the scrollbar thumb */
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+              background-color: #fff5; /* Color of the scrollbar thumb on hover */
+            }
+
             ul {
                 list-style: none;
                 width: 100%;
