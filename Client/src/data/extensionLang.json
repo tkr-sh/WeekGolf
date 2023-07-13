@@ -24,6 +24,7 @@
     "lua": "lua",
     "node": "js",
     "javascript": "js",
+    "janet": "janet",
     "js": "js",
     "ocaml": "ml",
     "perl": "pl",

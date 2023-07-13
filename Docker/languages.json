@@ -184,5 +184,10 @@
         "extension": "nim",
         "test": "echo readLine(stdin); echo readLine(stdin); echo readLine(stdin)",
         "version": "nim --version"
+    },
+    "janet": {
+        "extension": "janet",
+        "test": "(prin (getline))\n(prin (getline))\n(prin (getline))",
+        "version": "janet --version"
     }
 }

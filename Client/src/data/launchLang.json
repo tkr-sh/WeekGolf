@@ -16,6 +16,7 @@
     "golfscript": "ruby golfscript.rb",
     "haskell": "ghc",
     "j": "./jconsole.sh",
+    "janet": "janet",
     "java": "java",
     "jelly": "jelly fu",
     "julia": "julia",

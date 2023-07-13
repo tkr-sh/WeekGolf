@@ -138,6 +138,14 @@ s =: 1!:1 <3
 NB. Write an answer using echo
 echo s`,
 
+    // Janet
+    /////////////////////////////
+    "janet": `# Get STDIN
+(var s (getline))
+
+# Write an answer using print, prin, printf, ...
+(print "Hello WeekGolf!")`,
+
     // Java
     //////////////////////////////
     "java" : `import java.util.*;
