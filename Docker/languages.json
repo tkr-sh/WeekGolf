@@ -182,7 +182,7 @@
     },
     "nim": {
         "extension": "nim",
-        "test": "import std/rdstdin\necho readLineFromStdin()",
+        "test": "echo readLine(stdin); echo readLine(stdin); echo readLine(stdin)",
         "version": "nim --version"
     }
 }
