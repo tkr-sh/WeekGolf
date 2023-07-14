@@ -453,7 +453,7 @@
         "Top level constructor" : false,
         "Get a line of STDIN" : "input()",
         "Get all STDIN" : "open(0).read()",
-        "Get a char STDIN" : false,
+        "Get a char STDIN" : "import sys\nsys.stdin.read(1)",
         "Print without a new line at the end" : "print(s, end='')",
         "Print with a new line at the end" : "print(s)",
         "Implicit conversion of bool to int" : true,
