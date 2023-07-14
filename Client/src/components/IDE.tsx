@@ -85,7 +85,7 @@ const MonacoEditor = (props: PropsType) => {
         //     return;
         // }
 
-        import(`../data/monaco-syntax/${lang}/${lang}.js`)
+        import(`../data/monaco-syntax/${lang}/${lang}.ts`)
         .then((language) => {
             
             // Verify again if the lang is already loaded
