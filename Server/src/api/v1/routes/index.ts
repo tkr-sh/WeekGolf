@@ -11,7 +11,7 @@ import { verifyToken } from '../middleware/verifyToken';
 import { authObligatory } from '../middleware/authObligatory';
 //// Routes
 import passport from './auth';
-import { getLangs, getPersonnalUpvotes, getPhase, getStatus, submitLanguage, voteLanguage } from './lang';
+import { getLangs, getPersonnalUpvotes, getPhase, getStatus, getVersions, submitLanguage, voteLanguage } from './lang';
 import { getLastProblem, getPersonalNote, getProblem, getProblems, getPublicNoteProblem, noteProblem, updateRank } from './problems';
 import { getCodeStats, getHistory, getPreviousSolution, getSolution, getSolutions, submitSolution } from './solutions';
 import { createAccountRequest, getActivity, getCommentsOfUser, getId, getName, getPerformances, getPfp, getProfile, getUsers, login, updateInfo, verifyCode } from './user';
@@ -149,6 +149,7 @@ router.post('/api/v1/submit-language', authObligatory, rate1m16req, submitLangua
 router.post('/api/v1/vote-language', authObligatory, rate1m64req, rate10m256req, rate1h1024req, voteLanguage);
 router.get('/api/v1/personnal-upvotes', rate1m16req, getPersonnalUpvotes);
 router.get('/api/v1/status', rate1m8req, getStatus);
+router.get('/api/v1/versions', rate1m8req, getVersions);
 // User
 router.get('/api/v1/pfp', rate1m64req, getPfp);
 router.post('/api/v1/login', rate1m8req, rate10m64req, login);

@@ -1,14 +1,23 @@
-# FROM debian:buster-slim
+FROM archlinux:latest AS base
 
+RUN pacman -Sy archlinux-keyring --noconfirm; pacman -Syu base-devel --noconfirm
+RUN useradd -m --shell=/bin/false build && usermod -L build
+RUN install -d -m 0755 -o build -g users /home/build/.cache/
+RUN mkdir -m 777 /app
+WORKDIR /app
 
-# RUN apt update -y && apt upgrade -y && apt install -y curl && \
-#     curl -s --compressed "https://virtuslab.github.io/scala-cli-packages/KEY.gpg" | apt-key add - && \
-#     curl -s --compressed -o /etc/apt/sources.list.d/scala_cli_packages.list "https://virtuslab.github.io/scala-cli-packages/debian/scala_cli_packages.list" && \
-#     apt update && \
-#     apt install scala-cli
+FROM base AS yay
 
-FROM openjdk:21-bullseye
+RUN pacman -Syu wget go git --noconfirm
+RUN wget "https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yay-git" -O PKGBUILD
+USER build
+RUN makepkg
 
+FROM base AS build
 
-# Install dependencies
-RUN apk --no-cache add openjdk11 scala
+COPY --from=yay /app/yay*.pkg.* /app/
+RUN pacman -U /app/yay*.pkg.* --noconfirm
+RUN echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+USER build
+
+RUN yay -Sy --noconfirm scala

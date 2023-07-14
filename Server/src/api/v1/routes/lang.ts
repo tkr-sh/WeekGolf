@@ -2,7 +2,6 @@ import { Request, Response,  } from "express";
 import conn from "../../../config/initDB";
 import { AuthenticatedRequest } from "../middleware/verifyToken";
 import sqlExec from "../utils/sqlExec";
-import { request } from "request-promise";
 import axios from "axios";
 
 
@@ -604,8 +603,14 @@ export const getPersonnalUpvotes =  async (req: AuthenticatedRequest, res: Respo
 
 
 
+/**
+ * Get the current status of the programming languages
+ * 
+ * @param {AuthenticatedRequest} req - The authenticated request.
+ * @param {Response} res - The response to be sent.
+ * @returns Promise that resolves once the response has been sent.
+ */
 export const getStatus =  async (req: AuthenticatedRequest, res: Response): Promise<void> => {
-
 
     // Define the URL that we want to write to
     const requestURL: string = "http://217.69.14.183/status";
@@ -621,5 +626,31 @@ export const getStatus =  async (req: AuthenticatedRequest, res: Response): Prom
         console.log(response);
         console.log(response.data);
         res.json(response.data);
-    })
+    });
+}
+
+
+
+/**
+ * Get the versions of programming languages in WeekGolf
+ * 
+ * @param {AuthenticatedRequest} req - The authenticated request.
+ * @param {Response} res - The response to be sent.
+ * @returns Promise that resolves once the response has been sent.
+ */
+export const getVersions = async (req: Request, res: Response): Promise<void> => {
+
+    // Define the URL we want to write to
+    const requestURL: string = "http://217.69.14.183/versions";
+    //const requestURL: string = "http://localhost:5800/versions"
+
+    const options = {
+        method: 'GET',
+        url: requestURL,
+    };
+
+    await axios(options)
+    .then(response => {
+        res.json(response.data);
+    });
 }

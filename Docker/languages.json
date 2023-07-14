@@ -72,6 +72,11 @@
         "version": "/j903/jconsole.sh --version",
         "regex": "j(\\d+)"
     },
+    "janet": {
+        "extension": "janet",
+        "test": "(prin (getline))\n(prin (getline))\n(prin (getline))",
+        "version": "janet -v"
+    },
     "java": {
         "extension": "java",
         "test": "import java.util.Scanner;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        while (scanner.hasNextLine()) {\n            System.out.println(scanner.nextLine());\n        }\n        scanner.close();\n    }\n}",
@@ -85,7 +90,7 @@
     },
     "jelly": {
         "extension": "jelly",
-        "test": "\u201c3\u1e05a\u0117;\u0153\u00bb",
+        "test": "⁷ɠ⁷ɠ⁷ɠ",
         "version": "$HOME/.local/bin/jelly --version"
     },
     "julia": {
@@ -107,6 +112,11 @@
         "extension": "lua",
         "test": "print(io.read(\"*l\"))\nprint(io.read(\"*l\"))\nprint(io.read(\"*l\"))\n",
         "version": "lua5.4 -v"
+    },
+    "nim": {
+        "extension": "nim",
+        "test": "echo readLine(stdin); echo readLine(stdin); echo readLine(stdin)",
+        "version": "nim --version"
     },
     "node": {
         "test": "console.log(prompt());console.log(prompt());console.log(prompt());",
@@ -172,22 +182,12 @@
     },
     "scala": {
         "extension": "scala",
-        "test": "@main def HelloWorld(args: String*): Unit =\n  println(\"Hello, World!\")",
+        "test": "import scala.io.StdIn.readLine;\nobject p {def main(args: Array[String]): Unit = { println(readLine());println(readLine());println(readLine())\n    }\n}",
         "version": "scala --version"
     },
     "vyxal": {
         "extension": "vyxal",
         "test": "",
         "version": "vyxal --help"
-    },
-    "nim": {
-        "extension": "nim",
-        "test": "echo readLine(stdin); echo readLine(stdin); echo readLine(stdin)",
-        "version": "nim --version"
-    },
-    "janet": {
-        "extension": "janet",
-        "test": "(prin (getline))\n(prin (getline))\n(prin (getline))",
-        "version": "janet --version"
     }
 }
