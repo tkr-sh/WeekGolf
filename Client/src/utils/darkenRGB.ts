@@ -1,4 +1,8 @@
-export const darkenColor = (color: string, factor: number): string => {
+export const darkenColor = (color: string | undefined, factor: number): string => {
+
+    if (color === undefined) return "#000000";
+
+
     // Convert the string color into an array of RGB values
     const rgbArray = color.match(/\w\w/g)?.map((val) => parseInt(val, 16));
   

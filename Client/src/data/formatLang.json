@@ -38,6 +38,7 @@
     "go": "Go",
     "fs": "F#",
     "f#": "F#",
+    "fsharp": "F#",
     "groovy": "Groovy",
     "dart": "Dart",
     "j": "J",
@@ -65,5 +66,6 @@
     "piet": "Piet",
     "sass": "Sass",
     "erlang": "Erlang",
-    "delphi": "Delphi"
+    "delphi": "Delphi",
+    "janet": "Janet"
 }

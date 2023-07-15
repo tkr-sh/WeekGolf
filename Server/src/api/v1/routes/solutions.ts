@@ -210,7 +210,7 @@ const getSizeSolution = (code: string, lang: string): number => {
     let SBCS: string | undefined;
 
     if (!["vyxal", "apl", "jelly", "bqn"].includes(lang)) {
-        lengthOfCode = code.replace(/\r\n/g, "\n").length;
+        lengthOfCode = Buffer.from(code.replace(/\r\n/g, "\n")).length;
     } else {
         lengthOfCode = 0;
 

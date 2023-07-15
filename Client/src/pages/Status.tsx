@@ -21,7 +21,7 @@ const Status = () => {
   const [status, setStatus] = createSignal<{[key: string]: number}>({});
 
   onMount(() => {
-    fetch("https://api.weekgolf.net/api/v1/status")
+    fetch("http://localhost:5000/api/v1/status")
     .then(rep => rep.json())
     .then(rep => setStatus(rep));
   });

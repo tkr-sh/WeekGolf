@@ -2,17 +2,18 @@
 countNbTest=$1
 
 # Change directory
-cd /tmp/in
+cd /tmp/jellylanguage
 
 # Support errors
 set +e
 
+cp /tmp/in/prog.jelly .
 
-ls  $HOME/.local/bin/
+
 
 for testcount in `seq 0 1 $countNbTest`; do
-    $HOME/.local/bin/jelly fu prog.jelly \
-        < /tmp/in/input$testcount.txt \
+    # $HOME/.local/bin/jelly fu prog.jelly \
+    ~/.local/bin/jelly fun prog.jelly < /tmp/in/input$testcount.txt \
         > /tmp/out/out$testcount.txt  \
         2> /tmp/out/err$testcount.txt
 done

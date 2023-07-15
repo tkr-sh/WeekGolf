@@ -102,6 +102,32 @@ const languagesCode: langCodeType[] = [
 ]
 
 
+
+const codeSample: string[] = [
+	"a=b=sum(map(int.bit_count,*open(0,'rb')))",
+	"b=-a=gets.unpack1('b*').sum%96",
+	'$input|% t*y|%{$b+=[int]::PopCount($_)}',
+	"$_=(print$%,$/)x$%.!($%+=y/1//)","for(unpack'b*',<>)x16",
+	"s=0:[16*x+y|x<-s,y<-[10..15]]",
+	"⎕←⌊/|⎕-16⊥¨,,\\9+↑⍳5⍴6",
+	"get~~say (0...{!base($_-$^x&$_+$x: 16).comb(/\d/)})-1",
+	"Þn+≬HʀAcε",
+	"fn f(x:i32)->bool{x>0&&(x%16<10)|f(x/16)}",
+	"$>.<<s[27..].tr'A-Z',s",
+	'eval"y/A-Z/".<>."/,print for<>"',
+	"interface prog{static void main(String[]a){}}",
+	"$><<gets.split",
+	"for(b=(P=prompt)(a=P(t=0)-1);;);",
+	"say (get,{$_+.flip}...* *2==*)-2",
+	"#1_($+/?.'|:\\)\\1:0",
+	'echo(>:@$:@+`>@.=|.&.":)".1!:1<3',
+	'0\{"BGHYXIC"?"2~2.02(*)/p/+ ">7%~}/;',
+	"#!perl -p",
+	"N←•Fmt≠|+´∘-⟜@",
+	"<?php",
+]
+
+
 console.log(data);
 
 const Home: Component = () => {
@@ -110,6 +136,22 @@ const Home: Component = () => {
 	const [program, setProgram] = createSignal(languagesCode, {equals: false});
 	const [currentProg, setCurrentProg] = createSignal(program().slice(0,3), {equals: false});
 	const [GPTVSHUMAN, setGPTVSHUMAN] = createSignal(data[Math.floor(Math.random() * data.length)])
+	let codeRef: HTMLElement[] = [];
+	const [coef, setCoef] = createSignal<number[]>([]);
+
+
+	window.addEventListener("mousemove", (event: MouseEvent) => {
+		console.log(event.x)
+
+		const eventX: number = event.x;
+		const eventY: number = event.y;
+		const coefVal = coef();
+
+		codeRef.forEach((e,i) => 
+			// e.style.transform = `translate(${event.x / 10}px - 50%, ${event.y / 10}px - 50%)`
+			e.style.transform = `translate(${eventX / (2000 / coefVal[i] ** 2) - 400}px, ${eventY / (2000 / coefVal[i] ** 2) - 400}px)`
+		);
+	});
 
 	// Remove text from wordStart
 	const removeText = () => {
@@ -164,7 +206,7 @@ const Home: Component = () => {
 	// The loop to rotate
 	const loopRotateIde = () => {
 		rotateIDE();
-		setTimeout(loopRotateIde, 5_000);
+		setTimeout(loopRotateIde, 3_000);
 	}
 
 	// When mounted, start the loop
@@ -180,7 +222,7 @@ const Home: Component = () => {
 
 
     return (
-		<>
+		<span>
 		<main class='home'>
 			{/* Home */}
 			<section class='home'>
@@ -197,10 +239,47 @@ const Home: Component = () => {
 						Sign up
 					</A>
 				</div>
+				<div class='content-code'>
+				<Index each={codeSample}>
+					{
+						(l,i) => {
+							const tempCoef = Math.random() * 30 + 20;
+							
+							setCoef(p => [...p, tempCoef]);
+
+							return <span
+								class='code-example'
+								ref={el => codeRef[i] = el}
+								style={
+									{
+										top: Math.random() * window.innerHeight + "px",
+										left: Math.random() * window.innerWidth + "px",
+										"font-size": tempCoef + "px"
+									}
+								}
+							>
+								{l()}
+							</span>
+							}
+					}
+				</Index>
+				</div>
+
 			</section>
 
 			{/* Languages */}
 			<section class='languages'>
+				{
+					["python", "lua", "apl", "jelly", "prolog", "c", "haskell"]
+					.map(l => 
+						<img
+							src={`src/assets/icons/${l}_white.svg`}
+							alt={l}
+							class="lang"
+						/>
+					)
+
+				}
 				<aside>
 					<Index each={program()}>
 					{
@@ -210,17 +289,11 @@ const Home: Component = () => {
 							return <div class={"ide-" + Math.min(i + 1 - indexIde(), 3)} style={{				"margin-left": indexIde() > i ? "-2000px" : "0",
 							"margin-top": indexIde() > i ? `-${1000 * i}px` : "0",
 							"display": indexIde() > i ? `none` : "block"}}>
-								<MonacoEditor
+								<CodeBlock
 									code={p().code}
-									style={{
-										'border-radius': '10px',
-										"overflow": "hidden",
-										"height": "400px",
-										// "margin-left": indexIde() > i ? "-2000px" : "0",
-										// "margin-top": indexIde() > i ? `-${1000 * i}px` : "0",
-										// "display": indexIde() > i ? `none` : "block"
-									}}
-									lang={p().lang.toLowerCase()}
+									language={p().lang.toLowerCase()}
+									bytes={false}
+									info={p().lang}
 								/>
 								<div class="filter-lang" style={{'background': (colorLang as {[key: string]: string})[p().lang.toLowerCase()]}}>
 									<img src={`src/assets/icons/${p().lang.toLowerCase()}_white.svg`}/>
@@ -282,15 +355,15 @@ const Home: Component = () => {
 				<h1>
 					Want to try ?
 				</h1>
-				<button>
+				<div class='content-button'>
 					<A href="/sign-up">
-						Create an account!
+						Join WeekGolf
 					</A>
-				</button>
+				</div>
 			</section>
       	</main>
 		<BasicFooter/>
-		</>
+		</span>
     );
 }
 

@@ -1,4 +1,5 @@
 @import "./Variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap');
 
 
 @keyframes blinker {
@@ -15,6 +16,8 @@ main.home {
     display: flex;
     align-items: start;
     flex-direction: column;
+    overflow: hidden;
+    max-width: 100vw;
 
     section {
         width: 100vw;
@@ -36,10 +39,52 @@ main.home {
             font-weight: 700;
         }
 
+        .content-button {
+            width: 100%;
+            @include flex-center;
+            gap: 10px;
+            margin-top: 30px;
+
+            a {
+                height: 60px;
+                min-width: 110px;
+                color: $txt-color;
+                text-decoration: none;
+                background-color: $golf-color;
+                @include flex-center;
+                font-size: 22px;
+                font-weight: 700;
+                padding-inline: 20px;
+                border-radius: 10px;
+
+                &::after {
+                    content: ">";
+                    margin-left: -10px;
+                    opacity: 0;
+                    transition: .3s;
+                }
+
+                &:hover {
+                    background-color: $main-color;
+
+                    &::after {
+                        margin-left: 10px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
         // The home 
         &.home {
-            background-image: linear-gradient(to bottom, transparent, black), url("src/assets/imgs/bg-home.jpg");
+            // background-image: linear-gradient(to bottom, transparent, black), url("src/assets/imgs/bg-home.jpg");
 			background-size: cover;
+            overflow: hidden;
+            max-width: 100vw;
+            
+            * {
+                z-index: 1;
+            }
 
             .word {
                 color: $ide-color;
@@ -73,42 +118,6 @@ main.home {
                 }
             }
 
-            .content-button {
-                width: 100%;
-                @include flex-center;
-                gap: 10px;
-                margin-top: 30px;
-
-                a {
-                    height: 60px;
-                    min-width: 110px;
-                    color: $txt-color;
-                    text-decoration: none;
-                    background-color: $golf-color;
-                    @include flex-center;
-                    font-size: 22px;
-                    font-weight: 700;
-                    padding-inline: 20px;
-                    border-radius: 10px;
-
-                    &::after {
-                        content: ">";
-                        margin-left: -10px;
-                        opacity: 0;
-                        transition: .3s;
-                    }
-
-                    &:hover {
-                        background-color: $main-color;
-
-                        &::after {
-                            margin-left: 10px;
-                            opacity: 1;
-                        }
-                    }
-                }
-            }
-
             .cursor {
                 height: 80px;
                 width: 10px;
@@ -117,12 +126,34 @@ main.home {
                 transform: translateY(10px);
                 animation: blinker 1s linear infinite;
             }
+            .content-code {
+                background: #000;
+                width: 100vw;
+                overflow: hidden;
+                height: 100vh;
+                position: absolute;
+                z-index: 0 !important;
+                background: radial-gradient(circle, rgba(17,80,40,1) 0%, rgba(0,0,0,1) 100%);
+            }
+            .code-example {
+                font-family: 'Ubuntu Mono', monospace;
+                transition: 0s !important;
+                position: absolute;
+                color: #5C8;
+                font-weight: 600;
+                font-size: 36px;
+                text-shadow: 0px 0px 30px #5C8;
+                top: 0;
+                width: 1000vw;
+                text-align: left;
+            }
         }
 
 
         // +30 languages
         &.languages {
             background-color: #000;
+            background: linear-gradient(#010, #053);
             flex-direction: row;
             gap: 100px;
             position: relative;
@@ -143,6 +174,7 @@ main.home {
                     top: 50%;
                     transform: translateY(-50%);
                     z-index: 3;
+                    left: 10px;
 
                     .filter-lang {
                         position: absolute;
@@ -154,6 +186,7 @@ main.home {
                         border-radius: 10px;
                         @include flex-center;
                         flex-direction: column;
+                        z-index: 100;
                     }
 
                     &:hover .filter-lang {
@@ -164,7 +197,7 @@ main.home {
                 .ide-2 {
                     transform: translateY(-50%) scale(0.9);
                     z-index: 2;
-                    left: 45px;
+                    left: 55px;
                     filter: brightness(80%);
                 }
 
@@ -184,6 +217,104 @@ main.home {
                 flex-direction: column;
                 text-align: left;
             }
+
+
+            pre {
+                z-index: 99;
+                width: 100%;
+                min-height: 100%;
+                text-align: left;
+                position: relative;
+                font-family: inherit;
+                margin: 0;
+
+                strong.info {
+                    font-weight: 600;
+                    position: absolute;
+                    bottom: 6px;
+                    left: 6px;
+                    font-size: 20px;
+                    color: $txt-color-rgba;
+                }
+
+                span.bytes {
+                    font-weight: 600;
+                    position: absolute;
+                    bottom: 6px;
+                    right: 6px;
+                    color: $txt-color-rgba;
+
+                    b {
+                        font-size: 20px;
+                        color: $txt-color;
+                        margin-right: 2px;
+                    }
+                }
+            }
+
+            .hljs {
+                border-radius: 10px;
+                overflow: hidden;
+                height: 30vh;
+                min-width: 90%;
+                overflow: auto;
+                background-color: #222;
+                padding-right: 15px;
+                text-align: left;
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                    height: 5px;
+                }
+                  
+                &::-webkit-scrollbar-track {
+                    background: #fff1;
+                }
+                  
+                &::-webkit-scrollbar-thumb {
+                    background: #fff3;
+                    border-radius: 2px;
+                }
+                  
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #fff9;
+                }
+            }
+
+            .lang {
+                opacity: .4;
+                position: absolute;
+                height: 80px;
+
+                &:nth-child(1) {
+                    top: 10%;
+                    left: 10%
+                }
+                &:nth-child(2) {
+                    bottom: 14%;
+                    right: 16%
+                }
+                &:nth-child(3) {
+                    top: 23%;
+                    right: 20%
+                }
+                &:nth-child(4) {
+                    bottom: 4%;
+                    left: 4%
+                }
+                &:nth-child(5) {
+                    bottom: 34%;
+                    left: 64%
+                }
+                &:nth-child(6) {
+                    bottom: 4%;
+                    left: 4%
+                }
+                &:nth-child(4) {
+                    bottom: 14%;
+                    left: 34%
+                }
+            }
         }
 
 
@@ -201,7 +332,7 @@ main.home {
 
             &::before {
                 top: 0;
-                background: linear-gradient(#000, #0000);
+                background: linear-gradient(#053, #2750);
             }
 
             // Create the parallax scrolling effect
@@ -210,7 +341,7 @@ main.home {
             background-repeat: no-repeat;
             background-size: cover;
             position: relative;
-            background-image: linear-gradient(#0005, #0005), url("src/assets/imgs/ai-bg.png");
+            background-image: linear-gradient(#0005, #0005), url("src/assets/imgs/ai-bg-new.png");
 
             flex-direction: row;
 
@@ -264,7 +395,7 @@ main.home {
                 .hljs {
                     border-radius: 10px;
                     overflow: hidden;
-                    height: 30vh;
+                    height: 300px;
                     min-width: 90%;
                     overflow: auto;
                     background-color: #223C;
@@ -306,6 +437,11 @@ main.home {
 
             }
         }
+        
+
+        &.languages, &.chat-gpt {
+            height: 800px;
+        }
 
 
 
@@ -313,22 +449,22 @@ main.home {
 
         // The last section
         &.last {
-            background-image: linear-gradient(to top, transparent, black), url("src/assets/imgs/programming.webp");
+            background-image: linear-gradient(to top, transparent, black), url("src/assets/imgs/final-bg.jpg");
 			background-size: cover;
-            gap: 30px;
 
             h1 {
                 color: $darker-color-2;
             }
 
             button {
-                width: min(500px, 90vw);
                 background-color: $darker-color-2;
+                padding-inline: 15px;
                 color: #fff;
                 border: none;
                 border-radius: 50px;
-                font-weight: 700;
-                font-size: 40px;
+                font-weight: 600;
+                font-size: 30px;
+                font-family: 'Poppins' !important;
 
                 a {
                     width: 100%;
@@ -349,4 +485,85 @@ main.home {
             }
         }
     }
+
+
+    @media screen and (max-width: 600px) {
+        section {
+            h1 {
+                font-size: 50px;
+                line-height: 45px;
+            }
+
+            .cursor {
+                height: 55px !important;
+                width: 7px !important;
+            }
+
+            &.languages {
+                main {
+                    order: -1;
+                    width: 90vw;
+
+
+                    h2 {
+                        line-height: 48px;
+                    }
+                }
+
+
+                aside {
+                    height: 450px;
+                    width: 80vw;
+                    transform: translateX(-30px);
+
+
+                    // & > div {
+                    //     max-height: 200px;
+                    // }
+                }
+                flex-direction: column;
+
+
+                gap: 0px;
+            }
+
+            &.chat-gpt {
+                flex-direction: column;
+
+                h2 {
+                    font-size: 40px;
+                    line-height: 40px !important;
+                }
+
+                p {
+                    line-height: 13px;
+                    font-size: 11px;
+                    font-weight: 500;
+                }
+
+
+                main {
+                    width: 100%;
+                    code {
+                        height: 18vh !important;
+                    }
+
+                    .vs {
+                        z-index: 10;
+                    }
+                }
+
+
+                aside {
+                    width: 95vw;
+                    justify-content: end;
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+    }
 }
+

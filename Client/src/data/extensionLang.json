@@ -24,6 +24,7 @@
     "lua": "lua",
     "node": "js",
     "javascript": "js",
+    "janet": "janet",
     "js": "js",
     "ocaml": "ml",
     "perl": "pl",
@@ -38,5 +39,6 @@
     "sass": "scss",
     "scss": "scss",
     "scala": "scala",
-    "vyxal": "vyxal"
+    "vyxal": "vyxal",
+    "nim": "nim"
 }
