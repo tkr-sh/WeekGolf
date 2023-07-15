@@ -39,6 +39,42 @@ main.home {
             font-weight: 700;
         }
 
+        .content-button {
+            width: 100%;
+            @include flex-center;
+            gap: 10px;
+            margin-top: 30px;
+
+            a {
+                height: 60px;
+                min-width: 110px;
+                color: $txt-color;
+                text-decoration: none;
+                background-color: $golf-color;
+                @include flex-center;
+                font-size: 22px;
+                font-weight: 700;
+                padding-inline: 20px;
+                border-radius: 10px;
+
+                &::after {
+                    content: ">";
+                    margin-left: -10px;
+                    opacity: 0;
+                    transition: .3s;
+                }
+
+                &:hover {
+                    background-color: $main-color;
+
+                    &::after {
+                        margin-left: 10px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
         // The home 
         &.home {
             // background-image: linear-gradient(to bottom, transparent, black), url("src/assets/imgs/bg-home.jpg");
@@ -82,42 +118,6 @@ main.home {
                 }
             }
 
-            .content-button {
-                width: 100%;
-                @include flex-center;
-                gap: 10px;
-                margin-top: 30px;
-
-                a {
-                    height: 60px;
-                    min-width: 110px;
-                    color: $txt-color;
-                    text-decoration: none;
-                    background-color: $golf-color;
-                    @include flex-center;
-                    font-size: 22px;
-                    font-weight: 700;
-                    padding-inline: 20px;
-                    border-radius: 10px;
-
-                    &::after {
-                        content: ">";
-                        margin-left: -10px;
-                        opacity: 0;
-                        transition: .3s;
-                    }
-
-                    &:hover {
-                        background-color: $main-color;
-
-                        &::after {
-                            margin-left: 10px;
-                            opacity: 1;
-                        }
-                    }
-                }
-            }
-
             .cursor {
                 height: 80px;
                 width: 10px;
@@ -129,7 +129,7 @@ main.home {
             .content-code {
                 background: #000;
                 width: 100vw;
-                overflow: hidde;
+                overflow: hidden;
                 height: 100vh;
                 position: absolute;
                 z-index: 0 !important;
@@ -341,7 +341,7 @@ main.home {
             background-repeat: no-repeat;
             background-size: cover;
             position: relative;
-            background-image: linear-gradient(#0005, #0005), url("src/assets/imgs/ai-bg.png");
+            background-image: linear-gradient(#0005, #0005), url("src/assets/imgs/ai-bg-new.png");
 
             flex-direction: row;
 
@@ -449,22 +449,22 @@ main.home {
 
         // The last section
         &.last {
-            background-image: linear-gradient(to top, transparent, black), url("src/assets/imgs/programming.webp");
+            background-image: linear-gradient(to top, transparent, black), url("src/assets/imgs/final-bg.jpg");
 			background-size: cover;
-            gap: 30px;
 
             h1 {
                 color: $darker-color-2;
             }
 
             button {
-                width: min(500px, 90vw);
                 background-color: $darker-color-2;
+                padding-inline: 15px;
                 color: #fff;
                 border: none;
                 border-radius: 50px;
-                font-weight: 700;
-                font-size: 40px;
+                font-weight: 600;
+                font-size: 30px;
+                font-family: 'Poppins' !important;
 
                 a {
                     width: 100%;

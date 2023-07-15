@@ -355,11 +355,11 @@ const Home: Component = () => {
 				<h1>
 					Want to try ?
 				</h1>
-				<button>
+				<div class='content-button'>
 					<A href="/sign-up">
-						Create an account!
+						Join WeekGolf
 					</A>
-				</button>
+				</div>
 			</section>
       	</main>
 		<BasicFooter/>
