@@ -404,8 +404,11 @@ export const submitSolution = async (req: AuthenticatedRequest, res: Response): 
                 // Push the new data to ouput
                 outputs.push(data.out[i].trim().replace(/\s+\n/g, '\n'));
 
+
+
                 // Push the error to error
-                errors.push(data.err[i]);
+                if (typeof data.err[i] === 'string' && data.err[i].length > 0) 
+                    errors.push(data.err[i]);
 
                 // Push the success
                 successArray.push(data.out[i].trim().replace(/\s+\n/g, '\n') === expectedOutputs[i].trim());
@@ -417,8 +420,8 @@ export const submitSolution = async (req: AuthenticatedRequest, res: Response): 
             if (problemId === 26 && !challengeNewYearValid) {
                 success = false;
 
-                for (const idx in errors) {
-                    errors[idx] =`This challenge is a special challenge for the year 2023!
+                for (let error in errors) {
+                    error =`This challenge is a special challenge for the year 2023!
             Your code needs to have all the letters in "happynewyear2023" for it to work!
             Case and duplicate doesn't matters
             ----------------------------------------------------------------------------

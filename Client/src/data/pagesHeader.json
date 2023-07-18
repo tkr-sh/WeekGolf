@@ -38,5 +38,10 @@
         "icon": "translate",
         "link": "/translate",
         "title": "Translate"
+    },
+    {
+        "icon": "contribute",
+        "link": "/contribute-menu",
+        "title": "Contribute"
     }
 ]

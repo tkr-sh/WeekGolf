@@ -36,19 +36,8 @@ export interface AuthenticatedRequest extends Request {
 */
 export const verifyToken = async ( req: AuthenticatedRequest, res: Response, next: NextFunction ): Promise<void> => {
 
-    // console.log(req.query);
-    // console.log(req);
-    // console.log(req.body);
-    // console.log(req.body);
-    // console.log(req.body);
-    // console.log(req.body);
-    // console.log(req.body);
-    // console.log(req.body);
-    // console.log(req.body);
-
     // If it's an options request
     if (req.method === 'OPTIONS') {
-        console.log("OPTIONS request")
         next();
         return;
     }
@@ -56,11 +45,9 @@ export const verifyToken = async ( req: AuthenticatedRequest, res: Response, nex
 
     const auth: string | undefined = req.headers.authorization;
 
-    console.log(auth);
 
     // If there isnt the authorization header
     if (auth === undefined || auth === null) {
-        console.log('No auth.')
         next();
         return;
     }
@@ -76,9 +63,6 @@ export const verifyToken = async ( req: AuthenticatedRequest, res: Response, nex
     }
     
     const validity: boolean = await tokenValidity(token);
-
-    console.log('<================================================>')
-    console.log(validity, token)
 
 
     // Check the token's validity using the tokenValidity function

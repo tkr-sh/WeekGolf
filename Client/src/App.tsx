@@ -25,6 +25,9 @@ import ValidateEmail from './pages/ValidateEmail';
 import Stats from './pages/Stats';
 import MetaTags from './components/MetaTags';
 import Status from './pages/Status';
+import ContributeMenu from './pages/ContributeMenu';
+import Contribution from './pages/Contribution';
+import CreateContribution from './pages/CreateContribution';
 
 console.log("test")
 
@@ -55,6 +58,10 @@ const App: Component = () => {
             <Route path="/problem" element={<Problem />} />
             <Route path="/statistics" element={<Stats />} />
             <Route path="/status" element={<Status />} />
+            <Route path="/contribute-menu" element={<ContributeMenu />} />
+            <Route path="/contribution" element={<Contribution />} />
+            <Route path="/create-contribution" element={<CreateContribution editContribution={false}/>} />
+            <Route path="/edit-contribution" element={<CreateContribution editContribution={true}/>} />
             <Route path="/*" element={<Error />} />
           </Route>
           <Route path="/sign-up" element={localStorage.getItem('token') !== null && localStorage.getItem('token') !== undefined ? <MainLayout children={<ListProblems/>}/> : <SignUp /> } />

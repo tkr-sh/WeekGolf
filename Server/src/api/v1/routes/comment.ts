@@ -100,7 +100,6 @@ export const getComments = async (req: Request, res: Response) => {
  * 
  * @param {AuthenticatedRequest} req - The authenticated request object containing the ID of the comment to be voted on and the user token.
  * @param {Response} res - The response object to be sent.
- * @returns {Promise<void>} Promise that resolves once the response has been sent.
  * @throws 400 error if the request is invalid (e.g., the ID is missing).
  * @throws 500 error if an internal error occurs during the database query.
  * 
@@ -207,7 +206,7 @@ export const postComment = async (req: AuthenticatedRequest, res: Response): Pro
         `INSERT INTO Comments (content, owner_id, solution_id, date_send)
         VALUES (?, ?, ?, NOW());`,
         [content, owner_id, id],
-        (err, rep) => res.send("OK.")
+        () => res.send("OK.")
     );
 }
 

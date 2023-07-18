@@ -7,7 +7,10 @@
 function formatDate(date: number): string {
     const time = [1, 60, 3600, 84000, 31536000, Infinity];
     const name = ["second", "minute", "hour", "day", "year"];
-    const diff = Date.now() / 1000 - date;
+    const currentDateTime = new Date();
+    const currentUTC = new Date(currentDateTime.getUTCFullYear(), currentDateTime.getUTCMonth(), currentDateTime.getUTCDate(), 
+                        currentDateTime.getUTCHours(), currentDateTime.getUTCMinutes(), currentDateTime.getUTCSeconds());
+    const diff = currentUTC.getTime() / 1000 - date;
   
     for (let i = 0; i < name.length; i++) {
         if (diff < time[i + 1]) {

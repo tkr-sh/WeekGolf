@@ -16,7 +16,28 @@ import('@elasticemail/elasticemail-client')
 .then(e => {console.log(e); elasticEmailVar = e});
 
 
-
+/**
+ * Is the user and admin ?
+ *
+ * @async
+ * @function
+ * @param {AuthenticatedRequest} req - The HTTP request object.
+ * @param {Response} res - The HTTP response object.
+ * @throws {Error} - If an error occurs while retrieving the profile from the database.
+ */
+export const isAdmin = async (req: AuthenticatedRequest, res: Response) => {
+	await conn.execute(
+		`SELECT id
+		FROM Users
+		WHERE token = ?`,
+		[req.token],
+		(err, rep) => {
+			if (err)
+				return res.status(500).send("An error occured while trying to get the id of the users");
+			res.json({ admin: rep[0].id === 1 });
+		}
+	)
+}
 
 
 /**
@@ -24,7 +45,7 @@ import('@elasticemail/elasticemail-client')
  *
  * @async
  * @function
- * @param {Request} req - The HTTP request object.
+ * @param {AuthenticatedRequest} req - The HTTP request object.
  * @param {Response} res - The HTTP response object.
  * @returns {Promise<void>} - The Promise that resolves when the response has been sent.
  * @throws {Error} - If an error occurs while retrieving the profile from the database.

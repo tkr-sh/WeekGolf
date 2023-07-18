@@ -44,7 +44,7 @@ const SmallNav = () => {
                 c => <A href={c.link}>
                         <button
                             class={
-                                lastPath(location.pathname) === c.title.toLowerCase() ?
+                                lastPath(location.pathname).split('-')[0] === c.title.toLowerCase() ?
                                 "selected" :
                                 ""
                             }

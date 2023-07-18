@@ -1,6 +1,5 @@
 import { Component, createEffect, createSignal, For, onMount } from 'solid-js';
 import "../style/FAQ.scss";
-// import version from "../data/version.json";
 import formatLang from "../data/formatLang.json";
 import colorLang from "../data/colorLang.json";
 import { darkenColor } from '../utils/darkenRGB';

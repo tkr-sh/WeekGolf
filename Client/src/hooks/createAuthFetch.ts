@@ -34,7 +34,7 @@ const createAuth = () => {
 
         // If there is an error
         if (error && showError) {
-            handleError(data.toString());
+            handleError(data.toString().replace(/<[^>]*\>/g, ""));
         }
 
         return {data, error, contentType};

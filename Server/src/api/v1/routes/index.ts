@@ -4,8 +4,6 @@ import { Router, Request, Response } from 'express';
 import rateLimit from 'express-rate-limit';
 import multer from 'multer';
 import session from "express-session";
-//// DB congif
-import pool from '../../../config/initDB';
 //// Middleware
 import { verifyToken } from '../middleware/verifyToken';
 import { authObligatory } from '../middleware/authObligatory';
@@ -14,7 +12,7 @@ import passport from './auth';
 import { getLangs, getPersonnalUpvotes, getPhase, getStatus, getVersions, submitLanguage, voteLanguage } from './lang';
 import { getLastProblem, getPersonalNote, getProblem, getProblems, getPublicNoteProblem, noteProblem, updateRank } from './problems';
 import { getCodeStats, getHistory, getPreviousSolution, getSolution, getSolutions, submitSolution } from './solutions';
-import { createAccountRequest, getActivity, getCommentsOfUser, getId, getName, getPerformances, getPfp, getProfile, getUsers, login, updateInfo, verifyCode } from './user';
+import { createAccountRequest, getActivity, getCommentsOfUser, getId, getName, getPerformances, getPfp, getProfile, getUsers, isAdmin, login, updateInfo, verifyCode } from './user';
 import { getLeaderboard, getLeaderboardProblem } from './leaderboard';
 import { getPersonnalUpvotesComments, postComment, voteComment, getComments } from './comment';
 import { discordCallback, githubCallback, stackCallback } from './authCallBack';
@@ -23,6 +21,7 @@ import { uplaodImage } from './img';
 import { updateDiscordDisplay, getDiscordInfo, initLinkDiscordAccount, linkDiscordAccount } from './discord';
 import dotenv from 'dotenv';
 import { meanLanguages, topLanguages, weekInfo } from './bot';
+import { amIAuthor, changeState, createContribution, editContribution, getCommentsContribution, getContribution, getContributions, getVotesCommentsContribution, getVotesInContributions, postCommentContribution, voteCommentContribution, voteContribution } from './contribution';
 
 // Configure the .env
 dotenv.config()
@@ -163,6 +162,7 @@ router.post('/api/v1/code', rate1m4req, verifyCode);
 router.post('/api/v1/create-account', rate1m4req, createAccountRequest);
 router.post('/api/v1/info', authObligatory,  rate1m16req, updateInfo);
 router.get('/api/v1/users', rate1m8req, getUsers);
+router.get('/api/v1/am-i-admin', authObligatory, rate1m32req, isAdmin);
 // Discord
 router.get('/api/v1/discord', authObligatory,  rate1m16req, getDiscordInfo);
 router.put('/api/v1/discord-display', authObligatory,  rate1m16req, updateDiscordDisplay);
@@ -174,6 +174,19 @@ router.get('/api/v1/top-languages', rate1m16req, topLanguages);
 router.get('/api/v1/relation', authObligatory, rate1m32req, rate1h1024req, getRelation)
 router.put('/api/v1/relation', authObligatory, rate1m16req, rate1h256req, updateRelation);
 router.get('/api/v1/friends', rate1m16req, rate1h256req, getFriends);
+// Contribution
+router.get('/api/v1/contribution', rate1m32req, rate1h256req, getContribution);
+router.get('/api/v1/contributions', rate1m32req, rate1h256req, getContributions);
+router.post('/api/v1/vote-contribution', authObligatory, rate1m32req, rate1h256req, voteContribution);
+router.get('/api/v1/votes-contributions', authObligatory, rate1m32req, rate1h256req, getVotesInContributions);
+router.post('/api/v1/comment-contribution', authObligatory, rate1m4req, postCommentContribution);
+router.get('/api/v1/contribution-comments', rate1m32req, rate1h256req, getCommentsContribution);
+router.post('/api/v1/vote-comment-contribution', authObligatory, rate1m32req, rate1h256req, voteCommentContribution);
+router.get('/api/v1/votes-contribution-comments', authObligatory, rate1m32req, rate1h256req, getVotesCommentsContribution);
+router.post('/api/v1/create-contribution', authObligatory, rate1m2req, rate1h8req, createContribution);
+router.put('/api/v1/change-state', authObligatory, rate1m32req, rate1h256req, changeState);
+router.get('/api/v1/am-i-author', authObligatory, rate1m32req, rate1h256req, amIAuthor);
+router.put('/api/v1/edit-contribution', authObligatory, rate1m32req, rate1h256req, editContribution);
 // Extra
 router.post('/api/v1/upload-image', authObligatory, upload.single('image'), rate1m4req, rate1h8req, uplaodImage);
 

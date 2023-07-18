@@ -1,0 +1,90 @@
+@import "./Variables.scss";
+
+
+
+
+form.CreateContribution {
+    width: 90%;
+    background: $lighten-bg-theme-color;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-block: 10px;
+    border-radius: 10px;
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        margin-inline: 5%;
+        position: relative;
+
+        * {
+            text-align: left;
+        }
+        
+        label {
+            font-weight: 600;
+            font-size: 18px;
+            width: 100%;
+            text-align: left;
+        }
+
+        span {
+            color: $txt-color-rgba;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            color: $txt-color;
+            background: $darken-bg-theme-color;
+            outline: none;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            min-width: 100%;
+            max-width: 100%;
+            padding: 5px;
+            font-family: 'Poppins';
+            transition: 0s;
+        }
+
+        code {
+            background: #0002;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+        input[type="file"]::file-selector-button  {
+            background: $fade-color;
+            border: none;
+            border-radius: 5px;
+            color: $txt-color;
+            font-weight: 600;
+            padding-block: 2px;
+        }
+
+
+    }
+
+    input[type="submit"] {
+        width: 150px;
+        margin-left: 50%;
+        margin-top: 20px;
+        background: $fade-color;
+        color: $txt-color;
+        transform: translateX(-50%);
+        border: none;
+        border-radius: 10px;
+        font-size: 25px;
+        font-weight: 600;
+        padding-block: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background: $fade-lighten;
+        }
+    }
+}

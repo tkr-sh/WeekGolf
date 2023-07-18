@@ -160,9 +160,11 @@ CREATE TABLE Friends (
 -- Description:
 -- This table is also of great importance since it is the table that contains the problems (for once the name is explicit...)
 CREATE TABLE Problems (
-    id INT PRIMARY KEY AUTO_INCREMENT UNIQUE, -- ID of Problem (you can see them on https://week.golf/problems.html)
+    id INT PRIMARY KEY AUTO_INCREMENT UNIQUE, -- ID of Problem (you can see them on http://localhost:3000/problems)
     title VARCHAR(64), -- Title of the problem
     descript TEXT, -- Description of the problem
+    example TEXT DEFAULT NULL, -- An example of that problem
+    more_info TEXT DEFAULT NULL, -- More info about that problem 
 	date_enable DATETIME, -- Date where the problem start
 	date_end DATETIME, -- Date where the problem ends
 	update_state TINYINT DEFAULT 0, -- 0 is not updated and 1 is updated
@@ -184,7 +186,7 @@ CREATE TABLE Problems (
 CREATE TABLE Solutions (
     id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE, -- ID of the Golf
     code TEXT, -- The code
-    size INT, -- Size of the code (It is important to have this column, because there are some languages that are not in ASCII.)
+    size INT, -- Size of the code (It is important to have this column, because there are some languages that are not in ASCII scoring.)
     lang VARCHAR(16), -- The name of the lang
     owner_id INT UNSIGNED NOT NULL, -- The owner of this golf
     problem_id INT NOT NULL, -- The ID of the problem
@@ -348,4 +350,88 @@ CREATE TABLE UpvoteComment (
 -- Languages that are currently in WeekGolf
 CREATE TABLE CurrentLang (
 	lang VARCHAR(16) 
+);
+
+
+
+----------------------
+---- CONTRIBUTION ----
+----------------------
+-- Descripion:
+-- The table that is stores contribution 
+CREATE TABLE Contribution (
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+	title TEXT,
+	description TEXT,
+	example TEXT,
+	more_info TEXT,
+	vote INT DEFAULT 0,
+	owner_id INT UNSIGNED,
+	created DATETIME DEFAULT NOW(),
+	fix_case INT DEFAULT 7,
+	state INT DEFAULT 0, -- -1: Refused, 0: Being thought about, 1: Accepted
+
+    FOREIGN KEY (owner_id) REFERENCES Users(id)
+);
+
+
+-----------------------------
+---- UPVOTE CONTRIBUTION ----
+-----------------------------
+-- Descripion:
+-- The table that keeps upvotes of users for a contribution
+CREATE TABLE UpvoteContribution (
+	contribution_id BIGINT UNSIGNED,
+	owner_id INT UNSIGNED,
+	up TINYINT UNSIGNED, -- Is it an upvote ? 1: Yes, 0: No
+
+    FOREIGN KEY (contribution_id) REFERENCES Contribution(id),
+    FOREIGN KEY (owner_id) REFERENCES Users(id)
+);
+
+
+--------------------------------
+---- TEST CASE CONTRIBUTION ----
+--------------------------------
+-- Descripion:
+-- The table that keeps tests cases of the contribution
+CREATE TABLE TestCaseContribution (
+	contribution_id BIGINT UNSIGNED, -- The ID of the contribution
+    input TEXT NOT NULL, -- The input for a problem
+    expected_output TEXT NOT NULL, -- The expected output from the program that is executed with input
+    id_output INT NOT NULL, -- The ID of this ouput (Not unique because for every contribution the id_output starts at 0)
+
+    FOREIGN KEY (contribution_id) REFERENCES Contribution(id)
+);
+
+
+------------------------------
+---- COMMENT CONTRIBUTION ----
+------------------------------
+-- Descripion:
+-- The comment under a contribution
+CREATE TABLE CommentContribution (
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE, -- ID of the comment
+	content TEXT, -- Content of the comment
+    owner_id INT UNSIGNED NOT NULL, -- Owner of this comment
+	contribution_id BIGINT UNSIGNED NOT NULL, -- On which contribution it has been posted
+	upvote INT UNSIGNED DEFAULT 0, -- Number of Upvotes that this comment has
+	date_send DATETIME NOT NULL, -- When the comment was posted
+
+    FOREIGN KEY (owner_id) REFERENCES Users(id),
+    FOREIGN KEY (contribution_id) REFERENCES Contribution(id)
+);
+
+
+-------------------------------------
+---- UPVOTE COMMENT CONTRIBUTION ----
+-------------------------------------
+-- Descripion:
+-- The upvote of a contribution
+CREATE TABLE UpvoteCommentContribution (
+	comment_id INT UNSIGNED NOT NULL, -- ID of the comment
+	owner_id INT UNSIGNED NOT NULL, -- Who upvoted it
+
+    FOREIGN KEY (owner_id) REFERENCES Users(id),
+    FOREIGN KEY (comment_id) REFERENCES CommentContribution(id)
 );

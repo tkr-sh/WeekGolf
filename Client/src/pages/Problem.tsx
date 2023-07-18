@@ -27,6 +27,7 @@ import bulb from "../assets/icons/bulb.svg";
 import send from "../assets/icons/paper_plane.svg";
 //// Functions
 import capitalize from '../utils/capitalize';
+import transformParagraph from '../utils/transformParagraph';
 //// Socket
 import { io } from "socket.io-client";
 import addRank from '../utils/addRankLeaderboard';
@@ -48,16 +49,6 @@ const extensionLangTyped: {[key: string]: string} = extensionLang;
 const launchLangTyped: {[key: string]: string} = launchLang;
 
 
-
-// Transform a paragraph
-const transformParagraph = (str: string | undefined) => {
-    return str
-    ?.replaceAll(/<[\w\/][^>]*>/g, '')
-    ?.split('\n')
-    ?.map(
-        e => <p>{e}</p>
-    );
-}
 
 // Interface for the output type 
 interface outputType {
@@ -106,6 +97,8 @@ const Problem: Component = () => {
     const [isLast, setIsLast] = createSignal<boolean>(true);
     const [inputOutput, setInputOutput] = createSignal<string[]>([]);
     const [description, setDescription] = createSignal("", {equals: false});
+    const [example, setExample] = createSignal<null | string>(null, {equals: false});
+    const [moreInfo, setMoreInfo] = createSignal<null | string>(null, {equals: false});
     ////// Lang
     const [selectedLang, setSelectedLang] = createSignal<string>(localStorage.getItem('selectedLang') ?? "python", {equals: false});
     const [pickLang, setPickLang] = createSignal<boolean>(false);
@@ -144,8 +137,9 @@ const Problem: Component = () => {
             setTitle(rep.title);
             setInputOutput([""+rep?.input, ""+rep?.expected_output]);
             setDescription(rep.descript);
+            setExample(rep.example);
+            setMoreInfo(rep.more_info);
             setLotw(rep.lotw);
-            console.log(description().split("<br><b><u>Example:</u></b><br>")[1])
         });
 
         //// Get the name of the user
@@ -419,7 +413,7 @@ const Problem: Component = () => {
                     input: rep.data.inputs[i],
                     expected: rep.data.expectedOutputs[i],
                     obtained: rep.data.outputs[i],
-                    error: rep.data.errors[i],
+                    error: rep.data.errors.length > i ? rep.data.errors[i] : "",
                 })
             }
 
@@ -494,14 +488,22 @@ const Problem: Component = () => {
                 <div class="text">
                     <p>
                         {
-                            transformParagraph(description().split("<br><b><u>Example:</u></b><br>")[0])
+                            transformParagraph(
+                                example() !== null && example !== undefined ?
+                                description():
+                                description().split("<br><b><u>Example:</u></b><br>")[0]
+                            )
                         }
                     </p>
                 </div>
                 <div class="more-info">
                     <p>
                         {
-                            transformParagraph(description().split("More info</div>")[1])
+                            transformParagraph(
+                                example() !== null && example() !== undefined ?
+                                moreInfo():
+                                description().split("More info</div>")[1]
+                            )
                         }
                     </p>
                 </div>
@@ -527,7 +529,11 @@ const Problem: Component = () => {
                     </div>
                     <p>
                         {
-                            transformParagraph(description()?.split("<br><b><u>Example:</u></b><br>")[1]?.split("More info</div>")[0] ?? "")
+                            transformParagraph(
+                                example() !== null && example() !== undefined ?
+                                example():
+                                description()?.split("<br><b><u>Example:</u></b><br>")[1]?.split("More info</div>")[0] ?? ""
+                            )
                         }
                     </p>
                 </div>
