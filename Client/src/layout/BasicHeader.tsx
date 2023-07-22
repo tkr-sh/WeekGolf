@@ -1,4 +1,4 @@
-import { createEffect, createSignal, For, onCleanup, onMount } from "solid-js";
+import { createEffect, createSignal, For, onCleanup, onMount, Show } from "solid-js";
 import "../style/BasicHeader.scss";
 import menu from "../data/pagesHeader.json";
 import defaultPfp from "../assets/imgs/nouser_white.jpg";
@@ -96,13 +96,24 @@ const BasicHeader = (prop: any) => {
                         Golf
                     </span>
                 </div>
-                <div class="content-pfp">
-                    <div>
-                        <A href="/profile">
-                            <img src={pfp() ?? defaultPfp}/>
+                <Show when={token() !== null}>
+                    <div class="content-pfp">
+                        <div>
+                                <A href="/profile">
+                                    <img src={pfp() ?? defaultPfp}/>
+                                </A>
+                        </div>
+                    </div>
+                </Show>
+                <Show when={token() === null}>
+                    <div class="content-pfp">
+                        <A href="/sign-up">
+                            <button class="header-sign-up"> 
+                                Sign up
+                            </button>
                         </A>
                     </div>
-                </div>
+                </Show>
             </header>
             <div style={{height: headerStyle() === "default" ? "100px": "60px"}}/>
         </>

@@ -1,4 +1,4 @@
-import { createEffect, createSignal, For, onCleanup, onMount } from "solid-js";
+import { createEffect, createSignal, For, onCleanup, onMount, Show } from "solid-js";
 import "../style/NavHeader.scss";
 import menu from "../data/pagesHeader.json";
 import { A } from "@solidjs/router";
@@ -116,9 +116,16 @@ const NavHeader = (prop: any) => {
                                 }
                             }
                         </For>
-                        <a href={"/profile"}>
-                            <button ref={lastPageRef}>Profile</button>
-                        </a>
+                        <Show when={localStorage.getItem("token") !== null}>
+                            <a href={"/profile"}>
+                                <button ref={lastPageRef}>Profile</button>
+                            </a>
+                        </Show>
+                        <Show when={localStorage.getItem("token") === null}>
+                            <A href={"/sign-up"}>
+                                <button ref={lastPageRef}>SignUp</button>
+                            </A>
+                        </Show>
                     </div>
                     <div class="shadow-right" ref={shadowRightRef}></div>
                 </div>
