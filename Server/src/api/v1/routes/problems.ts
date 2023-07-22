@@ -1,9 +1,7 @@
 import { Request, Response } from "express";
-import conn from "../../../config/initDB"
+import conn from "../../../config/initDB";
 import { AuthenticatedRequest } from "../middleware/verifyToken";
 import sqlExec from "../utils/sqlExec";
-
-
 
 /**
  * Retrieves the problem with the specified ID, along with its associated input and expected output for verification.
@@ -24,43 +22,41 @@ import sqlExec from "../utils/sqlExec";
  * - Otherwise, the function returns the problem, along with its associated input and expected output for verification.
  */
 export const getProblem = async (req: Request, res: Response): Promise<void> => {
+  if (req.query.id === undefined || req.query.null === null) {
+    res.status(400).send("Invalid request. No ID found.");
+  }
 
-    if (req.query.id === undefined || req.query.null === null) {
-        res.status(400).send("Invalid request. No ID found.");
-    }
-
-    await conn.execute(
-        `SELECT Problems.*, VerifySolution.input, VerifySolution.expected_output
+  conn.execute(
+    `SELECT Problems.*, VerifySolution.input, VerifySolution.expected_output
         FROM Problems, VerifySolution
         WHERE Problems.id = ?
         AND Problems.date_enable < NOW()
         AND Problems.id = VerifySolution.problem_id
         AND VerifySolution.id_output = 0`,
-        [req.query.id],
-        (err, rep) => {
-            if (err || rep === undefined) {
-                res.status(500).send("An error occured.");
-            } else if (rep.length === 0) {
-                res.status(404).send("No problem with that ID.");
-            } else {
-                res.json(rep[0]);
-            }
-        }
-    );
-}
-
+    [req.query.id],
+    (err, rep: any[]) => {
+      if (err || rep === undefined) {
+        res.status(500).send("An error occured.");
+      } else if (rep.length === 0) {
+        res.status(404).send("No problem with that ID.");
+      } else {
+        res.json(rep[0]);
+      }
+    },
+  );
+};
 
 /**
  * Retrieves the list of problems available on the platform.
  * If the request includes the query parameter 'profile=true', retrieves only the IDs and titles of the problems.
- * 
+ *
  * @param {Request} req - The HTTP request object.
  * @param {Response} res - The HTTP response object.
  * @returns {Promise<void>} Promise that resolves once the response has been sent.
  * @throws {500 Error} If an internal error occurs during the database query.
  * @throws {400 Error} If the request does not include a valid ID for the problem.
  * @throws {404 Error} If no problem is found with the specified ID.
- * 
+ *
  * @remarks
  * - If the 'profile' query parameter is present and set to 'true', the function retrieves only the IDs and titles of the problems.
  * - Otherwise, the function retrieves the IDs, titles, levels of the week, sum of votes and number of voters of all available problems.
@@ -70,79 +66,77 @@ export const getProblem = async (req: Request, res: Response): Promise<void> => 
  * - The function sends a 404 error if no problem is found with the specified ID.
  */
 export const getProblems = async (req: Request, res: Response): Promise<void> => {
+  // If it's for the profile
+  const profile: string | undefined = req.query.profile as string;
 
-    // If it's for the profile
-    const profile: string | undefined = req.query.profile as string;
+  const boolProfile: boolean = profile === "true";
 
-    const boolProfile: boolean = profile === 'true';
-
-    // If it's only the profile
-    if (boolProfile) {
-        await conn.execute("SELECT title, id FROM Problems WHERE date_enable < NOW()", (err, rep) => {
-            if (err || rep === undefined) {
-                res.status(500).send("An error occured.");
-            } else {
-                res.json(rep);
-            }
-        })
-    } else {
-        await conn.execute("SELECT title, id, lotw, sum_votes, voters FROM Problems WHERE date_enable < NOW()", (err, rep) => {
-            if (err || rep === undefined) {
-                res.status(500).send("An error occured.");
-            } else {
-                res.json(rep);
-            }
-        })
-    }
-}
-
-
+  // If it's only the profile
+  if (boolProfile) {
+    conn.execute("SELECT title, id FROM Problems WHERE date_enable < NOW()", (err, rep) => {
+      if (err || rep === undefined) {
+        res.status(500).send("An error occured.");
+      } else {
+        res.json(rep);
+      }
+    });
+  } else {
+    conn.execute(
+      "SELECT title, id, lotw, sum_votes, voters FROM Problems WHERE date_enable < NOW()",
+      (err, rep) => {
+        if (err || rep === undefined) {
+          res.status(500).send("An error occured.");
+        } else {
+          res.json(rep);
+        }
+      },
+    );
+  }
+};
 
 /**
  * Retrieves the ID and end date of the last problem that has ended.
- * 
+ *
  * @param {Request} req - The request object.
  * @param {Response} res - The response object.
  * @returns Promise that resolves once the response has been sent.
  * @throws 500 error if an internal error occurs during the database query.
  * @throws 404 error if there is no problem that has ended yet.
- * 
+ *
  * @remarks
  * - The function queries the database to retrieve the ID and end date of the last problem that has ended.
  * - If no problem has ended yet, the function sends a 404 error indicating that there is no problem.
  * - Otherwise, the function sends a JSON response containing the ID and end date of the last problem.
  */
 export const getLastProblem = async (req: Request, res: Response) => {
-    await conn.execute(
-        `SELECT id, date_end
+  conn.execute(
+    `SELECT id, date_end
         FROM Problems
         WHERE date_enable < NOW()
         ORDER BY id DESC
         LIMIT 1`,
-        (err, rep) => {
-            if (err || rep === undefined) {
-                res.status(500).send("An error occured.");
-            } else if (rep.length === 0) {
-                res.status(404).send("No problem.");
-            } else {
-                res.json(rep[0]);
-            }
-        }
-    )
-}
-
-
+    (err, rep: any[]) => {
+      if (err || rep === undefined) {
+        res.status(500).send("An error occured.");
+      } else if (rep.length === 0) {
+        res.status(404).send("No problem.");
+      } else {
+        res.json(rep[0]);
+      }
+    },
+  );
+};
 
 /**
  * Retrieves the public note and vote information for a problem with the given ID.
- * 
+ *
  * @param {Request} req - The request object.
  * @param {Response} res - The response object.
  * @returns Promise that resolves once the response has been sent.
  * @throws 400 error if no ID is found in the request.
  * @throws 404 error if no problem with the given ID is found.
  * @throws 500 error if an internal error occurs during the database query.
- * 
+ *
  * @remarks
  * - The function verifies that the request contains an ID parameter.
  * - The function queries the database to retrieve the sum of votes and the list of voters for the problem with the given ID, if the problem is public and enabled.
@@ -150,42 +144,40 @@ export const getLastProblem = async (req: Request, res: Response) => {
  * - Otherwise, the function sends a JSON response containing the sum of votes and the list of voters.
  */
 export const getPublicNoteProblem = async (req: Request, res: Response) => {
-    // Verify that the request is correct
-    if (req.query.id === undefined || req.query.id === null) {
-        res.status(400).send("No ID found");
-    }
+  // Verify that the request is correct
+  if (req.query.id === undefined || req.query.id === null) {
+    res.status(400).send("No ID found");
+  }
 
-    // Execute the request
-    await conn.execute(
-        `SELECT sum_votes, voters
+  // Execute the request
+  conn.execute(
+    `SELECT sum_votes, voters
         FROM Problems
         WHERE id = ? AND
         date_enable < NOW()
         LIMIT 1`,
-        [req.query.id],
-        (err, rep) => {
-            if (err || rep === undefined) {
-                res.status(500).send("An error occured while trying to get the problem");
-            } else if (rep.length === 0) {
-                res.status(404).send("No problem with that ID.");
-            } else {
-                res.json(rep[0]);
-            }
-        }
-    )
-}
-
-
+    [req.query.id],
+    (err, rep: any[]) => {
+      if (err || rep === undefined) {
+        res.status(500).send("An error occured while trying to get the problem");
+      } else if (rep.length === 0) {
+        res.status(404).send("No problem with that ID.");
+      } else {
+        res.json(rep[0]);
+      }
+    },
+  );
+};
 
 /**
  * Retrieves the personal note of a problem for the authenticated user.
- * 
+ *
  * @param {AuthenticatedRequest} req - The authenticated request containing the problem ID.
  * @param {Response} res - The response to be sent.
  * @returns Promise that resolves once the response has been sent.
  * @throws 400 error if the problem ID is not provided.
  * @throws 500 error if an internal error occurs during the database query.
- * 
+ *
  * @remarks
  * - The function queries the database to retrieve the personal note of a problem for the authenticated user.
  * - If the query fails or the result is undefined, the function sends a 500 error indicating an internal error occurred during the query.
@@ -193,39 +185,30 @@ export const getPublicNoteProblem = async (req: Request, res: Response) => {
  * - If the query returns a valid result, the function sends a JSON response containing the personal note.
  */
 export const getPersonalNote = async (req: AuthenticatedRequest, res: Response) => {
+  // Verify that the request is correct
+  if (req.query.id === undefined || req.query.id === null) {
+    res.status(400).send("No ID found");
+  }
 
-    // Verify that the request is correct
-    if (req.query.id === undefined || req.query.id === null) {
-        res.status(400).send("No ID found");
-    }
-
-    // Execute the request
-    await conn.execute(
-        `SELECT note
+  // Execute the request
+  conn.execute(
+    `SELECT note
         FROM NoteProblem
         WHERE owner_id = (SELECT id FROM Users WHERE token = ?) AND
         problem_id = ?
         LIMIT 1`,
-        [req.token, req.query.id],
-        (err, rep) => {
-            if (err || rep === undefined) {
-                res.status(500).send("An error occured while trying to get the problem");
-            } else if (rep.length === 0) {
-                res.json({note: -1});
-            } else {
-                res.json(rep[0]);
-            }
-        }
-    )
-}
-
-
-
-
-
-
-
-
+    [req.token, req.query.id],
+    (err, rep: any[]) => {
+      if (err || rep === undefined) {
+        res.status(500).send("An error occured while trying to get the problem");
+      } else if (rep.length === 0) {
+        res.json({ note: -1 });
+      } else {
+        res.json(rep[0]);
+      }
+    },
+  );
+};
 
 /**
  * Updates the note of a given problem for the authenticated user.
@@ -246,215 +229,201 @@ export const getPersonalNote = async (req: AuthenticatedRequest, res: Response) 
  * - If the user wants to add a note, the function inserts it into the NoteProblem table and updates the precalculated note from the Problems table.
  * - The function sends an "OK" response once the operation is completed successfully.
  */
-export const noteProblem = async (req: AuthenticatedRequest, res: Response): Promise<void | Response> => {
-    // Declare the note and the problemId as int
-    const { note, id: problemId} = req.body as {[key: string]: number};
-    const token: string = req.token;
+export const noteProblem = async (
+  req: AuthenticatedRequest,
+  res: Response,
+): Promise<void | Response> => {
+  // Declare the note and the problemId as int
+  const { note, id: problemId } = req.body as { [key: string]: number };
+  const token: string = req.token;
 
-    console.log(note )
+  console.log(note);
 
-    // If the note is invalid
-    // Note === -1: Remove the note
-    // Note in 1..10: The note
-    if (!note || (note !== - 1 && note > 10) || note < -1) {
-        return res.status(400).send("Invalid note");
-    }
+  // If the note is invalid
+  // Note === -1: Remove the note
+  // Note in 1..10: The note
+  if (!note || (note !== -1 && note > 10) || note < -1) {
+    return res.status(400).send("Invalid note");
+  }
 
-    // Get the ID of the user by it's token
-    // It will be used twice, so it's not a loss of performance
-    const [{id: userId}] = await sqlExec(
-        "SELECT id FROM Users WHERE token = ? LIMIT 1",
-        [token]
-    )
+  // Get the ID of the user by it's token
+  // It will be used twice, so it's not a loss of performance
+  const [{ id: userId }] = await sqlExec("SELECT id FROM Users WHERE token = ? LIMIT 1", [token]);
 
-    // Verify that the problem exists
-    const [{exist}] = await sqlExec(
-        `SELECT EXISTS(SELECT * FROM Problems WHERE date_enable < NOW() AND id = ?) AS exist`,
-        [problemId]
-    )
+  // Verify that the problem exists
+  const [{ exist }] = await sqlExec(
+    "SELECT EXISTS(SELECT * FROM Problems WHERE date_enable < NOW() AND id = ?) AS exist",
+    [problemId],
+  );
 
-    // IF the problem doesn't exists
-    if (exist === 0) {
-        return res.status(400).send("No problem with that ID");
-    }
+  // IF the problem doesn't exists
+  if (exist === 0) {
+    return res.status(400).send("No problem with that ID");
+  }
 
+  // See if the user already noted this problem, and if so, get the previous note
+  const rep = await sqlExec(
+    "SELECT note FROM NoteProblem WHERE problem_id = ? AND owner_id = ? LIMIT 1",
+    [problemId, userId],
+  );
 
-    // See if the user already noted this problem, and if so, get the previous note
-    const rep = await sqlExec(
-        `SELECT note FROM NoteProblem WHERE problem_id = ? AND owner_id = ? LIMIT 1`,
-        [problemId, userId]
+  console.log(rep);
+
+  // If it doesnt exist and the user wanted to remove the note
+  if (rep.length === 0 && note === -1) {
+    return res.status(400).send("You can't remove your vote if you haven't vote");
+  }
+  // Else if, it exists, delete the note
+  else if (rep.length === 1) {
+    // Delete from the notes
+    await sqlExec(
+      `DELETE FROM NoteProblem
+            WHERE problem_id = ? AND owner_id = ?`,
+      [problemId, userId],
     );
 
-    console.log(rep);
-
-
-    // If it doesnt exist and the user wanted to remove the note
-    if (rep.length === 0 && note === -1) {
-        return res.status(400).send("You can't remove your vote if you haven't vote");
-    }
-    // Else if, it exists, delete the note
-    else if (rep.length === 1) {
-        // Delete from the notes
-        await sqlExec(
-            `DELETE FROM NoteProblem
-            WHERE problem_id = ? AND owner_id = ?`,
-            [problemId, userId]
-        );
-
-        // Update the note precalculated from the table
-        await sqlExec(
-            `UPDATE Problems
+    // Update the note precalculated from the table
+    await sqlExec(
+      `UPDATE Problems
             SET sum_votes = sum_votes - ?, voters = voters - 1
             WHERE id = ?`,
-            [rep[0].note, problemId]
-        );
-    }
+      [rep[0].note, problemId],
+    );
+  }
 
-    // If the user wants to add a note
-    if (note > 0) {
-        // Insert it as a note
-        await sqlExec(
-            `INSERT INTO NoteProblem (note, problem_id, owner_id)
+  // If the user wants to add a note
+  if (note > 0) {
+    // Insert it as a note
+    await sqlExec(
+      `INSERT INTO NoteProblem (note, problem_id, owner_id)
             VALUES                   (?   , ?         , ?       )`,
-                                     [note, problemId , userId  ]
-        );
+      [note, problemId, userId],
+    );
 
-        // Update the Problems table
-        await sqlExec(
-            `UPDATE Problems
+    // Update the Problems table
+    await sqlExec(
+      `UPDATE Problems
             SET sum_votes = sum_votes + ?, voters = voters + 1
             WHERE id = ?`,
-            [note, problemId]
-        );
+      [note, problemId],
+    );
 
-        console.log(await sqlExec(
-            "SELECT sum_votes, voters FROM Problems WHERE id = ?"
-            , [problemId]
-        ))
-    }
+    console.log(await sqlExec("SELECT sum_votes, voters FROM Problems WHERE id = ?", [problemId]));
+  }
 
-
-    res.send("OK.")
-}
-
-
-
-
+  res.send("OK.");
+};
 
 export const updateScore = async () => {
-    
-    interface GolfRow {
-      owner_id: number;
-      size: number;
-    }
-    
-    const sql = "SELECT id, lotw FROM Problems WHERE update_state = 0 AND NOW() >= date_end;";
-    const result = await sqlExec(sql);
-    
-    if (result.length > 0) {
-        const row = result[0];
-        const problem_id = row["id"];
-        let lotw: string | undefined = row["lotw"]?.toLowerCase();
-        await sqlExec(`UPDATE Problems SET update_state = 1 WHERE id = ${problem_id}`);
-    
-        if (problem_id) {
-            // Get all the languages
-            const languages: string[] = (await sqlExec("SELECT lang FROM CurrentLang")).map(l => l.lang);
-        
-        
-            const correspondance: { [key: string]: string } = {
-                "c++": "cpp",
-                "c#": "cs",
-                "csharp": "cs",
-                "javascript": "js"
-            };
-        
-            // Update the lotw
-            if (lotw !== undefined)
-                lotw = correspondance[lotw] ? correspondance[lotw] : lotw;
-                
-        
-            // For each languages
-            for (let i = 0; i < languages.length; i++) {
-                let the_lang = correspondance[languages[i]] ? correspondance[languages[i]] : languages[i];
-                if (the_lang === 'js') {
-                    the_lang = 'node';
-                }
-        
-                const result = await sqlExec(
-                    `SELECT *
+  const sql = "SELECT id, lotw FROM Problems WHERE update_state = 0 AND NOW() >= date_end;";
+  const result = await sqlExec(sql);
+
+  if (result.length > 0) {
+    const row = result[0];
+    const problem_id = row["id"];
+    let lotw: string | undefined = row["lotw"]?.toLowerCase();
+    await sqlExec(`UPDATE Problems SET update_state = 1 WHERE id = ${problem_id}`);
+
+    if (problem_id) {
+      // Get all the languages
+      const languages: string[] = (await sqlExec("SELECT lang FROM CurrentLang")).map(
+        (l) => l.lang,
+      );
+
+      const correspondance: { [key: string]: string } = {
+        "c++": "cpp",
+        "c#": "cs",
+        csharp: "cs",
+        javascript: "js",
+      };
+
+      // Update the lotw
+      if (lotw !== undefined) lotw = correspondance[lotw] ? correspondance[lotw] : lotw;
+
+      // For each languages
+      for (let i = 0; i < languages.length; i++) {
+        let the_lang = correspondance[languages[i]] ? correspondance[languages[i]] : languages[i];
+        if (the_lang === "js") {
+          the_lang = "node";
+        }
+
+        const result = await sqlExec(
+          `SELECT *
                     FROM Solutions
                     WHERE problem_id = ?
                     AND lang = ?
                     ORDER BY size ASC;`,
-                    [problem_id, the_lang.toLowerCase()]
-                );
+          [problem_id, the_lang.toLowerCase()],
+        );
 
-                const size_lang = result.length;
-                const user_already_seen: number[] = [];
-                const size_arr: number[] = [];
-                const user_arr: number[] = [];
-        
-                if (size_lang > 0) {
-                    result.forEach((row: any) => {
-                        if (!user_already_seen.includes(row.owner_id)) {
-                            size_arr.push(row.size);
-                            user_arr.push(row.owner_id);
-                            user_already_seen.push(row.owner_id);
-                        }
-                    });
-                }
-        
-                for (let j = 0; j < size_arr.length; j++) {
-                    // rank: The rank of the person
-                    // same_rank_nb: The nb of person with the same rank (useful when rank == 1)
-                    // total: the total of people that tried
-                    // multiplier: the multiplier coefficient (useful when rank == 1)
-                    const rank = (size_arr.indexOf(size_arr[j]) + 1);
-                    const same_rank_nb = size_arr.filter((size) => size === size_arr[j]).length;
-                    const total: number = size_arr.length;
-                    let multiplier: number = 1;
-            
-                    if (rank === 1) {
-                        multiplier = Math.min(Math.max((Math.exp((total / same_rank_nb) / 70) / 6 + 0.8), 1), 1.25);
-                    }
-                    // same_rank < 1% => mutltiplier: 1.25
-                    // same_rank > 10% => mutltiplier: 1
+        const size_lang = result.length;
+        const user_already_seen: number[] = [];
+        const size_arr: number[] = [];
+        const user_arr: number[] = [];
 
-                    let score: number = Math.round(( 1 + Math.log10(total) / 6 ) * ( total - rank + 1 ) / ( total ) * 1000 * multiplier);
-
-                    // If the lang is the LOTW
-                    if (lotw != null && lotw == the_lang){
-                        score = Math.round(score * 2.25);
-                    }
-
-
-                    // Update the golf score of the user
-                    await sqlExec(`UPDATE Users SET golf_score = golf_score + ${score} WHERE id = ` + user_arr[j])
-                    // Update the golf score of the user
-                    await sqlExec(`UPDATE UserLanguages SET ${the_lang}_score = ${the_lang}_score + ${score} WHERE owner_id = ${user_arr[j]}`);
-                    // Update the golf score of the user
-                    await sqlExec(
-                        `INSERT INTO Activity (title, owner_id, lang, points, activity_date, major)
-                        VALUES("Points were awarded!", ?, ?, ?, NOW(), 1)`,
-                        [user_arr[j], the_lang, score]
-                    );
-                }
+        if (size_lang > 0) {
+          result.forEach((row: any) => {
+            if (!user_already_seen.includes(row.owner_id)) {
+              size_arr.push(row.size);
+              user_arr.push(row.owner_id);
+              user_already_seen.push(row.owner_id);
             }
+          });
         }
-    }
-}
 
+        for (let j = 0; j < size_arr.length; j++) {
+          // rank: The rank of the person
+          // same_rank_nb: The nb of person with the same rank (useful when rank == 1)
+          // total: the total of people that tried
+          // multiplier: the multiplier coefficient (useful when rank == 1)
+          const rank = size_arr.indexOf(size_arr[j]) + 1;
+          const same_rank_nb = size_arr.filter((size) => size === size_arr[j]).length;
+          const total: number = size_arr.length;
+          let multiplier: number = 1;
+
+          if (rank === 1) {
+            multiplier = Math.min(Math.max(Math.exp(total / same_rank_nb / 70) / 6 + 0.8, 1), 1.25);
+          }
+          // same_rank < 1% => mutltiplier: 1.25
+          // same_rank > 10% => mutltiplier: 1
+
+          let score: number = Math.round(
+            (((1 + Math.log10(total) / 6) * (total - rank + 1)) / total) * 1000 * multiplier,
+          );
+
+          // If the lang is the LOTW
+          if (lotw != null && lotw == the_lang) {
+            score = Math.round(score * 2.25);
+          }
+
+          // Update the golf score of the user
+          await sqlExec(
+            `UPDATE Users SET golf_score = golf_score + ${score} WHERE id = ` + user_arr[j],
+          );
+          // Update the golf score of the user
+          await sqlExec(
+            `UPDATE UserLanguages SET ${the_lang}_score = ${the_lang}_score + ${score} WHERE owner_id = ${user_arr[j]}`,
+          );
+          // Update the golf score of the user
+          await sqlExec(
+            `INSERT INTO Activity (title, owner_id, lang, points, activity_date, major)
+                        VALUES("Points were awarded!", ?, ?, ?, NOW(), 1)`,
+            [user_arr[j], the_lang, score],
+          );
+        }
+      }
+    }
+  }
+};
 
 updateScore();
-
 
 /**
  * Retrieves the rank and number of players for all solutions and updates their ranks.
  *
  * @returns Promise that resolves once the update is complete.
  * @throws error if an internal error occurs during the database query.
- * 
+ *
  * @remarks
  * - The function updates the rank, nb_players, and size fields of all solutions in the Solutions table.
  * - The rank of a solution is determined by the number of solutions with the same language and problem ID and smaller size submitted before the problem deadline, plus one.
@@ -462,9 +431,10 @@ updateScore();
  * - The size of a solution is set to the smallest size found for the same owner, language, and problem ID.
  * - Only solutions with rank 0 and submitted before the problem deadline are updated.
  */
-// Update the rank of all users 
+// Update the rank of all users
 export const updateRank = async () => {
-    await conn.execute(`UPDATE Solutions s
+  conn.execute(
+    `UPDATE Solutions s
     -- Update the Solutions table and give it an alias of 's'
     
     JOIN (
@@ -506,8 +476,8 @@ export const updateRank = async () => {
         ORDER BY size ASC 
         LIMIT 1
     );`,
-        (err, rep) => {
-            console.log(err);
-        }
-    );    
-}
+    (err, rep) => {
+      console.log(err);
+    },
+  );
+};
