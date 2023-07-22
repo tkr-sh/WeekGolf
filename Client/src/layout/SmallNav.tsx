@@ -62,7 +62,7 @@ const SmallNav = () => {
                         <img src={`src/assets/icons/${c.icon}.svg`} class="icon special"/>
                     </button>
                 </a> : 
-                <A href={c.link}>
+                <A href={token() === null ? "/sign-up" : c.link}>
                     <button class={c.icon}>
                         <img
                             src={pfp() !== '' ? pfp() : `src/assets/icons/${c.icon}.svg`}

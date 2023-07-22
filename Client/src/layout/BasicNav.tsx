@@ -1,6 +1,6 @@
 import "../style/BasicNav.scss"
 import menu from "../data/pagesHeader.json";
-import { For } from "solid-js";
+import { For, Show } from "solid-js";
 import icons from "../data/pagesFooter.json";
 import { A } from "@solidjs/router";
 
@@ -41,10 +41,17 @@ const BasicNav = () => {
                 }
             </For>
             <li>
-                <a href="/profile">
-                    Profile
-                    {/* <img src={`src/assets/icons/${c.icon}.svg`} class="icon"/> */}
-                </a>
+                <Show when={localStorage.getItem("token") !== null}>
+                    <A href="/profile">
+                        Profile
+                        {/* <img src={`src/assets/icons/${c.icon}.svg`} class="icon"/> */}
+                    </A>
+                </Show>
+                <Show when={localStorage.getItem("token") === null}>
+                    <A href="/sign-up">
+                        Sign-up
+                    </A>
+                </Show>
             </li>
         </ul>
 
