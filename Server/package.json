@@ -6,7 +6,11 @@
   "scripts": {
     "start": "ts-node src/server.ts",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint 'src/**/**.ts'",
+    "lint:fix": "eslint 'src/**/**.ts' --fix",
+    "format": "prettier \"**/*.ts\" \"src/**/*.json\" --write",
+    "prepare": "cd ../ && husky install ./Server/.husky"
   },
   "author": "",
   "license": "Attribution-NonCommercial 4.0 International",
@@ -36,6 +40,14 @@
     "@types/body-parser": "^1.19.2",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   }
