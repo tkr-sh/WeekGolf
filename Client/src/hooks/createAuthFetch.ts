@@ -34,7 +34,11 @@ const createAuth = () => {
 
         // If there is an error
         if (error && showError) {
-            handleError(data.toString().replace(/<[^>]*\>/g, ""));
+            if (typeof data !== "string" && "err" in data) {
+                handleError(data.err)
+            } else {
+                handleError(data.toString().replace(/<[^>]*\>/g, ""));
+            }
         }
 
         return {data, error, contentType};
