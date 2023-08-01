@@ -25,8 +25,8 @@ error_message="$(dotnet build)"
 
 
 
-# If there is an error
 if echo "$error_message" | grep -q "Build FAILED."; then
+    # If there is an error
 
     # Add the message to the error files
     for testcount in `seq 0 1 $countNbTest`; do

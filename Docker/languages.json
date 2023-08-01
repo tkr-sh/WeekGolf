@@ -34,6 +34,11 @@
         "test": "Console.WriteLine(Console.ReadLine());Console.WriteLine(Console.ReadLine());Console.WriteLine(Console.ReadLine());",
         "version": "dotnet --version"
     },
+    "dart": {
+        "extension": "dart",
+        "test": "import 'dart:io';void main() { print(stdin.readLineSync());print(stdin.readLineSync());print(stdin.readLineSync());}",
+        "version": "dart --version"
+    },
     "elixir": {
         "extension": "exs",
         "test": "line=IO.read(:stdio, :line)\nIO.write(line)\nline=IO.read(:stdio, :line)\nIO.write(line)\nline=IO.read(:stdio, :line)\nIO.write(line);",
@@ -105,7 +110,7 @@
     },
     "kotlin": {
         "extension": "kt",
-        "test": "fun main() {println(readLine())\nprintln(readLine())\nprintln(readLine())\n}",
+        "test": "fun main() {var s: String= 0;println(readLine())\nprintln(readLine())\nprintln(readLine())\n}",
         "version": "kotlinc -version"
     },
     "lua": {
@@ -188,6 +193,11 @@
     "vyxal": {
         "extension": "vyxal",
         "test": "",
+        "version": "vyxal \".\" \"⋎\""
+    },
+    "zig": {
+        "extension": "zig",
+        "test": "const std = @import(\"std\");pub fn main() !void {const stdout = std.io.getStdOut().writer();const in = std.io.getStdIn();var buf = std.io.bufferedReader(in.reader());// Get the Reader interface from BufferedReader\nvar r = buf.reader();\nvar msg_buf: [4096]u8 = undefined;var msg = try r.readUntilDelimiterOrEof(&msg_buf, 'a');\nif (msg) | m | { try stdout.print(\"{s}\", .{m});}}",
         "version": "vyxal --help"
     }
 }
